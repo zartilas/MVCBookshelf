@@ -2,6 +2,8 @@
 
 namespace MVCBookshelf
 {
+    // Bundles help us reduce the HTTP requests to make the page load faster.
+
     public static class BundleConfig
     {
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
@@ -22,7 +24,7 @@ namespace MVCBookshelf
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-lumen.css",
                       "~/Content/site.css"));
         }
     }
