@@ -9,5 +9,7 @@ namespace MVCBookshelf.Content.values
     {
         public static String appName = "MVCBookshelf";
         public static String homePageTitle = appName + " | Home Page";
+        public static String homePageButtonCommunication = "Στοιχεία επικοινωνίας των συγγραφέων";
+
     }
 }
