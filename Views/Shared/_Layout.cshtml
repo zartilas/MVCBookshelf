@@ -9,8 +9,10 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/fontawesome")
-    <link href="css/styles.css" rel="stylesheet" /> <!-- Κλήση αρχείου styles.css-->
+    <link href="Content\styles.css" rel="stylesheet" /> <!-- Κλήση αρχείου styles.css-->
 </head>
+
+
 <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
@@ -29,14 +31,62 @@
             </div>
         </div>
     </nav>
+    <!-- Navigation end-->
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+
     </div>
+
+
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        80, M. Karaoli & A. Dimitriou St.
+                        <br />
+                        Piraeus 18534, Greece
+                    </p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">CONTACT DETAILS</h4>
+                    <p class="lead mb-0">
+                        Tel: 210 4142022
+                        <br />
+                        Fax: 210 4142330
+                        <br />
+                        Email: library@unipi.gr
+                    </p>
+
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Us</h4>
+                    <p class="lead mb-0">
+                        Welcome to the new portal of the Library.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Team Rocket  @DateTime.Now.Year</small></div>
+    </div>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+    <div class="scroll-to-top d-lg-none position-fixed">
+        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
+    </div>
+
+    <!-- Footer end-->
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
