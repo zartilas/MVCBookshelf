@@ -1,18 +1,19 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@using MVCBookshelf.Content.Values
+@{
+    ViewBag.Title = Strings.homePageTitle;
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <form class="form-inline my-2 my-lg-0">
-        <label class="item item-input">
-            <i class="fa fa-search"></i>
-            <input type="search" placeholder="Search">
-        </label>
-    </form>
-</div>
+<section>
+    <div class="jumbotron">
+        <!-- Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Retrieve Information</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg"> @Strings.homePageButtonContactDetailsOfAuthors &raquo;</a></p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg"> @Strings.homePageButtonOrderID &raquo;</a></p>
+    </div>
+</section>
