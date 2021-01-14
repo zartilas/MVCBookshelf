@@ -89,7 +89,6 @@ p {
     margin-bottom: 1rem;
 }
 
-
 abbr[title],
 abbr[data-original-title] {
     text-decoration: underline;
@@ -241,6 +240,7 @@ button {
     }
 
 input,
+button,
 select,
 optgroup,
 textarea {
@@ -250,12 +250,12 @@ textarea {
     line-height: inherit;
 }
 
-
+button,
 input {
     overflow: visible;
 }
 
-
+button,
 select {
     text-transform: none;
 }
@@ -268,7 +268,7 @@ select {
     word-wrap: normal;
 }
 
-
+button,
 [type=button],
 [type=reset],
 [type=submit] {
