@@ -241,7 +241,6 @@ button {
     }
 
 input,
-button,
 select,
 optgroup,
 textarea {
@@ -251,12 +250,12 @@ textarea {
     line-height: inherit;
 }
 
-button,
+
 input {
     overflow: visible;
 }
 
-button,
+
 select {
     text-transform: none;
 }
@@ -269,7 +268,7 @@ select {
     word-wrap: normal;
 }
 
-button,
+
 [type=button],
 [type=reset],
 [type=submit] {
@@ -10649,7 +10648,7 @@ a.text-dark:hover, a.text-dark:focus {
         background-color: rgba(33, 37, 41, 0.5);
         line-height: 3.1rem;
     }
-    
+
 #mainNav {
     padding-top: 1rem;
     padding-bottom: 1rem;
