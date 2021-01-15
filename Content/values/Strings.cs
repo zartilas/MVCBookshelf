@@ -13,6 +13,11 @@ namespace MVCBookshelf.Content.Values
 
         /* Error Page */
         public static String error404PageTitle = "404: Page not found | " + appName;
+        public static String error404Header1 = "Oops!";
+        public static String error404Header2 = "We can't seem to find the page\nyou are looking for.";
+        public static String error404Header3 = "Error code: 404";
+
+
 
         /* Navigation Menu */
         public static String navBarTitle = "LIBRARY";
