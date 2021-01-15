@@ -21,7 +21,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-        <a class="navbar-brand" href="#"><img src="~/Content/Images/bookshelf.png" height="30" width="30" /> @Strings.navBarTitle </a>
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")"><img src="~/Content/Images/bookshelf.png" class="img-thumbnail" height="30" width="30" /> @Strings.navBarTitle </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">
                         <i class="fa fa-search"></i>&nbsp;
                         @Strings.navBarReferences
                         <span class="sr-only">(current)</span>
@@ -41,17 +41,16 @@
                         @Strings.navBarAdministration
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item">@Html.ActionLink(Strings.navBarAdministrationDropdownAuthors, "Authors", "Administration")</a>
-                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownAuthors</a>
-                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownDiscounts</a>
-                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownEmployees</a>
-                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownJobs</a>
-                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownPublishers</a>
-                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownRoysched</a>
-                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownSales</a>
-                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownStores</a>
-                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownTitles</a>
-                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownTitleAuthors</a>
+                        <a class="dropdown-item" href="@Url.Action("Authors", "Administration")">@Strings.navBarAdministrationDropdownAuthors</a>
+                        <a class="dropdown-item" href="@Url.Action("Discounts", "Administration")">@Strings.navBarAdministrationDropdownDiscounts</a>
+                        <a class="dropdown-item" href="@Url.Action("Employees", "Administration")">@Strings.navBarAdministrationDropdownEmployees</a>
+                        <a class="dropdown-item" href="@Url.Action("Jobs", "Administration")">@Strings.navBarAdministrationDropdownJobs</a>
+                        <a class="dropdown-item" href="@Url.Action("Publishers", "Administration")">@Strings.navBarAdministrationDropdownPublishers</a>
+                        <a class="dropdown-item" href="@Url.Action("Roysched", "Administration")">@Strings.navBarAdministrationDropdownRoysched</a>
+                        <a class="dropdown-item" href="@Url.Action("Sales", "Administration")">@Strings.navBarAdministrationDropdownSales</a>
+                        <a class="dropdown-item" href="@Url.Action("Stores", "Administration")">@Strings.navBarAdministrationDropdownStores</a>
+                        <a class="dropdown-item" href="@Url.Action("Titles", "Administration")">@Strings.navBarAdministrationDropdownTitles</a>
+                        <a class="dropdown-item" href="@Url.Action("TitleAuthors", "Administration")">@Strings.navBarAdministrationDropdownTitleAuthors</a>
                     </div>
                 </li>
             </ul>
@@ -76,7 +75,7 @@
         <br />
         <br />
     </div>
-    <footer class="card bg-secondary mb-3">
+    <footer class="card-footer fixed-bottom" style="padding-top:50px">
         <div class="container">
             <div class="row">
                 <!-- Footer Location-->
@@ -92,7 +91,6 @@
                     <p class="lead mb-0">
                         @Strings.footerDescriptionContactDetails
                     </p>
-
                 </div>
                 <!-- Footer About Text-->
                 <div class="col-lg-4">
@@ -102,20 +100,10 @@
                     </p>
                 </div>
             </div>
+            <hr>
+            <div class="container"><small>Copyright &copy; Team Rocket  @DateTime.Now.Year.</small></div>
         </div>
     </footer>
-    <!-- Copyright Section-->
-    <div class="copyright py-4 text-center text-white">
-        <div class="container"><small>Copyright &copy; Team Rocket  @DateTime.Now.Year</small></div>
-    </div>
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
-    <div class="scroll-to-top d-lg-none position-fixed">
-        <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
-    </div>
-
-    <!-- Footer end-->
-
-
 
 </body>
 </html>

@@ -5,10 +5,14 @@ namespace MVCBookshelf.Content.Values
     public static class Strings
     {
         public static String appName = "MVCBookshelf";
+
+        /* Home/References Page*/
         public static String homePageTitle = appName + " | Home Page";
         public static String homePageButtonContactDetailsOfAuthors = "Contact details of authors";
         public static String homePageButtonOrderID = "Order ID number";
 
+        /* Error Page */
+        public static String error404PageTitle = "404: Page not found | " + appName;
 
         /* Navigation Menu */
         public static String navBarTitle = "LIBRARY";
