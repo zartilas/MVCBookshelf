@@ -1,5 +1,6 @@
 ﻿using MVCBookshelf.Controllers;
 using System;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -11,6 +12,7 @@ namespace MVCBookshelf
     {
         protected void Application_Start()
         {
+            Database.SetInitializer<MVCBookshelf.Models.AuthorsContext>(null); 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

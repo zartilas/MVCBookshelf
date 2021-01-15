@@ -133,6 +133,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthorsContext.cs" />
     <Compile Include="Models\Jobs.cs" />
     <Compile Include="Models\Roysched.cs" />
     <Compile Include="Models\TitleAuthor.cs" />

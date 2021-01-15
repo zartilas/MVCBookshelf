@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace MVCBookshelf.Models
 {
+
+    [Table("dbo.authors")]
     public class Authors
     {
         public String au_id { get; set; }
