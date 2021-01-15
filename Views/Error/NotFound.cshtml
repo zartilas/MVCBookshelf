@@ -1,0 +1,25 @@
+﻿@using MVCBookshelf.Content.Values
+@{
+    ViewBag.Title = Strings.error404PageTitle;
+}
+
+<section>
+    <div class="col-sm-12 text-center">
+        <img src="~/Content/Images/error404.png" style="height:60%; width:60%;" alt="Error 404" />
+    </div>
+    <div class="jumbotron">
+        <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">Oops!</h1>
+
+        <div>
+            <!-- Button Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <p><a class="btn btn-primary btn-lg ml-4 mr-4"> @Strings.homePageButtonContactDetailsOfAuthors</a></p>
+        </div>
+    </div>
+</section>
+
+
