@@ -2,9 +2,10 @@
 
 namespace MVCBookshelf.Controllers
 {
-    public class HomeController : Controller
+    public class AdministrationController : Controller
     {
-        public ActionResult Index()
+        // GET: Authors
+        public ActionResult Authors()
         {
             return View();
         }
