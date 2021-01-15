@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿ using System.Web.Mvc;
+using MVCBookshelf.Models;
 
 namespace MVCBookshelf.Controllers
 {
@@ -7,7 +8,11 @@ namespace MVCBookshelf.Controllers
         // GET: Authors
         public ActionResult Authors()
         {
-            return View();
+            Authors authors = new Authors()
+            {
+                
+            };
+            return View(authors);
         }
     }
 }
