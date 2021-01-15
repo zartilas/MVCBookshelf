@@ -41,16 +41,17 @@
                         @Strings.navBarAdministration
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="~/Views/Administration/Authors.cshtml">@Strings.navBarAdministrationDropdownAuthors</a>
-                        <a class="dropdown-item" href="#">@Strings.navBarAdministrationDropdownDiscounts</a>
-                        <a class="dropdown-item" href="#">@Strings.navBarAdministrationDropdownEmployees</a>
-                        <a class="dropdown-item" href="#">@Strings.navBarAdministrationDropdownJobs</a>
-                        <a class="dropdown-item" href="#">@Strings.navBarAdministrationDropdownPublishers</a>
-                        <a class="dropdown-item" href="#">@Strings.navBarAdministrationDropdownRoysched</a>
-                        <a class="dropdown-item" href="#">@Strings.navBarAdministrationDropdownSales</a>
-                        <a class="dropdown-item" href="#">@Strings.navBarAdministrationDropdownStores</a>
-                        <a class="dropdown-item" href="#">@Strings.navBarAdministrationDropdownTitles</a>
-                        <a class="dropdown-item" href="#">@Strings.navBarAdministrationDropdownTitleAuthors</a>
+                        <a class="dropdown-item">@Html.ActionLink(Strings.navBarAdministrationDropdownAuthors, "Authors", "Administration")</a>
+                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownAuthors</a>
+                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownDiscounts</a>
+                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownEmployees</a>
+                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownJobs</a>
+                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownPublishers</a>
+                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownRoysched</a>
+                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownSales</a>
+                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownStores</a>
+                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownTitles</a>
+                        <a class="dropdown-item">@Strings.navBarAdministrationDropdownTitleAuthors</a>
                     </div>
                 </li>
             </ul>
