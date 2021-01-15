@@ -7,7 +7,7 @@ using System.Web;
 namespace MVCBookshelf.Models
 {
 
-    [Table("dbo.authors")]
+    [Table("authors")]
     public class Authors
     {
         public String au_id { get; set; }
