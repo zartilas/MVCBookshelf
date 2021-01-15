@@ -15,8 +15,34 @@
                 <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
                 <div class="divider-custom-line"></div>
             </div>
-            <p><a style="height:150px; width:200px;" class="btn btn-primary btn-lg ml-4 mr-4"> @Strings.homePageButtonContactDetailsOfAuthors</a></p>
+
+            <p data-toggle="modal" data-target="#modalContactDetailsOfAuthors"><a style="height:150px; width:200px;" class="btn btn-primary btn-lg ml-4 mr-4"> @Strings.homePageButtonContactDetailsOfAuthors</a></p>
+
+
+            <!-- Modal -->
+            <div id="modalContactDetailsOfAuthors" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Some text in the modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
             <p><a style="height:150px; width:200px;" class="btn btn-primary btn-lg ml-4 mr-4"> @Strings.homePageButtonOrderID</a></p>
         </div>
-    </div>
+        </div>
 </section>
