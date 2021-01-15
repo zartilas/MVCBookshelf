@@ -10,6 +10,9 @@ namespace MVCBookshelf.Content.Values
         public static String homePageTitle = appName + " | Home Page";
         public static String homePageButtonContactDetailsOfAuthors = "Contact details of authors";
         public static String homePageButtonOrderID = "Order ID number";
+            public static string homePageModalContactDetailsOfAuthorsHeader = "Search for contact details of authors:";
+            public static string homePageModalContactDetailsOfAuthorsFormPosNumLabel = "Position in leaderboards:";
+            public static string homePageModalContactDetailsOfAuthorsFormPlaceholderPosNum = "Enter position number.";
 
         /* Error Page */
         public static String error404PageTitle = "404: Page not found | " + appName;
