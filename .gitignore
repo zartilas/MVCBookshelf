@@ -341,3 +341,5 @@ healthchecksdb
 
 # Custom
 Web.config
+Web.Debug.config
+web.Release.config
