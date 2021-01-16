@@ -10,10 +10,14 @@
 namespace MVCBookshelf.Models
 {
     using System;
+    using System.Collections.Generic;
     
-    public partial class reptq1_Result
+    public partial class sysdiagrams
     {
-        public string pub_id { get; set; }
-        public Nullable<decimal> avg_price { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

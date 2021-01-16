@@ -165,65 +165,55 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\authors.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\AuthorsContext.cs" />
     <Compile Include="Models\discounts.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\employee.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\jobs.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelDbPuns.Context.cs">
+    <Compile Include="Models\ModelPubs.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDbPuns.Context.tt</DependentUpon>
+      <DependentUpon>ModelPubs.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelDbPuns.cs">
+    <Compile Include="Models\ModelPubs.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ModelDbPuns.Designer.cs">
+    <Compile Include="Models\ModelPubs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelDbPuns.edmx</DependentUpon>
+      <DependentUpon>ModelPubs.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\publishers.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\pub_info.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\reptq1_Result.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\reptq2_Result.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\reptq3_Result.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\roysched.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\sales.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\stores.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\titleauthor.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\titles.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\titleview.cs">
-      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+      <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -244,15 +234,15 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\ModelDbPuns.Context.tt">
+    <Content Include="Models\ModelPubs.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelDbPuns.edmx</DependentUpon>
-      <LastGenOutput>ModelDbPuns.Context.cs</LastGenOutput>
+      <DependentUpon>ModelPubs.edmx</DependentUpon>
+      <LastGenOutput>ModelPubs.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ModelDbPuns.tt">
+    <Content Include="Models\ModelPubs.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ModelDbPuns.edmx</DependentUpon>
-      <LastGenOutput>ModelDbPuns.cs</LastGenOutput>
+      <DependentUpon>ModelPubs.edmx</DependentUpon>
+      <LastGenOutput>ModelPubs.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -277,12 +267,12 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <EntityDeploy Include="Models\ModelDbPuns.edmx">
+    <EntityDeploy Include="Models\ModelPubs.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelDbPuns.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelPubs.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ModelDbPuns.edmx.diagram">
-      <DependentUpon>ModelDbPuns.edmx</DependentUpon>
+    <Content Include="Models\ModelPubs.edmx.diagram">
+      <DependentUpon>ModelPubs.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />

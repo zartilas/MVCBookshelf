@@ -9,10 +9,9 @@ namespace MVCBookshelf.Controllers
         // GET: Authors
         public ActionResult Authors(string id)
         {
-            AuthorsContext authorsContext = new AuthorsContext();
-            authors authors = authorsContext.Authors.Single(auth => auth.au_id == id);
 
-            return View(authors);
+
+            return View;
         }
     }
 }
