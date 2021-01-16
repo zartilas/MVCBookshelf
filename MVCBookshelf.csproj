@@ -207,7 +207,6 @@
     <Compile Include="Models\reptq3_Result.cs">
       <DependentUpon>ModelDbPuns.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PublisherInfo.cs" />
     <Compile Include="Models\roysched.cs">
       <DependentUpon>ModelDbPuns.tt</DependentUpon>
     </Compile>

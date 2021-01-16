@@ -8,6 +8,6 @@ namespace MVCBookshelf.Models
 {
     public class AuthorsContext : DbContext //connection with database
     {
-        public DbSet<Authors> Authors { get; set; }
+        public DbSet<authors> Authors { get; set; }
     }
 }
