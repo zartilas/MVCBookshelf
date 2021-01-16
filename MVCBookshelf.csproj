@@ -267,14 +267,7 @@
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
-    <Content Include="Web.config" />
     <Content Include=".gitignore" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
     <EntityDeploy Include="Models\ModelPubs.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelPubs.Designer.cs</LastGenOutput>
@@ -382,6 +375,13 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Administration\Authors.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

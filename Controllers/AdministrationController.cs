@@ -7,11 +7,11 @@ namespace MVCBookshelf.Controllers
     public class AdministrationController : Controller
     {
         // GET: Authors
-        public ActionResult Authors(string id)
+        /*public ActionResult Authors(string id)
         {
 
 
             return View;
-        }
+        }*/
     }
 }

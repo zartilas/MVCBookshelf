@@ -340,4 +340,6 @@ ASALocalRun/
 healthchecksdb
 
 # Custom
-~/Web.config
+Web.config
+Web.Debug.config
+web.Release.config
