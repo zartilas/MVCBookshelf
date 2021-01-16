@@ -11,7 +11,7 @@ namespace MVCBookshelf.Controllers
         {
             AuthorsContext authorsContext = new AuthorsContext();
             Authors authors = authorsContext.Authors.Single(auth => auth.au_id == id);
-       
+
             return View(authors);
         }
     }

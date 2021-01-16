@@ -192,7 +192,6 @@
     <Compile Include="Models\reptq3_Result.cs">
       <DependentUpon>ModelDbPuns.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\PublisherInfo.cs" />
     <Compile Include="Models\titleview.cs">
       <DependentUpon>ModelDbPuns.tt</DependentUpon>
     </Compile>
@@ -365,7 +364,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Authors\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

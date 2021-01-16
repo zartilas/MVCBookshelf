@@ -1,6 +1,6 @@
 ﻿@using MVCBookshelf.Content.Values
 @{
-    ViewBag.Title = Strings.error404PageTitle;
+    ViewBag.Title = Lang.error404PageTitle;
 }
 
 <section>
@@ -8,7 +8,7 @@
         <img src="~/Content/Images/error404.png" style="height:40%; width:40%;" alt="Error 404" />
     </div>
 
-    <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">@Strings.error404Header1</h1>
+    <h1 class="page-section-heading text-center text-uppercase text-secondary mb-0">@Lang.error404Header1</h1>
 
     <div>
         <!-- Button Divider-->
@@ -17,9 +17,9 @@
             <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
             <div class="divider-custom-line"></div>
         </div>
-        <h2 class="page-section-heading text-center text-secondary mb-0">@Strings.error404Header2</h2>
+        <h2 class="page-section-heading text-center text-secondary mb-0">@Lang.error404Header2</h2>
         <br />
-        <h3 class="page-section-heading text-center text-secondary mb-0">@Strings.error404Header3</h3>
+        <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.error404Header3</h3>
         <br />
         <div class="btn-toolbar justify-content-center">
             <p><a href="@Url.Action("Index", "Home")" class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-arrow-bar-left"></i> &nbsp;  Back Home</a></p>

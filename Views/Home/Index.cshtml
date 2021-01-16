@@ -1,6 +1,6 @@
 ﻿@using MVCBookshelf.Content.Values
 @{
-    ViewBag.Title = Strings.homePageTitle;
+    ViewBag.Title = Lang.homePageTitle;
 }
 
 <section>
@@ -16,7 +16,7 @@
                 <div class="divider-custom-line"></div>
             </div>
 
-            <p data-toggle="modal" data-target="#modalContactDetailsOfAuthors"><a style="height:150px; width:200px;" class="btn btn-primary btn-lg ml-4 mr-4"> @Strings.homePageButtonContactDetailsOfAuthors</a></p>
+            <p data-toggle="modal" data-target="#modalContactDetailsOfAuthors"><a style="height:150px; width:200px;" class="btn btn-primary btn-lg ml-4 mr-4"> @Lang.homePageButtonContactDetailsOfAuthors</a></p>
 
 
             <!-- Modal -->
@@ -26,16 +26,23 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">@Strings.homePageModalContactDetailsOfAuthorsHeader</h4>
+                            <h4 class="modal-title">@Lang.homePageModalContactDetailsOfAuthorsHeader</h4>
                             <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
                         </div>
                         <div class="modal-body">
                             <form>
-                                <label class="col-form-label" for="inputPosNum">@Strings.homePageModalContactDetailsOfAuthorsFormPosNumLabel</label>
-                                <input type="text" class="form-control" placeholder="@Strings.homePageModalContactDetailsOfAuthorsFormPlaceholderPosNum" id="inputPosNum">
+                                <label class="col-form-label" for="inputPosNum">@Lang.homePageModalContactDetailsOfAuthorsFormPosNumLabel</label>
+                                <input type="text" class="form-control" placeholder="@Lang.homePageModalContactDetailsOfAuthorsFormPlaceholderPosNum" id="inputPosNum">
 
-                                <label class="col-form-label" for="inputDateFrom">@Strings.homePageModalContactDetailsOfAuthorsFormPosNumLabel</label>
-                                <input data-provide="datepicker" class="form-control" placeholder="@Strings.homePageModalContactDetailsOfAuthorsFormPlaceholderPosNum" id="inputDateFrom">
+                                <label class="col-form-label" for="inputDateFrom">@Lang.homePageModalContactDetailsOfAuthorsFormPosNumLabel</label>
+                                <input data-provide="datepicker" class="form-control" placeholder="@Lang.homePageModalContactDetailsOfAuthorsFormPlaceholderPosNum" id="inputDateFrom">
+
+                                <div class="input-group date">
+                                    <input type="text" class="form-control" value="12-02-2012">
+                                    <div class="input-group-addon">
+                                        <span class="glyphicon glyphicon-th"></span>
+                                    </div>
+                                </div>
 
                                 <br />
                                 <div class="modal-footer">
@@ -49,7 +56,7 @@
 
 
 
-            <p><a style="height:150px; width:200px;" class="btn btn-primary btn-lg ml-4 mr-4"> @Strings.homePageButtonOrderID</a></p>
+            <p><a style="height:150px; width:200px;" class="btn btn-primary btn-lg ml-4 mr-4"> @Lang.homePageButtonOrderID</a></p>
         </div>
         </div>
 </section>

@@ -2,7 +2,7 @@
 
 namespace MVCBookshelf.Content.Values
 {
-    public static class Strings
+    public static class Lang
     {
         public static String appName = "MVCBookshelf";
 
