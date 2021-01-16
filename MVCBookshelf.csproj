@@ -164,7 +164,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\authors.cs">
+      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AuthorsContext.cs" />
+    <Compile Include="Models\discounts.cs">
+      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\employee.cs">
+      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\jobs.cs">
+      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ModelDbPuns.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -180,6 +192,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelDbPuns.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\publishers.cs">
+      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\pub_info.cs">
       <DependentUpon>ModelDbPuns.tt</DependentUpon>
     </Compile>
@@ -193,6 +208,21 @@
       <DependentUpon>ModelDbPuns.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PublisherInfo.cs" />
+    <Compile Include="Models\roysched.cs">
+      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sales.cs">
+      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\stores.cs">
+      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\titleauthor.cs">
+      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\titles.cs">
+      <DependentUpon>ModelDbPuns.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\titleview.cs">
       <DependentUpon>ModelDbPuns.tt</DependentUpon>
     </Compile>
