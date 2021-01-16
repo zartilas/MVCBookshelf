@@ -12,7 +12,7 @@ namespace MVCBookshelf
     {
         protected void Application_Start()
         {
-            Database.SetInitializer<MVCBookshelf.Models.AuthorsContext>(null); 
+            Database.SetInitializer<MVCBookshelf.Models.AuthorsContext>(null);
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
