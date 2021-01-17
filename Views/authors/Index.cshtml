@@ -1,16 +1,49 @@
 ﻿@model IEnumerable<MVCBookshelf.Models.authors>
-
+@using MVCBookshelf.Content.Values;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Lang.authorsPageTitle;
 }
 
-<h2>Index</h2>
+<div class="btn-toolbar justify-content-lg-start">
+    <p data-toggle="modal" data-target="#modalAddNewAuthor"><a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp;  Add new author</a></p>
+</div>
+<!-- Modal -->
+<div id="modalAddNewAuthor" class="modal fade" role="dialog">
+    <div class="modal-dialog">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr class="table-primary" >
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Titlos</h4>
+                <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label class="col-form-label" for="inputPosNum">@Lang.homePageModalContactDetailsOfAuthorsFormPosNumLabel</label>
+                    <input type="text" class="form-control" placeholder="@Lang.homePageModalContactDetailsOfAuthorsFormPlaceholderPosNum" id="inputPosNum">
+
+                    <label class="col-form-label" for="inputDateFrom">@Lang.homePageModalContactDetailsOfAuthorsFormPosNumLabel</label>
+                    <input data-provide="datepicker" class="form-control" placeholder="@Lang.homePageModalContactDetailsOfAuthorsFormPlaceholderPosNum" id="inputDateFrom">
+
+                    <div class="input-group date">
+                        <input type="text" class="form-control" value="12-02-2012">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+
+                    <br />
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-lg w-125 h-75" data-dismiss="modal"><i class="fa fa-search"></i> &nbsp; Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table table-dark table-striped table-responsive">
+    <tr class="table-primary">
         <th>
             @Html.DisplayNameFor(model => model.au_lname)
         </th>
@@ -38,38 +71,39 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.au_lname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.au_fname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.phone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.city)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.state)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.zip)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.contract)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.au_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.au_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.au_id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.au_lname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.au_fname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.zip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.contract)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.au_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.au_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.au_id })
+            </td>
+        </tr>
+    }
 
 </table>
