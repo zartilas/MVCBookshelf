@@ -10,7 +10,7 @@ using MVCBookshelf.Models;
 
 namespace MVCBookshelf.Controllers
 {
-    public class RoyschedsController : Controller
+    public class RoyschedController : Controller
     {
         private pubsEntities db = new pubsEntities();
 
