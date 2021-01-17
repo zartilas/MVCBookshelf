@@ -23,6 +23,9 @@ namespace MVCBookshelf.Content.Values
         /* Authors Page */
         public static String authorsPageTitle = appName + " | Authors";
 
+        /* Discounts Page */
+        public static String discountsPageTitle = appName + " | Discounts";
+
         /* Navigation Menu */
         public static String navBarTitle = "LIBRARY";
         public static String navBarReferences = "References";
