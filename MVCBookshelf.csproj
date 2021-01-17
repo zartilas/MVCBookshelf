@@ -358,7 +358,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Content\styles.css" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -375,7 +375,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Administration\Authors.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
-    <Content Include="Web.config" />
+    <Content Include="Views\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
