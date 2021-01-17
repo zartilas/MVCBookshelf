@@ -376,11 +376,11 @@
     <Content Include="Views\Administration\Authors.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Web.config" />
-    <Content Include="Views\authors\Create.cshtml" />
-    <Content Include="Views\authors\Delete.cshtml" />
-    <Content Include="Views\authors\Details.cshtml" />
-    <Content Include="Views\authors\Edit.cshtml" />
-    <Content Include="Views\authors\Index.cshtml" />
+    <Content Include="Views\Authors\Create.cshtml" />
+    <Content Include="Views\Authors\Delete.cshtml" />
+    <Content Include="Views\Authors\Details.cshtml" />
+    <Content Include="Views\Authors\Edit.cshtml" />
+    <Content Include="Views\Authors\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

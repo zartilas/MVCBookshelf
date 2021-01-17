@@ -14,13 +14,13 @@ namespace MVCBookshelf.Controllers
     {
         private pubsEntities db = new pubsEntities();
 
-        // GET: authors
+        // GET: Authors
         public ActionResult Index()
         {
             return View(db.authors.ToList());
         }
 
-        // GET: authors/Details/5
+        // GET: Authors/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace MVCBookshelf.Controllers
             return View(authors);
         }
 
-        // GET: authors/Create
+        // GET: Authors/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: authors/Create
+        // POST: Authors/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace MVCBookshelf.Controllers
             return View(authors);
         }
 
-        // GET: authors/Edit/5
+        // GET: Authors/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace MVCBookshelf.Controllers
             return View(authors);
         }
 
-        // POST: authors/Edit/5
+        // POST: Authors/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace MVCBookshelf.Controllers
             return View(authors);
         }
 
-        // GET: authors/Delete/5
+        // GET: Authors/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace MVCBookshelf.Controllers
             return View(authors);
         }
 
-        // POST: authors/Delete/5
+        // POST: Authors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
