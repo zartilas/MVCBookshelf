@@ -398,7 +398,6 @@
     <Content Include="Views\Authors\Details.cshtml" />
     <Content Include="Views\Authors\Edit.cshtml" />
     <Content Include="Views\Authors\Index.cshtml" />
-    <Content Include="Web.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Discounts\Create.cshtml" />
     <Content Include="Views\Discounts\Delete.cshtml" />
@@ -445,6 +444,7 @@
     <Content Include="Views\Titleauthors\Details.cshtml" />
     <Content Include="Views\Titleauthors\Edit.cshtml" />
     <Content Include="Views\Titleauthors\Index.cshtml" />
+    <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,10 +1,44 @@
 ﻿@model IEnumerable<MVCBookshelf.Models.publishers>
-
+@using MVCBookshelf.Content.Values;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = Lang.publishersPageTitle;
 }
 
-<h2>Index</h2>
+<div class="btn-toolbar justify-content-lg-start">
+    <p data-toggle="modal" data-target="#modalAddNewPublisher"><a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp;  Add new publisher</a></p>
+</div>
+<!-- Modal -->
+<div id="modalAddNewPublisher" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Titles</h4>
+                <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <label class="col-form-label" for="inputPosNum"></label>
+                    <input type="text" class="form-control" placeholder="" id="inputPosNum">
+
+                    <label class="col-form-label" for="inputDateFrom"></label>
+                    <input data-provide="datepicker" class="form-control" placeholder="" id="inputDateFrom">
+
+                    <div class="input-group date">
+                        <input type="text" class="form-control" value="12-02-2012">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary btn-lg w-125 h-75" data-dismiss="modal"><i class="fa fa-search"></i> &nbsp; Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -29,29 +63,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.pub_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.city)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.state)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.country)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pub_info.pr_info)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.pub_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.pub_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.pub_id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.pub_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pub_info.pr_info)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.pub_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.pub_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.pub_id })
+            </td>
+        </tr>
+    }
 
 </table>

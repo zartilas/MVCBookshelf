@@ -26,6 +26,30 @@ namespace MVCBookshelf.Content.Values
         /* Discounts Page */
         public static String discountsPageTitle = appName + " | Discounts";
 
+        /* Employees Page */
+        public static String employeesPageTitle = appName + " | Discounts";
+
+        /* Jobs Page */
+        public static String jobsPageTitle = appName + " | Discounts";
+
+        /* Publishers Page */
+        public static String publishersPageTitle = appName + " | Discounts";
+
+        /* Sales Page */
+        public static String salesPageTitle = appName + " | Discounts";
+
+        /* Stores Page */
+        public static String storesPageTitle = appName + " | Discounts";
+
+        /* TitleAuthor Page */
+        public static String titleauthorPageTitle = appName + " | Discounts";
+
+        /* Titles Page */
+        public static String titlesPageTitle = appName + " | Discounts";
+
+        /* Roysched Page */
+        public static String royschedPageTitle = appName + " | Discounts";
+
         /* Navigation Menu */
         public static String navBarTitle = "LIBRARY";
         public static String navBarReferences = "References";
