@@ -185,6 +185,7 @@
     <Compile Include="Models\authors.cs">
       <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Metadata\AuthorsMetadata.cs" />
     <Compile Include="Models\discounts.cs">
       <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
@@ -194,6 +195,7 @@
     <Compile Include="Models\jobs.cs">
       <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Metadata\DiscountsMetadata.cs" />
     <Compile Include="Models\ModelPubs.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,6 +211,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelPubs.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PartialClasses.cs" />
     <Compile Include="Models\publishers.cs">
       <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
@@ -454,7 +457,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Metadata\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
