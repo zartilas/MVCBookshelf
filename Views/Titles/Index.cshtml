@@ -42,37 +42,37 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-striped">
     <tr>
         <th>
-            Title
+            @Html.DisplayNameFor(model => model.title)
         </th>
         <th>
-            Type
+            @Html.DisplayNameFor(model => model.type)
         </th>
         <th>
-            Price
+            @Html.DisplayNameFor(model => model.price)
         </th>
         <th>
-            Advance
+            @Html.DisplayNameFor(model => model.advance)
         </th>
         <th>
-            Royalty
+            @Html.DisplayNameFor(model => model.royalty)
         </th>
         <th>
-            Ytd_Sales
+            @Html.DisplayNameFor(model => model.ytd_sales)
         </th>
         <th>
-            Notes
+            @Html.DisplayNameFor(model => model.notes)
         </th>
         <th>
-            Publish Date
+            @Html.DisplayNameFor(model => model.pubdate)
         </th>
         <th>
-            Publisher Name
+            @Html.DisplayNameFor(model => model.publishers.pub_name)
         </th>
         <th>
-            Title ID
+            @Html.DisplayNameFor(model => model.roysched.title_id)
         </th>
         <th></th>
     </tr>
