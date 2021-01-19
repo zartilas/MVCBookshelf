@@ -54,7 +54,7 @@ namespace MVCBookshelf.Content.Values
         public const string metadataMinit = "MIDDLE NAME INITIALS ";
         public const string metadataJob_lvl = "JOB LEVEL";
         public const string metadataHire_date = "DATE";
-        public const string metadataJob_desc = "JOB";
+        public const string metadataJob_desc = "JOB DESCRIPTION";
         public const string metadataPub_name = "PUBLISHER NAME";
 
         /* Metadata Jobs*/
@@ -66,18 +66,18 @@ namespace MVCBookshelf.Content.Values
         public const string metadataPr_info = "PUBLISHERS INFO";
 
         /* Metadata Roysched*/
-        public const string metadataTitle = "COUNTRY";
-        public const string metadataRoyalty = "PUBLISHERS INFO";
-        public const string metadataHirange = "COUNTRY";
-        public const string metadataLorange = "PUBLISHERS INFO";
+        public const string metadataTitle = "TITLE";
+        public const string metadataRoyalty = "ROYALTY";
+        public const string metadataHirange = "HIGH RANGE";
+        public const string metadataLorange = "LOW RANGE";
 
         /* Metadata Sales*/
-        public const string metadataQty = "COUNTRY";
+        public const string metadataQty = "QUANTITY";
         public const string metadataPayterms = "PAY TERMS";
         public const string metadataOrd_date = "ORDER DATE";
 
         /* Metadata Store*/
-        public const string metadataStor_address = "ADDRESS";
+        public const string metadataStor_address = "STORE ADDRESS";
 
         /* Metadata Title Authors*/
         public const string metadataRoyaltyper = "ROYALTYPER";
