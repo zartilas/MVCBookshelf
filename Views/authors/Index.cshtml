@@ -4,15 +4,21 @@
     ViewBag.Title = Lang.authorsPageTitle;
 }
 
-<div class="btn-toolbar justify-content-lg-start">
-    <p data-toggle="modal" data-target="#modalAddNewAuthor"><a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp; Add new author</a></p>
-</div>
-<!-- Modal -->
-<div id="modalAddNewAuthor" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
 
-        <!-- Modal content-->
-        <div class="modal-content">
+<!-- Create Author Button -->
+<div class="btn-toolbar justify-content-lg-start">
+    <p data-toggle="modal" data-target="#createAuthor" data-url="@Url.Action("Create")">
+        <a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp; Add new author</a>
+    </p>
+</div>
+
+<!-- Modal -->
+<!--<div id="modalAddNewAuthor" class="modal fade" role="dialog">
+    <div class="modal-dialog">-->
+<!-- Modal content-->
+<!--<div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Titles</h4>
                 <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
@@ -40,81 +46,139 @@
             </div>
         </div>
     </div>
+</div>-->
+
+<div class="modal hide fade in" id="modalAddNewAuthor">
+    <div id="edit-person-container"></div>
 </div>
 
-<div class="card bg-primary">
-    <table class="table table-curvy table-dark table-striped">
+@if (Model.Count() != 0)
+{
+    <div class="card bg-primary">
+        <table class="table table-curvy table-dark table-striped">
 
-        <tr class="table-primary">
+            <tr class="table-primary">
 
-            <th>
-                @Html.DisplayNameFor(model => model.au_lname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.au_fname)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.phone)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.city)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.state)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.zip)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.contract)
-            </th>
-            <th>
-                @Lang.tableHeaderTitleActions
-            </th>
-            <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.au_lname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.au_fname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.city)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.state)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.zip)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.contract)
+                </th>
+                <th></th>
 
-        </tr>
-        @foreach (var item in Model)
-        {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.au_lname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.au_fname)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.city)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.state)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.zip)
-            </td>
-            <td>
-                @*@Html.DisplayFor(modelItem => item.contract)*@
-                <div class="custom-control custom-checkbox">
-                    @Html.CheckBoxFor(modelItem => item.contract, new { @class = "custom-control-input" })
-                    <label class="custom-control-label"></label>
-                </div>
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.au_id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.au_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.au_id })
-            </td>
-        </tr>
-        }
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.au_lname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.au_fname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.city)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.state)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.zip)
+                    </td>
+                    <td>
+                        @*@Html.DisplayFor(modelItem => item.contract)*@
+                        <div class="custom-control custom-checkbox">
+                            @Html.CheckBoxFor(modelItem => item.contract, new { @class = "custom-control-input" })
+                            <label class="custom-control-label"></label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <p data-toggle="modal" data-target="#editAuthor" data-url="@Url.Action($"Edit/{item.au_id}")">
+                                <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                            </p>
+                            <p data-toggle="modal" data-target="#deleteAuthor" data-url="@Url.Action($"Delete/{item.au_id}")">
+                                <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                            </p>
+                        </div>
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.au_id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.au_id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.au_id })*@
+                    </td>
+                </tr>
+            }
 
-    </table>
-</div>
+        </table>
+    </div>
+
+    <div class="mt-5 row align-items-center justify-content-center">
+        <ul class="pagination pagination-lg">
+            <li class="page-item disabled">
+                <a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">4</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">5</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a>
+            </li>
+        </ul>
+    </div>
+}
+else
+{
+    <section>
+        <div class="col-sm-12 text-center">
+            <img src="~/Content/Images/nothing_found.png" style="height:40%; width:40%;" alt="No records found" />
+        </div>
+        <div>
+            <!-- Button Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <h2 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader2</h2>
+            <br />
+            <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
+            <br />
+        </div>
+    </section>
+}

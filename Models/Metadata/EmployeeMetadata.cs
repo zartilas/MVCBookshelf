@@ -1,35 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MVCBookshelf.Content.Values;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using MVCBookshelf.Content.Values;
 
 namespace MVCBookshelf.Models.Metadata
 {
+    /*    [MetadataType(typeof(EmployeeMetadata))]
+        public partial class employee
+        {
+        }*/
+
     public class EmployeeMetadata
     {
-        //private pubsEntities db = new pubsEntities();
-
-        [Display(Name = Lang.metadataLastName)]
-        public string lname;
+        private pubsEntities db = new pubsEntities();
 
         [Display(Name = Lang.metadataFirstName)]
+        [Required]
         public string fname;
 
         [Display(Name = Lang.metadataMinit)]
         public string minit;
 
-        [Display(Name = Lang.metadataPub_name)]
-        public string pub_name;
+        [Display(Name = Lang.metadataLastName)]
+        [Required]
+        public string lname;
 
-        [Display(Name = Lang.metadataJob_lvl)]
+        [Display(Name = Lang.metadataJobLvl)]
         public string job_lvl;
 
-        [Display(Name = Lang.metadataHire_date)]
+        [Display(Name = Lang.metadataHireDate)]
+        [Required]
         public string hire_date;
-
-        [Display(Name = Lang.metadataJob_desc)]
-        public string job_desc;
     }
 }

@@ -5,37 +5,39 @@ namespace MVCBookshelf.Content.Values
     public static class Lang
     {
         /* General */
-        public static readonly string appName = "MVCBookshelf";
-        public static readonly string tableHeaderTitleActions = "ACTIONS";
+        public const string appName = "MVCBookshelf";
         /* Forms */
-        public static readonly string formInputSuccess = "MVCBookshelf";
+        public const string formInputSuccess = "MVCBookshelf";
+        public const string tablesNothingFoundHeader2 = "No data found.";
+        public const string tablesNothingFoundHeader3 = "Click the button above to add a record.";
 
         /* Home/References Page*/
-        public static readonly string homePageTitle = appName + " | Home Page";
-        public static readonly string homePageButtonContactDetailsOfAuthors = "Contact details of authors";
-        public static readonly string homePageButtonOrderID = "Order ID number";
+        public const string homePageTitle = appName + " | Home Page";
+        public const string homePageButtonContactDetailsOfAuthors = "Contact details of authors";
+        public const string homePageButtonOrderID = "Order ID number";
         /* References - Search contact details of authors with top sellers */
-        public static readonly string homePageModal1Header = "Search for contact details of authors:";
-        public static readonly string homePageModal1Desc = "Find the contact details of authors depending on the top selling titles (date is optional).";
-        public static readonly string homePageModal1ButtonSearch = "Search";
-        public static readonly string homePageModal1ButtonClose = "Close";
+        public const string homePageModal1Header = "Search for contact details of authors:";
+        public const string homePageModal1Desc = "Find the contact details of authors depending on the top selling titles (date is optional).";
+        public const string homePageModal1ButtonSearch = "Search";
+        public const string homePageModal1ButtonClose = "Close";
         /* Labels */
-        public static readonly string homePageModal1FormTopNumLabel = "Top sellers position:";
-        public static readonly string homePageModal1FormDateFromLabel = "Date From:";
-        public static readonly string homePageModal1FormDateToLabel = "Date To:";
+        public const string homePageModal1FormTopNumLabel = "Top sellers position:";
+        public const string homePageModal1FormDateFromLabel = "Date From:";
+        public const string homePageModal1FormDateToLabel = "Date To:";
         /* Field Placeholders */
-        public static readonly string homePageModal1FormPlaceholderTopNum = "Enter top sellers number (Ex: 5).";
-        public static readonly string homePageModal1FormPlaceholderDateFrom = "Enter date to start (Ex: 2019-01-15).";
-        public static readonly string homePageModal1FormPlaceholderDateTo = "Enter date to finish between (Ex: 2019-02-18).";
+        public const string homePageModal1FormPlaceholderTopNum = "Enter top sellers number (Ex: 5).";
+        public const string homePageModal1FormPlaceholderDateFrom = "Enter date to start (Ex: 2019-01-15).";
+        public const string homePageModal1FormPlaceholderDateTo = "Enter date to finish between (Ex: 2019-02-18).";
 
 
         /* Error Page */
-        public static readonly string error404PageTitle = "404: Page not found | " + appName;
-        public static readonly string error404Header1 = "Oops!";
-        public static readonly string error404Header2 = "We can't seem to find the page\nyou are looking for.";
-        public static readonly string error404Header3 = "Error code: 404";
+        public const string error404PageTitle = "404: Page not found | " + appName;
+        public const string error404Header1 = "Oops!";
+        public const string error404Header2 = "We can't seem to find the page\nyou are looking for.";
+        public const string error404Header3 = "Error code: 404";
 
-        /* Metadata */
+/* Database Metadata */
+        /* Metadata Authors */
         public const string metadataLastName = "LAST NAME";
         public const string metadataFirstName = "FIRST NAME";
         public const string metadataPhone = "PHONE NUMBER";
@@ -45,128 +47,131 @@ namespace MVCBookshelf.Content.Values
         public const string metadataZip = "ZIP CODE";
         public const string metadataContract = "CONTRACT";
 
-        /* Metadata Discounts*/
-        public const string metadataHighqty= "HIGH QUANTITY ";
+        /* Metadata Discounts */
+        public const string metadataHighqty = "HIGH QUANTITY";
         public const string metadataLowqty = "LOW QUANTITY";
-        public const string metadataStor_name = "STORE NAME";
+        public const string metadataDiscount = "DISCOUNT";
+        public const string metadataDiscountType = "DISCOUNT TYPE";
 
-        /* Metadata Employees*/
+        /* Metadata Employees */
         public const string metadataMinit = "MIDDLE NAME INITIALS ";
-        public const string metadataJob_lvl = "JOB LEVEL";
-        public const string metadataHire_date = "DATE";
-        public const string metadataJob_desc = "JOB";
-        public const string metadataPub_name = "PUBLISHER NAME";
+        public const string metadataJobLvl = "JOB LEVEL";
+        public const string metadataHireDate = "DATE HIRED";
+        public const string metadataPubName = "PUBLISHER NAME";
 
-        /* Metadata Jobs*/
-        public const string metadataMin_lvl = "MIN LEVEL";
-        public const string metadataMax_lvl = "MAX LEVEL";
+        /* Metadata Jobs */
+        public const string metadataMinLvl = "MIN LEVEL";
+        public const string metadataMaxLvl = "MAX LEVEL";
+        public const string metadataJobDesc = "JOB DESCRIPTION";
 
-        /* Metadata Publishers*/
+        /* Metadata Publishers */
         public const string metadataCountry = "COUNTRY";
-        public const string metadataPr_info = "PUBLISHERS INFO";
+        public const string metadataPubInfo = "PUBLISHER INFO";
 
-        /* Metadata Roysched*/
-        public const string metadataTitle = "COUNTRY";
-        public const string metadataRoyalty = "PUBLISHERS INFO";
-        public const string metadataHirange = "COUNTRY";
-        public const string metadataLorange = "PUBLISHERS INFO";
+        /* Metadata Roysched */
+        public const string metadataTitle = "TITLE";
+        public const string metadataRoyalty = "ROYALTY";
+        public const string metadataHirange = "HIGH RANGE";
+        public const string metadataLorange = "LOW RANGE";
 
-        /* Metadata Sales*/
-        public const string metadataQty = "COUNTRY";
-        public const string metadataPayterms = "PAY TERMS";
-        public const string metadataOrd_date = "ORDER DATE";
+        /* Metadata Sales */
+        public const string metadataQuantity = "QUANTITY";
+        public const string metadataPayTerms = "PAY TERMS";
+        public const string metadataOrderDate = "ORDER DATE";
+        public const string metadataOrderNumber = "ORDER NUMBER";
 
-        /* Metadata Store*/
-        public const string metadataStor_address = "ADDRESS";
+        /* Metadata Stores */
+        public const string metadataStoreAddress = "STORE ADDRESS";
+        public const string metadataStoreName = "STORE NAME";
 
-        /* Metadata Title Authors*/
+        /* Metadata Title Authors */
         public const string metadataRoyaltyper = "ROYALTYPER";
-        public const string metadataAu_ord = "AYTHOR ORDER";
+        public const string metadataAuthorOrder = "AYTHOR ORDER";
 
-        /* Metadata Title */
+        /* Metadata Titles */
         public const string metadataType = "TYPE";
-        public const string metadataPrice= "PRICE";
+        public const string metadataPrice = "PRICE";
         public const string metadataAdvance = "ADVANCE";
-        public const string metadataYtd_sales = "YTD SALES";
+        public const string metadataYtdSales = "YTD SALES";
         public const string metadataNotes = "NOTES";
-        public const string metadataPubdate = "PUBLISHER DATE";
-        public const string metadataTitle_id = "TITLE ID";
+        public const string metadataPubDate = "PUBLISHER DATE";
+        public const string metadataTitleID = "TITLE ID";
 
-/* Authors Page */
-        public static string authorsPageTitle = appName + " | Authors";
+        /* Authors Page */
+        public const string authorsPageTitle = appName + " | Authors";
         /* Authors - ADD BUTTON */
-        public static readonly string authorsPageModalCreateHeader = "Add a new author:";
-        public static readonly string authorsPageModalCreateDesc = "Insert a new author to the database.";
-        public static readonly string authorsPageModalCreateButtonSearch = "Add";
-        public static readonly string authorsPageModalCreateButtonClose = "Close";
+        public const string authorsPageModalCreateHeader = "Add a new author:";
+        public const string authorsPageModalCreateDesc = "Insert a new author to the database.";
+        public const string authorsPageModalCreateButtonSearch = "Add";
+        public const string authorsPageModalCreateButtonClose = "Close";
         /* Labels */
-        public static readonly string authorsPageModalFormFirstNameLabel = "First Name:";
-        public static readonly string authorsPageModalFormLastNameLabel = "Last Name:";
-        public static readonly string authorsPageModalFormPhoneLabel = "Phone Number:";
-        public static readonly string authorsPageModalFormAddressLabel = "Address:";
-        public static readonly string authorsPageModalFormCityLabel = "City:";
-        public static readonly string authorsPageModalFormStateLabel = "State:";
-        public static readonly string authorsPageModalFormZipCodeLabel = "Zip Code:";
-        public static readonly string authorsPageModalFormContractLabel = "On Contract:";
+        public const string authorsPageModalFormFirstNameLabel = "First Name:";
+        public const string authorsPageModalFormLastNameLabel = "Last Name:";
+        public const string authorsPageModalFormPhoneLabel = "Phone Number:";
+        public const string authorsPageModalFormAddressLabel = "Address:";
+        public const string authorsPageModalFormCityLabel = "City:";
+        public const string authorsPageModalFormStateLabel = "State:";
+        public const string authorsPageModalFormZipCodeLabel = "Zip Code:";
+        public const string authorsPageModalFormContractLabel = "On Contract:";
         /* Field Placeholders */
-        public static readonly string authorsPageModalFormPlaceholderFirstName = "Ex: John";
-        public static readonly string authorsPageModalFormPlaceholderLastName = "Ex: Smith";
-        public static readonly string authorsPageModalFormPlaceholderMiddleNameInitials = "Ex: K (without dot)";
-        public static readonly string authorsPageModalFormPlaceholderPhone = "Ex: 99567181";
-        public static readonly string authorsPageModalFormPlaceholderCity = "Ex: Piraeus";
-        public static readonly string authorsPageModalFormPlaceholderZipCode = "Ex: 18534";
-        public static readonly string authorsPageModalFormPlaceholderAddress = "Ex: Karaoli kai dimitriou";
-        public static readonly string authorsPageModalFormPlaceholderState = "Ex: Attiki";
+        public const string authorsPageModalFormPlaceholderFirstName = "Ex: John";
+        public const string authorsPageModalFormPlaceholderLastName = "Ex: Smith";
+        public const string authorsPageModalFormPlaceholderMiddleNameInitials = "Ex: K (without dot)";
+        public const string authorsPageModalFormPlaceholderPhone = "Ex: 99567181";
+        public const string authorsPageModalFormPlaceholderCity = "Ex: Piraeus";
+        public const string authorsPageModalFormPlaceholderZipCode = "Ex: 18534";
+        public const string authorsPageModalFormPlaceholderAddress = "Ex: Karaoli kai dimitriou";
+        public const string authorsPageModalFormPlaceholderState = "Ex: Attiki";
 
 
 /* Discounts Page */
-        public static string discountsPageTitle = appName + " | Discounts";
+        public const string discountsPageTitle = appName + " | Discounts";
 
 /* Employees Page */
-        public static string employeesPageTitle = appName + " | Discounts";
+        public const string employeesPageTitle = appName + " | Discounts";
 
 /* Jobs Page */
-        public static string jobsPageTitle = appName + " | Discounts";
+        public const string jobsPageTitle = appName + " | Discounts";
 
 /* Publishers Page */
-        public static string publishersPageTitle = appName + " | Discounts";
+        public const string publishersPageTitle = appName + " | Discounts";
 
 /* Sales Page */
-        public static string salesPageTitle = appName + " | Discounts";
+        public const string salesPageTitle = appName + " | Discounts";
 
 /* Stores Page */
-        public static string storesPageTitle = appName + " | Discounts";
+        public const string storesPageTitle = appName + " | Discounts";
 
         /* TitleAuthor Page */
-        public static string titleauthorPageTitle = appName + " | Discounts";
+        public const string titleauthorPageTitle = appName + " | Discounts";
 
         /* Titles Page */
-        public static string titlesPageTitle = appName + " | Discounts";
+        public const string titlesPageTitle = appName + " | Discounts";
 
         /* Roysched Page */
-        public static string royschedPageTitle = appName + " | Discounts";
+        public const string royschedPageTitle = appName + " | Discounts";
 
         /* Navigation Menu */
-        public static string navBarTitle = "LIBRARY";
-        public static string navBarReferences = "References";
-        public static string navBarAdministration = "Administration";
-        public static string navBarAdministrationDropdownAuthors = "Authors";
-        public static string navBarAdministrationDropdownDiscounts = "Discounts";
-        public static string navBarAdministrationDropdownEmployees = "Employees";
-        public static string navBarAdministrationDropdownJobs = "Jobs";
-        public static string navBarAdministrationDropdownPublishers = "Publishers";
-        public static string navBarAdministrationDropdownRoysched = "Roysched";
-        public static string navBarAdministrationDropdownStores = "Stores";
-        public static string navBarAdministrationDropdownSales = "Sales";
-        public static string navBarAdministrationDropdownTitles = "Titles";
-        public static string navBarAdministrationDropdownTitleAuthors = "Title Authors";
+        public const string navBarTitle = "LIBRARY";
+        public const string navBarReferences = "References";
+        public const string navBarAdministration = "Administration";
+        public const string navBarAdministrationDropdownAuthors = "Authors";
+        public const string navBarAdministrationDropdownDiscounts = "Discounts";
+        public const string navBarAdministrationDropdownEmployees = "Employees";
+        public const string navBarAdministrationDropdownJobs = "Jobs";
+        public const string navBarAdministrationDropdownPublishers = "Publishers";
+        public const string navBarAdministrationDropdownRoysched = "Roysched";
+        public const string navBarAdministrationDropdownStores = "Stores";
+        public const string navBarAdministrationDropdownSales = "Sales";
+        public const string navBarAdministrationDropdownTitles = "Titles";
+        public const string navBarAdministrationDropdownTitleAuthors = "Title Authors";
 
         /* Footer */
-        public static string footerHeaderLocation = "Location";
-        public static string footerHeaderContactDetails = "Contact Details";
-        public static string footerHeaderAboutUs = "About Us";
-        public static string footerDescriptionLocation = "80, M. Karaoli & A. Dimitriou St.\nPiraeus 18534, Greece";
-        public static string footerDescriptionContactDetails = "Tel: 210 4142022\nFax: 210 4142330\nEmail: library @unipi.gr";
-        public static string footerDescriptionAboutUs = "Welcome to the new portal of the Library.";
+        public const string footerHeaderLocation = "Location";
+        public const string footerHeaderContactDetails = "Contact Details";
+        public const string footerHeaderAboutUs = "About Us";
+        public const string footerDescriptionLocation = "80, M. Karaoli & A. Dimitriou St.\nPiraeus 18534, Greece";
+        public const string footerDescriptionContactDetails = "Tel: 210 4142022\nFax: 210 4142330\nEmail: library @unipi.gr";
+        public const string footerDescriptionAboutUs = "Welcome to the new portal of the Library.";
     }
 }

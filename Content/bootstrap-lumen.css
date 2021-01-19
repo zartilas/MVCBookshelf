@@ -10733,3 +10733,10 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 .divider-custom.divider-light .divider-custom-icon {
         color: #fff !important;
 }
+
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+}

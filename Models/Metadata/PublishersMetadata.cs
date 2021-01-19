@@ -1,15 +1,11 @@
 ﻿using MVCBookshelf.Content.Values;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace MVCBookshelf.Models.Metadata
 {
     public class PublishersMetadata
     {
-        [Display(Name = Lang.metadataPub_name)]
+        [Display(Name = Lang.metadataPubName)]
         public string pub_name;
 
         [Display(Name = Lang.metadataState)]
@@ -20,8 +16,5 @@ namespace MVCBookshelf.Models.Metadata
 
         [Display(Name = Lang.metadataCountry)]
         public string country;
-
-        [Display(Name = Lang.metadataPr_info)]
-        public string pr_info;
     }
 }

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MVCBookshelf.Content.Values;
 using System.ComponentModel.DataAnnotations;
-using System.Configuration;
-using System.Linq;
-using System.Web;
-using MVCBookshelf.Content.Values;
 
 namespace MVCBookshelf.Models.Metadata
 {
@@ -15,12 +10,15 @@ namespace MVCBookshelf.Models.Metadata
         //[StringLength(50, MinimumLength = 3, ErrorMessage = "Last Name must be between 3 and 50 characters!")]
 
         [Display(Name = Lang.metadataLastName)]
+        [Required]
         public string au_lname;
 
         [Display(Name = Lang.metadataFirstName)]
+        [Required]
         public string au_fname;
 
         [Display(Name = Lang.metadataPhone)]
+        [Required]
         public string phone;
 
         [Display(Name = Lang.metadataAddress)]
@@ -36,6 +34,7 @@ namespace MVCBookshelf.Models.Metadata
         public string zip;
 
         [Display(Name = Lang.metadataContract)]
+        [Required]
         public string contract;
     }
 }

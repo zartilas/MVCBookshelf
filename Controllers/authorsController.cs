@@ -22,27 +22,6 @@ namespace MVCBookshelf.Controllers
             return View(db.authors.ToList());
         }
 
-        // GET: Authors/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            authors authors = db.authors.Find(id);
-            if (authors == null)
-            {
-                return HttpNotFound();
-            }
-            return View(authors);
-        }
-
-        // GET: Authors/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         // POST: Authors/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -59,20 +38,21 @@ namespace MVCBookshelf.Controllers
 
             return View(authors);
         }
+        [HttpGet] // this action result returns the partial containing the modal
+        public ActionResult CreateAuthor(string id)
+        {
+            var viewModel = new authors();
+            viewModel.au_id = id;
+            return PartialView("_CreateAuthor", viewModel);
+        }
 
         // GET: Authors/Edit/5
+        [HttpGet] // this action result returns the partial containing the modal
         public ActionResult Edit(string id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            authors authors = db.authors.Find(id);
-            if (authors == null)
-            {
-                return HttpNotFound();
-            }
-            return View(authors);
+            var viewModel = new authors();
+            viewModel.au_id = id;
+            return PartialView("EditAuthor", viewModel);
         }
 
         // POST: Authors/Edit/5

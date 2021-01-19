@@ -1,9 +1,5 @@
 ﻿using MVCBookshelf.Models.Metadata;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace MVCBookshelf.Models
 {
@@ -17,7 +13,7 @@ namespace MVCBookshelf.Models
 
     [MetadataType(typeof(EmployeeMetadata))]
     public partial class employee
-    {}
+    { }
 
     [MetadataType(typeof(JobsMetadata))]
     public partial class jobs
@@ -25,7 +21,7 @@ namespace MVCBookshelf.Models
 
     [MetadataType(typeof(PublishersMetadata))]
     public partial class publishers
-    {}
+    { }
 
     [MetadataType(typeof(RoyschedMetadata))]
     public partial class roysched
@@ -46,4 +42,4 @@ namespace MVCBookshelf.Models
     [MetadataType(typeof(TitlesMetadata))]
     public partial class titles
     {}
-    }
+}

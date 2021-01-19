@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MVCBookshelf.Content.Values;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
-using MVCBookshelf.Content.Values;
 
 namespace MVCBookshelf.Models.Metadata
 {
@@ -11,13 +7,18 @@ namespace MVCBookshelf.Models.Metadata
     {
         //private pubsEntities db = new pubsEntities();
 
+        [Display(Name = Lang.metadataDiscountType)]
+        [Required]
+        public string discounttype;
+
         [Display(Name = Lang.metadataLowqty)]
         public string lowqty;
 
         [Display(Name = Lang.metadataHighqty)]
         public string highqty;
 
-        [Display(Name = Lang.metadataStor_name)]
-        public string stor_name;
+        [Display(Name = Lang.metadataDiscount)]
+        [Required]
+        public string discount;
     }
 }

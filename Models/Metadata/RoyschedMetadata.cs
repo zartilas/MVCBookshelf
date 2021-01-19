@@ -1,9 +1,5 @@
 ﻿using MVCBookshelf.Content.Values;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace MVCBookshelf.Models.Metadata
 {
@@ -14,9 +10,6 @@ namespace MVCBookshelf.Models.Metadata
 
         [Display(Name = Lang.metadataRoyalty)]
         public string royalty;
-
-        [Display(Name = Lang.metadataTitle)]
-        public string title;
 
         [Display(Name = Lang.metadataHirange)]
         public string hirange;
