@@ -46,16 +46,16 @@ namespace MVCBookshelf.Content.Values
         public const string metadataContract = "CONTRACT";
 
         /* Metadata Discounts*/
-        public const string metadataHighqty= "HIGH ";
-        public const string metadataLowqty = "LOW";
+        public const string metadataHighqty= "HIGH QUANTITY ";
+        public const string metadataLowqty = "LOW QUANTITY";
         public const string metadataStor_name = "STORE NAME";
 
         /* Metadata Employees*/
-        public const string metadataMinit = "MINIT ";
+        public const string metadataMinit = "MIDDLE NAME INITIALS ";
         public const string metadataJob_lvl = "JOB LEVEL";
         public const string metadataHire_date = "DATE";
         public const string metadataJob_desc = "JOB";
-        public const string metadataPub_name = "PUB NAME";
+        public const string metadataPub_name = "PUBLISHER NAME";
 
         /* Metadata Jobs*/
         public const string metadataMin_lvl = "MIN LEVEL";
@@ -73,24 +73,24 @@ namespace MVCBookshelf.Content.Values
 
         /* Metadata Sales*/
         public const string metadataQty = "COUNTRY";
-        public const string metadataPayterms = "PAY";
-        public const string metadataOrd_date = "ORD";
+        public const string metadataPayterms = "PAY TERMS";
+        public const string metadataOrd_date = "ORDER DATE";
 
         /* Metadata Store*/
         public const string metadataStor_address = "ADDRESS";
 
         /* Metadata Title Authors*/
-        public const string metadataRoyaltyper = "ROYAL";
-        public const string metadataAu_ord = "ORD";
+        public const string metadataRoyaltyper = "ROYALTYPER";
+        public const string metadataAu_ord = "AYTHOR ORDER";
 
         /* Metadata Title */
-        public const string metadataType = "ROYAL";
-        public const string metadataPrice= "ORD";
-        public const string metadataAdvance = "ROYAL";
-        public const string metadataYtd_sales = "ORD";
-        public const string metadataNotes = "ROYAL";
-        public const string metadataPubdate = "ORD";
-        public const string metadataTitle_id = "ORD";
+        public const string metadataType = "TYPE";
+        public const string metadataPrice= "PRICE";
+        public const string metadataAdvance = "ADVANCE";
+        public const string metadataYtd_sales = "YTD SALES";
+        public const string metadataNotes = "NOTES";
+        public const string metadataPubdate = "PUBLISHER DATE";
+        public const string metadataTitle_id = "TITLE ID";
 
 /* Authors Page */
         public static string authorsPageTitle = appName + " | Authors";
