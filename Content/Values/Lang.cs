@@ -34,6 +34,63 @@ namespace MVCBookshelf.Content.Values
         public static readonly string error404Header2 = "We can't seem to find the page\nyou are looking for.";
         public static readonly string error404Header3 = "Error code: 404";
 
+        /* Metadata */
+        public const String metadataLastName = "LAST NAME";
+        public const String metadataFirstName = "FIRST NAME";
+        public const String metadataPhone = "PHONE NUMBER";
+        public const String metadataAddress = "ADDRESS";
+        public const String metadataCity = "CITY";
+        public const String metadataState = "STATE";
+        public const String metadataZip = "ZIP CODE";
+        public const String metadataContract = "CONTRACT";
+
+        /* Metadata Discounts*/
+        public const String metadataHighqty= "HIGH ";
+        public const String metadataLowqty = "LOW";
+        public const String metadataStor_name = "STORE NAME";
+
+        /* Metadata Employees*/
+        public const String metadataMinit = "MINIT ";
+        public const String metadataJob_lvl = "JOB LEVEL";
+        public const String metadataHire_date = "DATE";
+        public const String metadataJob_desc = "JOB";
+        public const String metadataPub_name = "PUB NAME";
+
+        /* Metadata Jobs*/
+        public const String metadataMin_lvl = "MIN LEVEL";
+        public const String metadataMax_lvl = "MAX LEVEL";
+
+        /* Metadata Publishers*/
+        public const String metadataCountry = "COUNTRY";
+        public const String metadataPr_info = "PUBLISHERS INFO";
+
+        /* Metadata Roysched*/
+        public const String metadataTitle = "COUNTRY";
+        public const String metadataRoyalty = "PUBLISHERS INFO";
+        public const String metadataHirange = "COUNTRY";
+        public const String metadataLorange = "PUBLISHERS INFO";
+
+        /* Metadata Sales*/
+        public const String metadataQty = "COUNTRY";
+        public const String metadataPayterms = "PAY";
+        public const String metadataOrd_date = "ORD";
+
+        /* Metadata Store*/
+        public const String metadataStor_address = "ADDRESS";
+
+        /* Metadata Title Authors*/
+        public const String metadataRoyaltyper = "ROYAL";
+        public const String metadataAu_ord = "ORD";
+
+        /* Metadata Title */
+        public const String metadataType = "ROYAL";
+        public const String metadataPrice= "ORD";
+        public const String metadataAdvance = "ROYAL";
+        public const String metadataYtd_sales = "ORD";
+        public const String metadataNotes = "ROYAL";
+        public const String metadataPubdate = "ORD";
+        public const String metadataTitle_id = "ORD";
+
         /* Authors Page */
         public static string authorsPageTitle = appName + " | Authors";
 
@@ -78,8 +135,6 @@ namespace MVCBookshelf.Content.Values
         public static string navBarAdministrationDropdownSales = "Sales";
         public static string navBarAdministrationDropdownTitles = "Titles";
         public static string navBarAdministrationDropdownTitleAuthors = "Title Authors";
-
-
 
         /* Footer */
         public static string footerHeaderLocation = "Location";
