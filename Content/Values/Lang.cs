@@ -37,6 +37,7 @@ namespace MVCBookshelf.Content.Values
         /* Metadata */
         public const string metadataLastName = "LAST NAME";
         public const string metadataFirstName = "FIRST NAME";
+        public const string metadataMiddleNameInitials = "MIDDLE NAME INITIALS";
         public const string metadataPhone = "PHONE NUMBER";
         public const string metadataAddress = "ADDRESS";
         public const string metadataCity = "CITY";
@@ -91,25 +92,45 @@ namespace MVCBookshelf.Content.Values
         public const string metadataPubdate = "ORD";
         public const string metadataTitle_id = "ORD";
 
-        /* Authors Page */
+/* Authors Page */
         public static string authorsPageTitle = appName + " | Authors";
+        /* Authors - ADD BUTTON */
+        public static readonly string authorsPageModalCreateHeader = "Add a new author:";
+        public static readonly string authorsPageModalCreateDesc = "Insert a new author to the database.";
+        public static readonly string authorsPageModalCreateButtonSearch = "Add";
+        public static readonly string authorsPageModalCreateButtonClose = "Close";
+        /* Labels */
+        public static readonly string authorsPageModalCreateFormFirstNameLabel = "First Name:";
+        public static readonly string authorsPageModalCreateFormLastNameLabel = "Last Name:";
+        public static readonly string authorsPageModalCreateFormMiddleNameInitLabel = "Middle Name Initials:";
+        /* Field Placeholders */
+        public static readonly string authorsPageModalCreateFormPlaceholderFirstName = "Ex: John";
+        public static readonly string authorsPageModalCreateFormPlaceholderLastName = "Ex: Smith";
+        public static readonly string authorsPageModalCreateFormPlaceholderMiddleNameInitials = "Ex: K (without dot)";
+        public static readonly string authorsPageModalCreateFormPlaceholderPhone = "Ex: 99567181";
+        public static readonly string authorsPageModalCreateFormPlaceholderCity = "Ex: Piraeus";
+        public static readonly string authorsPageModalCreateFormPlaceholderZipCode = "Ex: 18534";
+        public static readonly string authorsPageModalCreateFormPlaceholderAddress = "Ex: Karaoli kai dimitriou";
+        public static readonly string authorsPageModalCreateFormPlaceholderState = "Ex: Attiki";
+        public static readonly string authorsPageModalCreateFormPlaceholderContract = "Ex: ";
 
-        /* Discounts Page */
+
+/* Discounts Page */
         public static string discountsPageTitle = appName + " | Discounts";
 
-        /* Employees Page */
+/* Employees Page */
         public static string employeesPageTitle = appName + " | Discounts";
 
-        /* Jobs Page */
+/* Jobs Page */
         public static string jobsPageTitle = appName + " | Discounts";
 
-        /* Publishers Page */
+/* Publishers Page */
         public static string publishersPageTitle = appName + " | Discounts";
 
-        /* Sales Page */
+/* Sales Page */
         public static string salesPageTitle = appName + " | Discounts";
 
-        /* Stores Page */
+/* Stores Page */
         public static string storesPageTitle = appName + " | Discounts";
 
         /* TitleAuthor Page */
