@@ -6,6 +6,7 @@ namespace MVCBookshelf.Content.Values
     {
         /* General */
         public static readonly string appName = "MVCBookshelf";
+        public static readonly string tableHeaderTitleActions = "ACTIONS";
         /* Forms */
         public static readonly string formInputSuccess = "MVCBookshelf";
 
@@ -37,7 +38,6 @@ namespace MVCBookshelf.Content.Values
         /* Metadata */
         public const string metadataLastName = "LAST NAME";
         public const string metadataFirstName = "FIRST NAME";
-        public const string metadataMiddleNameInitials = "MIDDLE NAME INITIALS";
         public const string metadataPhone = "PHONE NUMBER";
         public const string metadataAddress = "ADDRESS";
         public const string metadataCity = "CITY";
@@ -100,24 +100,23 @@ namespace MVCBookshelf.Content.Values
         public static readonly string authorsPageModalCreateButtonSearch = "Add";
         public static readonly string authorsPageModalCreateButtonClose = "Close";
         /* Labels */
-        public static readonly string authorsPageModalCreateFormFirstNameLabel = "First Name:";
-        public static readonly string authorsPageModalCreateFormLastNameLabel = "Last Name:";
-        public static readonly string authorsPageModalCreateFormPhoneLabel = "Phone Number:";
-        public static readonly string authorsPageModalCreateFormAddressLabel = "Address:";
-        public static readonly string authorsPageModalCreateFormCityLabel = "City:";
-        public static readonly string authorsPageModalCreateFormStateLabel = "State:";
-        public static readonly string authorsPageModalCreateFormZipCodeLabel = "Zip Code:";
-        public static readonly string authorsPageModalCreateFormContractLabel = "On Contract:";
+        public static readonly string authorsPageModalFormFirstNameLabel = "First Name:";
+        public static readonly string authorsPageModalFormLastNameLabel = "Last Name:";
+        public static readonly string authorsPageModalFormPhoneLabel = "Phone Number:";
+        public static readonly string authorsPageModalFormAddressLabel = "Address:";
+        public static readonly string authorsPageModalFormCityLabel = "City:";
+        public static readonly string authorsPageModalFormStateLabel = "State:";
+        public static readonly string authorsPageModalFormZipCodeLabel = "Zip Code:";
+        public static readonly string authorsPageModalFormContractLabel = "On Contract:";
         /* Field Placeholders */
-        public static readonly string authorsPageModalCreateFormPlaceholderFirstName = "Ex: John";
-        public static readonly string authorsPageModalCreateFormPlaceholderLastName = "Ex: Smith";
-        public static readonly string authorsPageModalCreateFormPlaceholderMiddleNameInitials = "Ex: K (without dot)";
-        public static readonly string authorsPageModalCreateFormPlaceholderPhone = "Ex: 99567181";
-        public static readonly string authorsPageModalCreateFormPlaceholderCity = "Ex: Piraeus";
-        public static readonly string authorsPageModalCreateFormPlaceholderZipCode = "Ex: 18534";
-        public static readonly string authorsPageModalCreateFormPlaceholderAddress = "Ex: Karaoli kai dimitriou";
-        public static readonly string authorsPageModalCreateFormPlaceholderState = "Ex: Attiki";
-        public static readonly string authorsPageModalCreateFormPlaceholderContract = "Ex: ";
+        public static readonly string authorsPageModalFormPlaceholderFirstName = "Ex: John";
+        public static readonly string authorsPageModalFormPlaceholderLastName = "Ex: Smith";
+        public static readonly string authorsPageModalFormPlaceholderMiddleNameInitials = "Ex: K (without dot)";
+        public static readonly string authorsPageModalFormPlaceholderPhone = "Ex: 99567181";
+        public static readonly string authorsPageModalFormPlaceholderCity = "Ex: Piraeus";
+        public static readonly string authorsPageModalFormPlaceholderZipCode = "Ex: 18534";
+        public static readonly string authorsPageModalFormPlaceholderAddress = "Ex: Karaoli kai dimitriou";
+        public static readonly string authorsPageModalFormPlaceholderState = "Ex: Attiki";
 
 
 /* Discounts Page */
