@@ -102,7 +102,12 @@ namespace MVCBookshelf.Content.Values
         /* Labels */
         public static readonly string authorsPageModalCreateFormFirstNameLabel = "First Name:";
         public static readonly string authorsPageModalCreateFormLastNameLabel = "Last Name:";
-        public static readonly string authorsPageModalCreateFormMiddleNameInitLabel = "Middle Name Initials:";
+        public static readonly string authorsPageModalCreateFormPhoneLabel = "Phone Number:";
+        public static readonly string authorsPageModalCreateFormAddressLabel = "Address:";
+        public static readonly string authorsPageModalCreateFormCityLabel = "City:";
+        public static readonly string authorsPageModalCreateFormStateLabel = "State:";
+        public static readonly string authorsPageModalCreateFormZipCodeLabel = "Zip Code:";
+        public static readonly string authorsPageModalCreateFormContractLabel = "On Contract:";
         /* Field Placeholders */
         public static readonly string authorsPageModalCreateFormPlaceholderFirstName = "Ex: John";
         public static readonly string authorsPageModalCreateFormPlaceholderLastName = "Ex: Smith";
