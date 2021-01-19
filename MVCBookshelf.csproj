@@ -196,6 +196,14 @@
       <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Metadata\DiscountsMetadata.cs" />
+    <Compile Include="Models\Metadata\EmployeeMetadata.cs" />
+    <Compile Include="Models\Metadata\JobsMetadata.cs" />
+    <Compile Include="Models\Metadata\PublishersMetadata.cs" />
+    <Compile Include="Models\Metadata\RoyschedMetadata.cs" />
+    <Compile Include="Models\Metadata\SalesMetadata.cs" />
+    <Compile Include="Models\Metadata\StoreMetadata.cs" />
+    <Compile Include="Models\Metadata\TitleAuthorsMetadata.cs" />
+    <Compile Include="Models\Metadata\TitlesMetadata.cs" />
     <Compile Include="Models\ModelPubs.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
