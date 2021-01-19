@@ -35,61 +35,61 @@ namespace MVCBookshelf.Content.Values
         public static readonly string error404Header3 = "Error code: 404";
 
         /* Metadata */
-        public const String metadataLastName = "LAST NAME";
-        public const String metadataFirstName = "FIRST NAME";
-        public const String metadataPhone = "PHONE NUMBER";
-        public const String metadataAddress = "ADDRESS";
-        public const String metadataCity = "CITY";
-        public const String metadataState = "STATE";
-        public const String metadataZip = "ZIP CODE";
-        public const String metadataContract = "CONTRACT";
+        public const string metadataLastName = "LAST NAME";
+        public const string metadataFirstName = "FIRST NAME";
+        public const string metadataPhone = "PHONE NUMBER";
+        public const string metadataAddress = "ADDRESS";
+        public const string metadataCity = "CITY";
+        public const string metadataState = "STATE";
+        public const string metadataZip = "ZIP CODE";
+        public const string metadataContract = "CONTRACT";
 
         /* Metadata Discounts*/
-        public const String metadataHighqty= "HIGH ";
-        public const String metadataLowqty = "LOW";
-        public const String metadataStor_name = "STORE NAME";
+        public const string metadataHighqty= "HIGH ";
+        public const string metadataLowqty = "LOW";
+        public const string metadataStor_name = "STORE NAME";
 
         /* Metadata Employees*/
-        public const String metadataMinit = "MINIT ";
-        public const String metadataJob_lvl = "JOB LEVEL";
-        public const String metadataHire_date = "DATE";
-        public const String metadataJob_desc = "JOB";
-        public const String metadataPub_name = "PUB NAME";
+        public const string metadataMinit = "MINIT ";
+        public const string metadataJob_lvl = "JOB LEVEL";
+        public const string metadataHire_date = "DATE";
+        public const string metadataJob_desc = "JOB";
+        public const string metadataPub_name = "PUB NAME";
 
         /* Metadata Jobs*/
-        public const String metadataMin_lvl = "MIN LEVEL";
-        public const String metadataMax_lvl = "MAX LEVEL";
+        public const string metadataMin_lvl = "MIN LEVEL";
+        public const string metadataMax_lvl = "MAX LEVEL";
 
         /* Metadata Publishers*/
-        public const String metadataCountry = "COUNTRY";
-        public const String metadataPr_info = "PUBLISHERS INFO";
+        public const string metadataCountry = "COUNTRY";
+        public const string metadataPr_info = "PUBLISHERS INFO";
 
         /* Metadata Roysched*/
-        public const String metadataTitle = "COUNTRY";
-        public const String metadataRoyalty = "PUBLISHERS INFO";
-        public const String metadataHirange = "COUNTRY";
-        public const String metadataLorange = "PUBLISHERS INFO";
+        public const string metadataTitle = "COUNTRY";
+        public const string metadataRoyalty = "PUBLISHERS INFO";
+        public const string metadataHirange = "COUNTRY";
+        public const string metadataLorange = "PUBLISHERS INFO";
 
         /* Metadata Sales*/
-        public const String metadataQty = "COUNTRY";
-        public const String metadataPayterms = "PAY";
-        public const String metadataOrd_date = "ORD";
+        public const string metadataQty = "COUNTRY";
+        public const string metadataPayterms = "PAY";
+        public const string metadataOrd_date = "ORD";
 
         /* Metadata Store*/
-        public const String metadataStor_address = "ADDRESS";
+        public const string metadataStor_address = "ADDRESS";
 
         /* Metadata Title Authors*/
-        public const String metadataRoyaltyper = "ROYAL";
-        public const String metadataAu_ord = "ORD";
+        public const string metadataRoyaltyper = "ROYAL";
+        public const string metadataAu_ord = "ORD";
 
         /* Metadata Title */
-        public const String metadataType = "ROYAL";
-        public const String metadataPrice= "ORD";
-        public const String metadataAdvance = "ROYAL";
-        public const String metadataYtd_sales = "ORD";
-        public const String metadataNotes = "ROYAL";
-        public const String metadataPubdate = "ORD";
-        public const String metadataTitle_id = "ORD";
+        public const string metadataType = "ROYAL";
+        public const string metadataPrice= "ORD";
+        public const string metadataAdvance = "ROYAL";
+        public const string metadataYtd_sales = "ORD";
+        public const string metadataNotes = "ROYAL";
+        public const string metadataPubdate = "ORD";
+        public const string metadataTitle_id = "ORD";
 
         /* Authors Page */
         public static string authorsPageTitle = appName + " | Authors";
