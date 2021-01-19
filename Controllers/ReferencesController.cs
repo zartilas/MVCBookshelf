@@ -9,7 +9,7 @@ namespace MVCBookshelf.Controllers
             return View();
         }
 
-        public ActionResult result()
+        public ActionResult result(int numTop, string test)
         {
             return View();
         }

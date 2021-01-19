@@ -1,7 +1,41 @@
 ﻿@using MVCBookshelf.Content.Values
-@{
-    ViewBag.Title = Lang.homePageTitle;
-}
+@{ ViewBag.Title = Lang.homePageTitle; }
+
+@*<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>*@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        $('#formModal1').validate({
+            rules: {
+                inputTopNum: {
+                    required: true,
+                    digits: true,
+                    min: 1
+                },
+                inputDateFrom: { required: false },
+                inputDateTo: { required: false }
+            },
+            highlight: function (input) {
+                $(input).addClass('is-invalid');
+            },
+            unhighlight: function (input) {
+                $(input).removeClass('is-invalid');
+            },
+            errorPlacement: function (error, element) {
+                $(element).next().append(error);
+            }
+        });
+        @*$("#inputTopNum").rules("add", {
+            required: true,
+            digits: true,
+            min: 1
+        });*@
+    });
+</script>
 
 <section>
     <div class="jumbotron">
@@ -17,7 +51,7 @@
             </div>
 
             <p data-toggle="modal" data-target="#modalContactDetailsOfAuthors"><a style="height:150px; width:200px;" class="btn btn-primary btn-lg ml-4 mr-4"> @Lang.homePageButtonContactDetailsOfAuthors</a></p>
-
+            <p><a style="height:150px; width:200px;" class="btn btn-primary btn-lg ml-4 mr-4"> @Lang.homePageButtonOrderID</a></p>
 
             <!-- Modal -->
             <div id="modalContactDetailsOfAuthors" class="modal fade" role="dialog">
@@ -26,37 +60,44 @@
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title">@Lang.homePageModalContactDetailsOfAuthorsHeader</h4>
+                            <h4 class="modal-title">@Lang.homePageModal1Header</h4>
                             <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
                         </div>
                         <div class="modal-body">
-                            <form>
-                                <label class="col-form-label" for="inputPosNum">@Lang.homePageModalContactDetailsOfAuthorsFormPosNumLabel</label>
-                                <input type="text" class="form-control" placeholder="@Lang.homePageModalContactDetailsOfAuthorsFormPlaceholderPosNum" id="inputPosNum">
+                            <div class="alert alert-dismissible alert-primary" role="alert">
+                                <span type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></span>
+                                <p>@Lang.homePageModal1Desc</p>
+                            </div>
+                        </div>
 
-                                <label class="col-form-label" for="inputDateFrom">@Lang.homePageModalContactDetailsOfAuthorsFormPosNumLabel</label>
-                                <input data-provide="datepicker" class="form-control" placeholder="@Lang.homePageModalContactDetailsOfAuthorsFormPlaceholderPosNum" id="inputDateFrom">
-
-                                <div class="input-group date">
-                                    <input type="text" class="form-control" value="12-02-2012">
-                                    <div class="input-group-addon">
-                                        <span class="glyphicon glyphicon-th"></span>
-                                    </div>
+                        <div class="modal-body">
+                            <form id="formModal1" class="form-horizontal" method="post" novalidate>
+                                <div class="form-group" id="divInputTopNum">
+                                    <label for="inputTopNum">@Lang.homePageModal1FormTopNumLabel</label>
+                                    <input type="text" class="form-control" id="inputTopNum" placeholder="@Lang.homePageModal1FormPlaceholderTopNum" required>
+                                    <div class="invalid-feedback" />
                                 </div>
-
                                 <br />
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary btn-lg w-125 h-75" data-dismiss="modal"><i class="fa fa-search"></i> &nbsp; Search</button>
+                                <div class="form-group">
+                                    <label for="inputDateFrom">@Lang.homePageModal1FormDateFromLabel</label>
+                                    <input type="date" class="form-control" id="inputDateFrom" placeholder="@Lang.homePageModal1FormPlaceholderDateFrom">
+                                    <div class="invalid-feedback" />
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <label for="inputDateTo">@Lang.homePageModal1FormDateToLabel</label>
+                                    <input type="date" class="form-control" id="inputDateTo" placeholder="@Lang.homePageModal1FormPlaceholderDateTo">
+                                </div>
+                                <div class="modal-footer"></div>
+                                <div class="btn-toolbar justify-content-lg-start">
+                                    <button type="submit" id="buttonSubmitFormModal1" class="btn btn-primary btn-lg"><i class="fa fa-search"></i> &nbsp; @Lang.homePageModal1ButtonSearch</button>
+                                    <button type="button" class="btn btn-secondary btn-lg ml-2" data-dismiss="modal">@Lang.homePageModal1ButtonClose</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-            <p><a style="height:150px; width:200px;" class="btn btn-primary btn-lg ml-4 mr-4"> @Lang.homePageButtonOrderID</a></p>
         </div>
-        </div>
+    </div>
 </section>
