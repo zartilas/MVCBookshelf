@@ -181,6 +181,7 @@
     <Compile Include="Models\authors.cs">
       <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthorViewModel.cs" />
     <Compile Include="Models\Metadata\AuthorsMetadata.cs" />
     <Compile Include="Models\discounts.cs">
       <DependentUpon>ModelPubs.tt</DependentUpon>
@@ -455,6 +456,7 @@
     <Content Include="Web.config" />
     <Content Include="Views\References\result.cshtml" />
     <Content Include="Views\Authors\_CreateAuthor.cshtml" />
+    <Content Include="Views\Authors\_EditAuthor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

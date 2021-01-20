@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using MVCBookshelf.Models;
-
-
 
 namespace MVCBookshelf.Controllers
 {
@@ -46,27 +41,47 @@ namespace MVCBookshelf.Controllers
             return PartialView("_CreateAuthor", viewModel);
         }
 
-        // GET: Authors/Edit/5
+        // GET
         [HttpGet] // this action result returns the partial containing the modal
-        public ActionResult Edit(string id)
+        public ActionResult EditAuthor(string author_id)
         {
-            var viewModel = new authors();
-            viewModel.au_id = id;
-            return PartialView("EditAuthor", viewModel);
+            /*List<authors> listAuthors = db.authors.ToList();
+            ViewBag.AuthorsList = new SelectList(listAuthors, "au_id", "au_fname");
+
+            AuthorViewModel model = new AuthorViewModel();
+
+
+
+            authors auth = db.authors.SingleOrDefault(x => x.au_id == author_id);*/
+            /* model.EmployeeId = emp.EmployeeId;
+             model.DepartmentId = emp.DepartmentId;
+             model.Name = emp.Name;
+             model.Address = emp.Address;*/
+
+            if (author_id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            authors author = db.authors.Find(author_id);
+            if (author == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView("_EditAuthor", author);
         }
 
-        // POST: Authors/Edit/5
+        // POST
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "au_id,au_lname,au_fname,phone,address,city,state,zip,contract")] authors authors)
+        public ActionResult EditAuthor([Bind(Include = "au_id, au_lname, au_fname, phone, address, city, state, zip, contract")] authors authors)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(authors).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Authors/Index");
             }
             return View(authors);
         }

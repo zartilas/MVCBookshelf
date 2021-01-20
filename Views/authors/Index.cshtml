@@ -4,55 +4,30 @@
     ViewBag.Title = Lang.authorsPageTitle;
 }
 
-<script src="~/Scripts/jquery-3.5.1.min.js"></script>
-<script src="~/Scripts/bootstrap.min.js"></script>
-
 <!-- Create Author Button -->
 <div class="btn-toolbar justify-content-lg-start">
     <p data-toggle="modal" data-target="#createAuthor" data-url="@Url.Action("Create")">
-        <a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp; Add new author</a>
+        <a class="btn btn-primary btn-lg w-125 h-75"><i class="fa fa-plus"></i> &nbsp; Add new author</a>
     </p>
 </div>
 
-<!-- Modal -->
-<!--<div id="modalAddNewAuthor" class="modal fade" role="dialog">
-    <div class="modal-dialog">-->
-<!-- Modal content-->
-<!--<div class="modal-content">
+<!-- Modal Edit Author -->
+<div id="modalEditAuthor" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content -->
+        <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Titles</h4>
                 <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
             </div>
-            <div class="modal-body">
-                <form>
-                    <label class="col-form-label" for="inputPosNum">Titlos</label>
-                    <input type="text" class="form-control" placeholder="" id="inputPosNum">
+            <div class="modal-body" id="modalEditAuthorBodyDiv">
 
-                    <label class="col-form-label" for="inputDateFrom"></label>
-                    <input data-provide="datepicker" class="form-control" placeholder="" id="inputDateFrom">
-
-                    <div class="input-group date">
-                        <input type="text" class="form-control" value="12-02-2012">
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
-                        </div>
-                    </div>
-
-                    <br />
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-lg w-125 h-75" data-dismiss="modal"><i class="fa fa-search"></i> &nbsp; Search</button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
-</div>-->
-
-<div class="modal hide fade in" id="modalAddNewAuthor">
-    <div id="edit-person-container"></div>
 </div>
 
-@if (Model.Count() != 0)
+@if (Model != null || Model.Count() != 0)
 {
     <div class="card bg-primary">
         <table class="table table-curvy table-dark table-striped">
@@ -60,10 +35,10 @@
             <tr class="table-primary">
 
                 <th>
-                    @Html.DisplayNameFor(model => model.au_lname)
+                    @Html.DisplayNameFor(model => model.au_fname)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.au_fname)
+                    @Html.DisplayNameFor(model => model.au_lname)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.phone)
@@ -90,10 +65,10 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.au_lname)
+                        @Html.DisplayFor(modelItem => item.au_fname)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.au_fname)
+                        @Html.DisplayFor(modelItem => item.au_lname)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.phone)
@@ -111,24 +86,30 @@
                         @Html.DisplayFor(modelItem => item.zip)
                     </td>
                     <td>
-                        @*@Html.DisplayFor(modelItem => item.contract)*@
                         <div class="custom-control custom-checkbox">
                             @Html.CheckBoxFor(modelItem => item.contract, new { @class = "custom-control-input" })
-                            <label class="custom-control-label"></label>
+                            <label class="custom-control-label"></label> @* <- This is needed *@
                         </div>
                     </td>
                     <td>
                         <div class="btn-group">
-                            <p data-toggle="modal" data-target="#editAuthor" data-url="@Url.Action($"Edit/{item.au_id}")">
-                                <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                            <p>
+                                <a onclick="EditAuthor('@item.au_id')" class="btn btn-primary btn-lg w-25"><i class="fa fa-edit"></i></a>
                             </p>
-                            <p data-toggle="modal" data-target="#deleteAuthor" data-url="@Url.Action($"Delete/{item.au_id}")">
-                                <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                            <script type="text/javascript">
+                                var EditAuthor = function (authorId) {
+
+                                    var url = "/Authors/EditAuthor/" + authorId;
+                                    $("#modalEditAuthorBodyDiv").load(url, function () {
+                                        $("#modalEditAuthor").modal("show");
+                                    })
+
+                                }
+                            </script>
+                            <p data-toggle="modal" data-target="#deleteAuthor" onclick="ConfirmDelete(@item.au_id)" data-url="@Url.Action($"Delete/{item.au_id}")">
+                                <a class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                             </p>
                         </div>
-                        @*@Html.ActionLink("Edit", "Edit", new { id = item.au_id }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.au_id }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.au_id })*@
                     </td>
                 </tr>
             }
