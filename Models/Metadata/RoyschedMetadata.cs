@@ -13,5 +13,8 @@ namespace MVCBookshelf.Models.Metadata
 
         [Display(Name = Lang.metadataHirange)]
         public string hirange;
+
+        [Display(Name = Lang.metadataTitleID)]
+        public string title_id;
     }
 }
