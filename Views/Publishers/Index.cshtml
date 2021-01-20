@@ -43,9 +43,6 @@
 @if (Model.Count() != 0)
 {
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <div class="card bg-primary">
     <table class="table table-curvy table-dark table-striped">
         <tr>
@@ -69,28 +66,35 @@
 
         @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.pub_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.city)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.state)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.country)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.pub_info.pr_info)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.pub_id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.pub_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.pub_id })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.pub_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pub_info.pr_info)
+        </td>
+
+        <td>
+            <div class="btn-group">
+                <p data-toggle="modal" data-target="#editPublisher" data-url="@Url.Action($"Edit/{item.pub_id}")">
+                    <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                </p>
+                <p data-toggle="modal" data-target="#deletePublisher" data-url="@Url.Action($"Delete/{item.pub_id}")">
+                    <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                </p>
+            </div>
+
+        </td>
+    </tr>
     }
 
     </table>

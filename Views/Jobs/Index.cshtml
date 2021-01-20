@@ -62,22 +62,29 @@
 
         @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.job_desc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.min_lvl)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.max_lvl)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.job_id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.job_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.job_id })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.job_desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.min_lvl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.max_lvl)
+        </td>
+
+        <td>
+            <div class="btn-group">
+                <p data-toggle="modal" data-target="#editJob" data-url="@Url.Action($"Edit/{item.job_id}")">
+                    <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                </p>
+                <p data-toggle="modal" data-target="#deleteJob" data-url="@Url.Action($"Delete/{item.job_id}")">
+                    <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                </p>
+            </div>
+
+        </td>
+    </tr>
     }
 
     </table>

@@ -44,9 +44,7 @@
 @if (Model.Count() != 0)
 {
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <div class="card bg-primary">
     <table class="table table-curvy table-dark table-striped">
         <tr>
@@ -70,28 +68,35 @@
 
         @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ord_date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.qty)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.payterms)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.stores.stor_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.titles.title)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ord_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.payterms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stores.stor_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.titles.title)
+        </td>
+
+        <td>
+            <div class="btn-group">
+                <p data-toggle="modal" data-target="#editSale" data-url="@Url.Action($"Edit/{}")">
+                    <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                </p>
+                <p data-toggle="modal" data-target="#deleteSale" data-url="@Url.Action($"Delete/{}")">
+                    <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                </p>
+            </div>
+
+        </td>
+    </tr>
     }
 
     </table>

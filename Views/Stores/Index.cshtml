@@ -46,13 +46,11 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <div class="card bg-primary">
     <table class="table table-curvy table-dark table-striped">
         <tr>
-           
+
             <th>
                 @Html.DisplayNameFor(model => model.stor_name)
             </th>
@@ -73,29 +71,36 @@
 
         @foreach (var item in Model)
     {
-        <tr>
-           
-            <td>
-                @Html.DisplayFor(modelItem => item.stor_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.stor_address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.city)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.state)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.zip)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.stor_id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.stor_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.stor_id })
-            </td>
-        </tr>
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.stor_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.stor_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.city)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.state)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zip)
+        </td>
+
+        <td>
+            <div class="btn-group">
+                <p data-toggle="modal" data-target="#editStore" data-url="@Url.Action($"Edit/{}")">
+                    <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                </p>
+                <p data-toggle="modal" data-target="#deleteStore" data-url="@Url.Action($"Delete/{}")">
+                    <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                </p>
+            </div>
+
+        </td>
+    </tr>
     }
 
     </table>
