@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = Lang.storesPageTitle;
 }
-<h1>Stores</h1>
+<h1 style="text-align:center">  <span class="badge badge-pill badge-dark">Stores Table</span> </h1>
 <div class="btn-toolbar justify-content-lg-start">
     <p data-toggle="modal" data-target="#modalAddNewStore"><a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp;  Add new store</a></p>
 </div>
@@ -91,10 +91,10 @@
 
         <td>
             <div class="btn-group">
-                <p data-toggle="modal" data-target="#editStore" data-url="@Url.Action($"Edit/{}")">
+                <p data-toggle="modal" data-target="#editStore" >
                     <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
                 </p>
-                <p data-toggle="modal" data-target="#deleteStore" data-url="@Url.Action($"Delete/{}")">
+                <p data-toggle="modal" data-target="#deleteStore" >
                     <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
                 </p>
             </div>

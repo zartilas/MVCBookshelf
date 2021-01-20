@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = Lang.titleauthorPageTitle;
 }
-<h1>Title Authors</h1>
+<h1 style="text-align:center">  <span class="badge badge-pill badge-dark">Title Authors Table</span> </h1>
 <div class="btn-toolbar justify-content-lg-start">
     <p data-toggle="modal" data-target="#modalAddNewTitleAuthor"><a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp;  Add new title author</a></p>
 </div>
@@ -80,10 +80,12 @@
 
         <td>
             <div class="btn-group">
-                <p data-toggle="modal" data-target="#editTitleAuthor" data-url="@Url.Action($"Edit/{}")">
+                <p data-toggle="modal" data-target="#editTitleAuthor">
+
                     <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
                 </p>
-                <p data-toggle="modal" data-target="#deleteTitleAuthor" data-url="@Url.Action($"Delete/{}")">
+                <p data-toggle="modal" data-target="#deleteTitleAuthor">
+
                     <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
                 </p>
             </div>
