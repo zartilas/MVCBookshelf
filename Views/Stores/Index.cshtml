@@ -8,8 +8,9 @@
 }
 <link href="~/Content/PagedList.css" rel="stylesheet" />
 <h1 style="text-align:center">  <span class="badge badge-pill badge-dark">Stores Table</span> </h1>
+
 <div class="btn-toolbar justify-content-lg-start">
-    <p data-toggle="modal" data-target="#modalAddNewStore"><a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp;  Add new store</a></p>
+    <p data-toggle="modal" data-target="#modalAddNewStore"><a class="btn btn-primary btn-lg w-125 h-75"><i class="fa fa-plus"></i> &nbsp;  Add new store</a></p>
 </div>
 <!-- Modal -->
 <div id="modalAddNewStore" class="modal fade" role="dialog">
@@ -51,78 +52,82 @@
 @if (Model.Count() != 0)
 {
 
-<p>
-    @using (Html.BeginForm("Index", "Stores" , FormMethod.Get))
-    {
-    <input type="text" name="search" placeholder="Enter Store Name" />
-    <input type="submit" name="submit" value="Search " />
-    }
+<div class="row-fluid">
+    <div class="form-group">
+        @using (Html.BeginForm("Index", "Stores", FormMethod.Get))
+        {
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Enter Store Name" />
+                <button type="button" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; Search</button>
+            </div>
+         }
+    </div>
+ </div>
+ <br />
+
+    <div class="card bg-primary">
+        <table class="table table-curvy table-dark table-striped">
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.First().stor_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().stor_address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().city)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().state)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().zip)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.stor_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.stor_address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.city)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.state)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.zip)
+                    </td>
+
+                    <td>
+                        <div class="btn-group">
+                            <p data-toggle="modal" data-target="#editStore">
+                                <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                            </p>
+                            <p data-toggle="modal" data-target="#deleteStore">
+                                <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                            </p>
+                        </div>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
     <br />
-</p>
-
-<div class="card bg-primary">
-    <table class="table table-curvy table-dark table-striped">
-        <tr>
-
-            <th>
-                @Html.DisplayNameFor(model => model.First().stor_name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().stor_address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().city)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().state)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().zip)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-    {
-        <tr>
-
-            <td>
-                @Html.DisplayFor(modelItem => item.stor_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.stor_address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.city)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.state)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.zip)
-            </td>
-
-            <td>
-                <div class="btn-group">
-                    <p data-toggle="modal" data-target="#editStore">
-                        <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
-                    </p>
-                    <p data-toggle="modal" data-target="#deleteStore">
-                        <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
-                    </p>
-                </div>
-
-            </td>
-        </tr>
-    }
-
-    </table>
-</div>
-
-    <br/>
     <div class="mt-5 row align-items-center justify-content-center">
 
-               @Html.PagedListPager(Model,i =>Url.Action("Index","Stores", new {i ,search=Request.QueryString["Search"]}))
+        @Html.PagedListPager(Model, i => Url.Action("Index", "Stores", new { i, search = Request.QueryString["Search"] }))
 
     </div>
 
@@ -130,21 +135,21 @@
     }
     else
     {
-<section>
-    <div class="col-sm-12 text-center">
-        <img src="~/Content/Images/nothing_found.png" style="height:40%; width:40%;" alt="No records found" />
-    </div>
-    <div>
-        <!-- Button Divider-->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
-            <div class="divider-custom-line"></div>
+    <section>
+        <div class="col-sm-12 text-center">
+            <img src="~/Content/Images/nothing_found.png" style="height:40%; width:40%;" alt="No records found" />
         </div>
-        <h2 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader2</h2>
-        <br />
-        <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
-        <br />
-    </div>
-</section>
+        <div>
+            <!-- Button Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <h2 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader2</h2>
+            <br />
+            <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
+            <br />
+        </div>
+    </section>
     }
