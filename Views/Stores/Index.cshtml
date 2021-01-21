@@ -6,6 +6,7 @@
 @{
     ViewBag.Title = Lang.storesPageTitle;
 }
+<link href="~/Content/PagedList.css" rel="stylesheet" />
 <h1 style="text-align:center">  <span class="badge badge-pill badge-dark">Stores Table</span> </h1>
 <div class="btn-toolbar justify-content-lg-start">
     <p data-toggle="modal" data-target="#modalAddNewStore"><a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp;  Add new store</a></p>
@@ -107,8 +108,15 @@
     }
 
     </table>
-
 </div>
+
+    <br/>
+    <div class="mt-5 row align-items-center justify-content-center">
+
+               @Html.PagedListPager(Model,i =>Url.Action("Index","Stores", new {i}))
+
+    </div>
+
 
     }
     else
