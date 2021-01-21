@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCBookshelf.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MVCBookshelf.Controllers
 {
@@ -15,9 +17,9 @@ namespace MVCBookshelf.Controllers
         private pubsEntities db = new pubsEntities();
 
         // GET: Stores
-        public ActionResult Index()
+        public ActionResult Index(int? i)
         {
-            return View(db.stores.ToList());
+            return View(db.stores.ToList().ToPagedList(i ?? 1, 3));
         }
 
         // GET: Stores/Details/5

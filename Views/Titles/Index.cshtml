@@ -1,5 +1,8 @@
 ﻿@model IEnumerable<MVCBookshelf.Models.titles>
 @using MVCBookshelf.Content.Values;
+
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = Lang.titlesPageTitle;
 }
@@ -79,80 +82,57 @@
 
         @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.advance)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.royalty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ytd_sales)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.notes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pubdate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.publishers.pub_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.roysched.title_id)
-        </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.advance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.royalty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ytd_sales)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pubdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.publishers.pub_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.roysched.title_id)
+            </td>
 
-        <td>
-            <div class="btn-group">
-                <p data-toggle="modal" data-target="#editTitle" data-url="@Url.Action($"Edit/{item.title_id}")">
-                    <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
-                </p>
-                <p data-toggle="modal" data-target="#deleteTitle" data-url="@Url.Action($"Delete/{item.title_id}")">
-                    <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
-                </p>
-            </div>
+            <td>
+                <div class="btn-group">
+                    <p data-toggle="modal" data-target="#editTitle" data-url="@Url.Action($"Edit/{item.title_id}")">
+                        <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                    </p>
+                    <p data-toggle="modal" data-target="#deleteTitle" data-url="@Url.Action($"Delete/{item.title_id}")">
+                        <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                    </p>
+                </div>
 
-        </td>
-    </tr>
+            </td>
+        </tr>
     }
 
     </table>
 </div>
 
-<div class="mt-5 row align-items-center justify-content-center">
-    <ul class="pagination pagination-lg">
-        <li class="page-item disabled">
-            <a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a>
-        </li>
-        <li class="page-item active">
-            <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">4</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">5</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a>
-        </li>
-    </ul>
-</div>
+
+
 }
 else
 {
@@ -174,4 +154,6 @@ else
     </div>
 </section>
 }
+
+
 

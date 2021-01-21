@@ -7,6 +7,9 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCBookshelf.Models;
+using X.PagedList;
+using X.PagedList.Mvc.Core;
+using X.PagedList.Mvc;
 
 namespace MVCBookshelf.Controllers
 {
