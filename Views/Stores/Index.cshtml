@@ -140,3 +140,9 @@
 </section>
     }
 
+
+<div class="mt-5 row align-items-center justify-content-center">
+    <ul class="pagination pagination-lg">
+        @Html.PagedListPager(Model, i => Url.Action("Index", "Stores", new { i }))
+    </ul>
+</div>
