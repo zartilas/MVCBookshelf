@@ -17,9 +17,10 @@ namespace MVCBookshelf.Controllers
         private pubsEntities db = new pubsEntities();
 
         // GET: Stores
-        public ActionResult Index(int? i)
+        public ActionResult Index(string search, int? i)
         {
-            return View(db.stores.ToList().ToPagedList(i ?? 1, 3));
+            List<stores> storesList = db.stores.ToList();
+            return View(db.stores.Where(x => x.stor_name.StartsWith(search) || search== null).ToList().ToPagedList(i ?? 1, 3));
         }
 
         // GET: Stores/Details/5
