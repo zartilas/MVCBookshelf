@@ -10741,13 +10741,3 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
     display: none;
 }
 
-ul.pagination li {
-    position: relative;
-    display: block;
-    padding: 0.5rem 0.75rem;
-    margin-left: -1px;
-    line-height: 1.25;
-    color: #555;
-    background-color: #f0f0f0;
-    border: 1px solid #dee2e6;
-}
