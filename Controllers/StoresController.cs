@@ -20,7 +20,7 @@ namespace MVCBookshelf.Controllers
         public ActionResult Index(string search, int? i)
         {
             List<stores> storesList = db.stores.ToList();
-            return View(db.stores.Where(x => x.stor_name.StartsWith(search) || search== null).ToList().ToPagedList(i ?? 1, 3));
+            return View(db.stores.Where(x => x.stor_name.StartsWith(search) || search== null).ToList().ToPagedList(i ?? 1, 5));
         }
 
         // GET: Stores/Details/5

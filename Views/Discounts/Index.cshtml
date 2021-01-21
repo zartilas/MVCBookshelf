@@ -1,12 +1,14 @@
-﻿@model IEnumerable<MVCBookshelf.Models.discounts>
+﻿@model IPagedList<MVCBookshelf.Models.discounts>
 @using MVCBookshelf.Content.Values;
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = Lang.discountsPageTitle;
 }
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
 <h1 style="text-align:center">  <span class="badge badge-pill badge-dark">Discounts Table</span> </h1>
-<div class="btn-toolbar justify-content-lg-start">
-    <p data-toggle="modal" data-target="#modalAddNewDiscount"><a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp;  Add new discount</a></p>
-</div>
+
 <!-- Modal -->
 <div id="modalAddNewDiscount" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -43,102 +45,103 @@
 
 @if (Model.Count() != 0)
 {
+<br />
+<br />
+
+<div class="btn-toolbar justify-content-lg-start  pull-right">
+    <p data-toggle="modal" data-target="#modalAddNewDiscount"><a class="btn btn-primary btn-lg w-125 h-75"><i class="bi bi-plus"></i> &nbsp;  Add new discount</a></p>
+</div>
+
+
+<div class="row-fluid">
+    <div class="form-group">
+
+        @using (Html.BeginForm("Index", "Discounts", FormMethod.Get))
+        {
+        <div class="input-group " style="width:300px">
+            <input type="text" name="search" class="form-control" placeholder="Enter Discount Type" />
+            <button type="submit" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; Search</button>
+        </div>
+         }
+        <br />
+    </div>
+</div>
 <div class="card bg-primary">
     <table class="table table-curvy table-dark table-striped">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.discounttype)
+                @Html.DisplayNameFor(model => model.First().discounttype)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.lowqty)
+                @Html.DisplayNameFor(model => model.First().lowqty)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.highqty)
+                @Html.DisplayNameFor(model => model.First().highqty)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.stores.stor_name)
+                @Html.DisplayNameFor(model => model.First().stores.stor_name)
             </th>
             <th></th>
         </tr>
 
         @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.discounttype)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.lowqty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.highqty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.stores.stor_name)
-        </td>
-        <td>
-            <div class="btn-group">
-                <p data-toggle="modal" data-target="#editDiscount" >
-                    <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
-                </p>
-                <p data-toggle="modal" data-target="#deleteDiscount">
-                    <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
-                </p>
-            </div>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.discounttype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lowqty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.highqty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stores.stor_name)
+            </td>
+            <td>
+                <div class="btn-group">
+                    <p data-toggle="modal" data-target="#editDiscount">
+                        <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                    </p>
+                    <p data-toggle="modal" data-target="#deleteDiscount">
+                        <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                    </p>
+                </div>
 
-        </td>
-    </tr>
+            </td>
+        </tr>
     }
 
     </table>
 </div>
 
-    <div class="mt-5 row align-items-center justify-content-center">
-        <ul class="pagination pagination-lg">
-            <li class="page-item disabled">
-                <a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a>
-            </li>
-            <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">4</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">5</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a>
-            </li>
-        </ul>
-    </div>
+<div class="mt-5 row align-items-center justify-content-center ">
+
+    @Html.PagedListPager(Model, i => Url.Action("Index", "Discounts", new { i, search = Request.QueryString["Search"] }))
+
+</div>
 
     }
     else
     {
-    <section>
-        <div class="col-sm-12 text-center">
-            <img src="~/Content/Images/nothing_found.png" style="height:40%; width:40%;" alt="No records found" />
+<section>
+    <div class="col-sm-12 text-center">
+        <img src="~/Content/Images/nothing_found.png" style="height:40%; width:40%;" alt="No records found" />
+    </div>
+    <div>
+        <!-- Button Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
+            <div class="divider-custom-line"></div>
         </div>
-        <div>
-            <!-- Button Divider-->
-            <div class="divider-custom">
-                <div class="divider-custom-line"></div>
-                <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
-                <div class="divider-custom-line"></div>
-            </div>
-            <h2 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader2</h2>
-            <br />
-            <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
-            <br />
-        </div>
-    </section>
+        <h2 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader2</h2>
+        <br />
+        <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
+        <br />
+    </div>
+</section>
     }
 
 

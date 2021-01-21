@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCBookshelf.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MVCBookshelf.Controllers
 {
@@ -15,10 +17,11 @@ namespace MVCBookshelf.Controllers
         private pubsEntities db = new pubsEntities();
 
         // GET: Titleauthors
-        public ActionResult Index()
+        public ActionResult Index(string search, int? i)
         {
+            List<titleauthor> storesList = db.titleauthor.ToList();
             var titleauthor = db.titleauthor.Include(t => t.authors).Include(t => t.titles);
-            return View(titleauthor.ToList());
+            return View(db.titleauthor.Where(x => x.royaltyper.ToString().StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
         // GET: Titleauthors/Details/5
