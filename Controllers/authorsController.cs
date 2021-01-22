@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using MVCBookshelf.Models;
+using PagedList;
 
 namespace MVCBookshelf.Controllers
 {
@@ -12,9 +12,16 @@ namespace MVCBookshelf.Controllers
         private pubsEntities db = new pubsEntities();
 
         // GET: Authors
-        public ActionResult Index()
+        public ActionResult Index(string search, int? i)
         {
-            return View(db.authors.ToList());
+            return View(db.authors.Where(x => x.au_fname.StartsWith(search)
+                                         || x.au_lname.StartsWith(search)
+                                         || x.phone.StartsWith(search)
+                                         || x.address.StartsWith(search)
+                                         || x.city.StartsWith(search)
+                                         || x.state.StartsWith(search)
+                                         || x.zip.StartsWith(search)
+                                         || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
         // POST: Authors/Create

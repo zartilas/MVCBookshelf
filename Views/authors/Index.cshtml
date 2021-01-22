@@ -1,16 +1,33 @@
-﻿@model IEnumerable<MVCBookshelf.Models.authors>
+﻿@model IPagedList<MVCBookshelf.Models.authors>
 @using MVCBookshelf.Content.Values;
+@using PagedList;
+@using PagedList.Mvc;
+
 @{
     ViewBag.Title = Lang.authorsPageTitle;
 }
 
-<!-- Create Author Button -->
-<div class="btn-toolbar justify-content-lg-start">
-    <p data-toggle="modal" data-target="#createAuthor" data-url="@Url.Action("Create")">
-        <a class="btn btn-primary btn-lg w-125 h-75"><i class="fa fa-plus"></i> &nbsp; Add new author</a>
-    </p>
-</div>
+<h1 class="text-lg-center justify-content-center">
+    <span class="badge badge-pill badge-dark">@Lang.authorsPageHeader</span>
+</h1>
+<br />
+<br />
 
+<!-- Modal Create Author -->
+<div id="modalCreateAuthor" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Titles</h4>
+                <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
+            </div>
+            <div class="modal-body" id="modalEditAuthorBodyDiv">
+
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Modal Edit Author -->
 <div id="modalEditAuthor" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -29,9 +46,28 @@
 
 @if (Model != null || Model.Count() != 0)
 {
+    <!-- Create Author Button -->
+    <div class="btn-toolbar justify-content-lg-start pull-right">
+        <p data-toggle="modal" data-target="#modalCreateAuthor"><a class="btn btn-primary btn-lg w-125"><i class="fa fa-plus"></i> &nbsp; @Lang.authorsPageButtonCreate</a></p>
+    </div>
+
+    <!-- Search Input Group -->
+    <div class="row-fluid">
+        <div class="form-group">
+
+            @using (Html.BeginForm("Index", "Authors", FormMethod.Get))
+            {
+                <div class="input-group " style="width:300px">
+                    <input type="text" name="search" class="form-control" placeholder="@Lang.authorsPagePlaceholderSearch" />
+                    <button type="submit" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; @Lang.buttonSearch</button>
+                </div>
+            }
+            <br />
+        </div>
+    </div>
+
     <div class="card bg-primary">
         <table class="table table-curvy table-dark table-striped">
-
             <tr class="table-primary">
 
                 <th>
@@ -117,30 +153,8 @@
         </table>
     </div>
 
-    <div class="mt-5 row align-items-center justify-content-center">
-        <ul class="pagination pagination-lg">
-            <li class="page-item disabled">
-                <a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a>
-            </li>
-            <li class="page-item active">
-                <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">3</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">4</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">5</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a>
-            </li>
-        </ul>
+    <div class="mt-5 row align-items-center justify-content-center ">
+        @Html.PagedListPager(Model, i => Url.Action("Index", "Authors", new { i, search = Request.QueryString["Search"] }))
     </div>
 }
 else
@@ -160,6 +174,10 @@ else
             <br />
             <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
             <br />
+            <!-- Create Author Button -->
+            <div class="btn-toolbar justify-content-lg-start pull-right">
+                <p data-toggle="modal" data-target="#modalAddNewAuthor"><a class="btn btn-primary btn-lg w-125 h-100"><i class="fa fa-plus"></i> &nbsp; @Lang.authorsPageButtonCreate</a></p>
+            </div>
         </div>
     </section>
 }

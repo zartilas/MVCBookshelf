@@ -4,12 +4,19 @@ namespace MVCBookshelf.Content.Values
 {
     public static class Lang
     {
-        /* General */
+    /* General - Global */
         public const string appName = "MVCBookshelf";
         /* Forms */
         public const string formInputSuccess = "MVCBookshelf";
         public const string tablesNothingFoundHeader2 = "No data found.";
         public const string tablesNothingFoundHeader3 = "Click the button above to add a record.";
+        /* Buttons */
+        public const string buttonSearch = "Search";
+        public const string buttonClose = "Close";
+        public const string buttonCreate = "Add";
+        public const string buttonEdit = "Update";
+        public const string buttonCancel = "Cancel";
+        public const string buttonActionOk = "OK";
 
         /* Home/References Page*/
         public const string homePageTitle = appName + " | Home Page";
@@ -97,9 +104,11 @@ namespace MVCBookshelf.Content.Values
         public const string metadataPubDate = "PUBLISHER DATE";
         public const string metadataTitleID = "TITLE ID";
 
-        /* Authors Page */
+/* Authors Page */
         public const string authorsPageTitle = appName + " | Authors";
+        public const string authorsPageHeader = "Authors Table";
         /* Authors - ADD BUTTON */
+        public const string authorsPageButtonCreate = "Add a new author";
         public const string authorsPageModalCreateHeader = "Add a new author:";
         public const string authorsPageModalCreateDesc = "Insert a new author to the database.";
         public const string authorsPageModalCreateButtonSearch = "Add";
@@ -114,6 +123,7 @@ namespace MVCBookshelf.Content.Values
         public const string authorsPageModalFormZipCodeLabel = "Zip Code:";
         public const string authorsPageModalFormContractLabel = "On Contract:";
         /* Field Placeholders */
+        public const string authorsPagePlaceholderSearch = "Enter author name.";
         public const string authorsPageModalFormPlaceholderFirstName = "Ex: John";
         public const string authorsPageModalFormPlaceholderLastName = "Ex: Smith";
         public const string authorsPageModalFormPlaceholderMiddleNameInitials = "Ex: K (without dot)";
@@ -124,34 +134,79 @@ namespace MVCBookshelf.Content.Values
         public const string authorsPageModalFormPlaceholderState = "Ex: Attiki";
 
 
-/* Discounts Page */
+    /* Discounts Page */
         public const string discountsPageTitle = appName + " | Discounts";
+        public const string discountsPageHeader = "Discounts Table";
+        /* BUTTONS */
+        public const string discountsPageButtonCreate = "Add a new discount";
+        /* Field Placeholders */
+        public const string discountsPagePlaceholderSearch = "Enter discount type.";
 
-/* Employees Page */
+    /* Employees Page */
         public const string employeesPageTitle = appName + " | Discounts";
+        public const string employeesPageHeader = "Employees Table";
+        /* BUTTONS */
+        public const string employeePageButtonCreate = "Add a new employee";
+        /* Field Placeholders */
+        public const string employeesPagePlaceholderSearch = "Enter employee name.";
 
-/* Jobs Page */
+    /* Jobs Page */
         public const string jobsPageTitle = appName + " | Discounts";
+        public const string jobsPageHeader = "Jobs Table";
+        /* BUTTONS */
+        public const string jobsPageButtonCreate = "Add a new job";
+        /* Field Placeholders */
+        public const string jobsPagePlaceholderSearch = "Enter job name.";
 
-/* Publishers Page */
+    /* Publishers Page */
         public const string publishersPageTitle = appName + " | Discounts";
+        public const string publishersPageHeader = "Publishers Table";
+        /* BUTTONS */
+        public const string publishersPageButtonCreate = "Add a new publisher";
+        /* Field Placeholders */
+        public const string publishersPagePlaceholderSearch = "Enter publisher name.";
 
-/* Sales Page */
+    /* Sales Page */
         public const string salesPageTitle = appName + " | Discounts";
+        public const string salesPageHeader = "Sales Table";
+        /* BUTTONS */
+        public const string salesPageButtonCreate = "Add a new sale";
+        /* Field Placeholders */
+        public const string salesPagePlaceholderSearch = "Enter something.";
 
-/* Stores Page */
+    /* Stores Page */
         public const string storesPageTitle = appName + " | Discounts";
+        public const string storesPageHeader = "Stores Table";
+        /* BUTTONS */
+        public const string storePageButtonCreate = "Add a new store";
+        /* Field Placeholders */
+        public const string storesPagePlaceholderSearch = "Enter store name.";
 
-        /* TitleAuthor Page */
-        public const string titleauthorPageTitle = appName + " | Discounts";
+    /* TitleAuthor Page */
+        public const string titleAuthorPageTitle = appName + " | Discounts";
+        public const string titleAuthorPageHeader = "Title Author Table";
+        /* BUTTONS */
+        public const string titleAuthorPageButtonCreate = "Add a new title author";
+        /* Field Placeholders */
+        public const string titleAuthorPagePlaceholderSearch = "Enter author name.";
 
-        /* Titles Page */
+    /* Titles Page */
         public const string titlesPageTitle = appName + " | Discounts";
+        public const string titlesPageHeader = "Titles Table";
+        /* BUTTONS */
+        public const string titlesPageButtonCreate = "Add a new title";
+        /* Field Placeholders */
+        public const string titlesPagePlaceholderSearch = "Enter title name.";
 
-        /* Roysched Page */
+    /* Roysched Page */
         public const string royschedPageTitle = appName + " | Discounts";
+        public const string royschedPageHeader = "Roysched Table";
+        /* BUTTONS */
+        public const string royschedPageButtonCreate = "Add a new roysched";
+        /* Field Placeholders */
+        public const string royschedPagePlaceholderSearch = "Enter something.";
 
-        /* Navigation Menu */
+    /* Navigation Menu */
         public const string navBarTitle = "LIBRARY";
         public const string navBarReferences = "References";
         public const string navBarAdministration = "Administration";

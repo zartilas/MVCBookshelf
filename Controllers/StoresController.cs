@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using MVCBookshelf.Models;
 using PagedList;
-using PagedList.Mvc;
 
 namespace MVCBookshelf.Controllers
 {
