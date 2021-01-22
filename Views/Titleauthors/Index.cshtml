@@ -3,7 +3,7 @@
 @using PagedList;
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = Lang.titleauthorPageTitle;
+    ViewBag.Title = Lang.titleAuthorPageTitle;
 }
 
 
@@ -68,7 +68,7 @@
 
 <div class="card bg-primary">
     <table class="table table-curvy table-dark table-striped">
-        <tr>
+        <tr class="table-primary">
             <th>
                 @Html.DisplayNameFor(model => model.First().au_ord)
             </th>
@@ -121,7 +121,7 @@
 
 <div class="mt-5 row align-items-center justify-content-center ">
 
-    @Html.PagedListPager(Model, i => Url.Action("Index", "Titleauthor", new { i, search = Request.QueryString["Search"] }))
+    @Html.PagedListPager(Model, i => Url.Action("Index", "Titleauthors", new { i, search = Request.QueryString["Search"] }))
 
 </div>
 
