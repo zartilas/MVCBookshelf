@@ -6,7 +6,6 @@
     ViewBag.Title = Lang.discountsPageTitle;
 }
 
-<link href="~/Content/PagedList.css" rel="stylesheet" />
 <h1 style="text-align:center">  <span class="badge badge-pill badge-dark">Discounts Table</span> </h1>
 
 <!-- Modal -->
@@ -59,7 +58,7 @@
         @using (Html.BeginForm("Index", "Discounts", FormMethod.Get))
         {
         <div class="input-group " style="width:300px">
-            <input type="text" name="search" class="form-control" placeholder="Enter Discount Type" />
+            <input type="text" name="search" class="form-control" placeholder="@Lang.searchTextBox" />
             <button type="submit" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; Search</button>
         </div>
          }
