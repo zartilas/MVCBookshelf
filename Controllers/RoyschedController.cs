@@ -19,9 +19,13 @@ namespace MVCBookshelf.Controllers
         // GET: Royscheds
         public ActionResult Index(string search, int? i)
         {
-          
+
             var roysched = db.roysched.Include(r => r.titles);
-            return View(db.roysched.Where(x => x.royalty.ToString().StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 5));
+            return View(db.roysched.Where(x => x.royalty.ToString().StartsWith(search)
+                                               || x.hirange.ToString().StartsWith(search)
+                                               || x.lorange.ToString().StartsWith(search)
+                                               || x.titles.title.StartsWith(search)
+                                               || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
         // GET: Royscheds/Details/5

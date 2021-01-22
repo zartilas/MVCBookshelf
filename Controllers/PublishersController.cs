@@ -20,8 +20,13 @@ namespace MVCBookshelf.Controllers
         public ActionResult Index(string search, int? i)
         {
             var publishers = db.publishers.Include(p => p.pub_info);
-    
-            return View(db.publishers.Where(x => x.pub_name.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 5));
+
+            return View(db.publishers.Where(x => x.pub_name.StartsWith(search)
+                                            || x.city.StartsWith(search)
+                                            || x.state.StartsWith(search)
+                                            || x.country.StartsWith(search)
+                                            || x.pub_info.pr_info.StartsWith(search)
+                                            || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
         // GET: Publishers/Details/5
