@@ -19,7 +19,7 @@ namespace MVCBookshelf.Controllers
         // GET: Titles
         public ActionResult Index(string search, int? i)
         {
-            List<titles> storesList = db.titles.ToList();
+          
             var titles = db.titles.Include(t => t.publishers).Include(t => t.roysched);
             return View(db.titles.Where(x => x.title.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 5));
         }

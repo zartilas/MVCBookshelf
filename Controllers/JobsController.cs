@@ -19,7 +19,7 @@ namespace MVCBookshelf.Controllers
         // GET: Jobs
         public ActionResult Index(string search, int? i)
         {
-            List<jobs> jobsList = db.jobs.ToList();
+        
             return View(db.jobs.Where(x => x.job_desc.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
