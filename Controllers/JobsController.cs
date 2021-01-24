@@ -19,7 +19,6 @@ namespace MVCBookshelf.Controllers
         // GET: Jobs
         public ActionResult Index(string search, int? i)
         {
-
             return View(db.jobs.Where(x => x.job_desc.StartsWith(search)
                                            ||x.max_lvl.ToString().StartsWith(search)
                                            ||x.min_lvl.ToString().StartsWith(search)
