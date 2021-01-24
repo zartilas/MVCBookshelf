@@ -101,10 +101,10 @@
             <td>
                 <div class="btn-group">
                     <p data-toggle="modal" data-target="#editDiscount">
-                        <a class="btn btn-primary btn-lg w-25"><i class="fa fa-edit"></i></a>
+                        <a href="@Url.Action("Edit", "Discounts", new { id = item.discount })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
                     </p>
                     <p>
-
+                        <a href="@Url.Action("Delete", "Discounts", new { id = item.discount })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                     </p>
                 </div>
 

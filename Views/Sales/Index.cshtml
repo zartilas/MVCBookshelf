@@ -109,11 +109,12 @@
 
             <td>
                 <div class="btn-group">
-                    <p data-toggle="modal" data-target="#editSale">
-                        <a class="btn btn-primary btn-lg w-25 "><i class="fa fa-edit"></i></a>
+                    <p>
+                        <a href="@Url.Action("Edit", "Sales", new { id = item.stor_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
+
                     </p>
-                    <p data-toggle="modal" data-target="#deleteSale">
-                        <a class="btn btn-primary btn-lg ml-2 btn-danger w-25"><i class="fa fa-trash"></i></a>
+                    <p>
+                        <a href="@Url.Action("Delete", "Sales", new { id = item.stor_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                     </p>
                 </div>
 

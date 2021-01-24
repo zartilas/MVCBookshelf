@@ -131,11 +131,11 @@
 
             <td>
                 <div class="btn-group">
-                    <p data-toggle="modal" data-target="#editPublisher" data-url="@Url.Action($"Edit/{item.pub_id}")">
-                        <a class="btn btn-primary btn-lg w-25"><i class="fa fa-edit"></i></a>
+                    <p>
+                        <a href="@Url.Action("Edit", "Publishers", new { id = item.pub_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
                     </p>
-                    <p data-toggle="modal" data-target="#deletePublisher" data-url="@Url.Action($"Delete/{item.pub_id}")">
-                        <a class="btn btn-primary btn-lg ml-2 btn-danger w-25"><i class="fa fa-trash"></i></a>
+                    <p>
+                        <a href="@Url.Action("Delete", "Publishers", new { id = item.pub_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                     </p>
                 </div>
 

@@ -101,11 +101,11 @@
 
             <td>
                 <div class="btn-group">
-                    <p data-toggle="modal" data-target="#editRoysched" data-url="@Url.Action($"Edit/{item.title_id}")">
-                        <a class="btn btn-primary btn-lg w-25"><i class="fa fa-edit"></i></a>
+                    <p>
+                        <a href="@Url.Action("Edit", "Roysched", new { id = item.title_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
                     </p>
-                    <p data-toggle="modal" data-target="#deleteRoysched" data-url="@Url.Action($"Delete/{item.title_id}")">
-                        <a class="btn btn-primary btn-lg ml-2 btn-danger w-25"><i class="fa fa-trash"></i></a>
+                    <p>
+                        <a href="@Url.Action("Delete", "Roysched", new { id = item.title_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                     </p>
                 </div>
 
