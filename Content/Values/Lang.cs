@@ -17,6 +17,7 @@ namespace MVCBookshelf.Content.Values
         public const string buttonCreate = "Add";
         public const string buttonEdit = "Update";
         public const string buttonCancel = "Cancel";
+        public const string buttonDelete = "Delete";
         public const string buttonActionOk = "OK";
 
         /* Home/References Page*/
@@ -52,6 +53,7 @@ namespace MVCBookshelf.Content.Values
         public const string authorsPageHeaderCreate = "Add a new author";
         public const string authorsPageHeaderEdit = "Edit author";
         public const string authorsPageHeaderDelete = "Delete author";
+        public const string authorsPageHeaderDelete2 = "Are you sure you want to delete this author?";
         public const string authorsPageHeader = "Authors Table";
         /* Authors - ADD BUTTON */
         public const string authorsPageButtonCreate = "Add a new author";
