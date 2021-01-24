@@ -37,6 +37,7 @@ namespace MVCBookshelf.Controllers
             {
                 db.authors.Add(authors);
                 db.SaveChanges();
+                ModelState.Clear();
                 return RedirectToAction("Index");
             }
 
@@ -50,13 +51,13 @@ namespace MVCBookshelf.Controllers
 
         // GET
         [HttpGet] // this action result returns the partial containing the modal
-        public ActionResult Edit(string author_id)
+        public ActionResult Edit(string id)
         {
-            if (author_id == null)
+            if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            authors author = db.authors.Find(author_id);
+            authors author = db.authors.Find(id);
             if (author == null)
             {
                 return HttpNotFound();
@@ -75,7 +76,8 @@ namespace MVCBookshelf.Controllers
             {
                 db.Entry(authors).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("/Authors/Index");
+                ModelState.Clear();
+                return RedirectToAction("Index");
             }
             return View(authors);
         }
@@ -103,6 +105,7 @@ namespace MVCBookshelf.Controllers
             authors authors = db.authors.Find(id);
             db.authors.Remove(authors);
             db.SaveChanges();
+            ModelState.Clear();
             return RedirectToAction("Index");
         }
 
