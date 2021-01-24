@@ -13,42 +13,11 @@
 <br />
 <br />
 
-<!-- Modal Create Author -->
-<div id="modalCreateAuthor" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Titles</h4>
-                <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
-            </div>
-            <div class="modal-body" id="modalEditAuthorBodyDiv">
-
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Modal Edit Author -->
-<div id="modalEditAuthor" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Titles</h4>
-                <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
-            </div>
-            <div class="modal-body" id="modalEditAuthorBodyDiv">
-
-            </div>
-        </div>
-    </div>
-</div>
-
 @if (Model != null || Model.Count() != 0)
 {
     <!-- Create Author Button -->
     <div class="btn-toolbar justify-content-lg-start pull-right">
-        <p data-toggle="modal" data-target="#modalCreateAuthor"><a class="btn btn-primary btn-lg w-125"><i class="fa fa-plus"></i> &nbsp; @Lang.authorsPageButtonCreate</a></p>
+        <p><a href="@Url.Action("Create", "Authors")" class="btn btn-primary btn-lg w-125"><i class="fa fa-plus"></i> &nbsp; @Lang.authorsPageButtonCreate</a></p>
     </div>
 
     <!-- Search Input Group -->
@@ -130,20 +99,11 @@
                     <td>
                         <div class="btn-group">
                             <p>
-                                <a onclick="EditAuthor('@item.au_id')" class="btn btn-primary btn-lg w-25"><i class="fa fa-edit"></i></a>
+                                @Html.ActionLink("link text", "Edit", "Authors", new { id = item.au_id }, null)
+                                <a href="@Url.Action("Edit", "Authors", new { id = item.au_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
                             </p>
-                            <script type="text/javascript">
-                                var EditAuthor = function (authorId) {
-
-                                    var url = "/Authors/EditAuthor/" + authorId;
-                                    $("#modalEditAuthorBodyDiv").load(url, function () {
-                                        $("#modalEditAuthor").modal("show");
-                                    })
-
-                                }
-                            </script>
-                            <p data-toggle="modal" data-target="#deleteAuthor" onclick="ConfirmDelete(@item.au_id)" data-url="@Url.Action($"Delete/{item.au_id}")">
-                                <a class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
+                            <p>
+                                <a href="@Url.Action("Delete", "Authors", new { id = item.au_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                             </p>
                         </div>
                     </td>
@@ -176,7 +136,7 @@ else
             <br />
             <!-- Create Author Button -->
             <div class="btn-toolbar justify-content-lg-start pull-right">
-                <p data-toggle="modal" data-target="#modalAddNewAuthor"><a class="btn btn-primary btn-lg w-125 h-100"><i class="fa fa-plus"></i> &nbsp; @Lang.authorsPageButtonCreate</a></p>
+                <p><a href="@Url.Action("Create", "Authors")" class="btn btn-primary btn-lg w-125 h-100"><i class="fa fa-plus"></i> &nbsp; @Lang.authorsPageButtonCreate</a></p>
             </div>
         </div>
     </section>

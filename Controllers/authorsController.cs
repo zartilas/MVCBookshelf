@@ -9,11 +9,13 @@ namespace MVCBookshelf.Controllers
 {
     public class AuthorsController : Controller
     {
+
         private pubsEntities db = new pubsEntities();
 
         // GET: Authors
         public ActionResult Index(string search, int? i)
         {
+            ModelState.Clear();
             return View(db.authors.Where(x => x.au_fname.StartsWith(search)
                                          || x.au_lname.StartsWith(search)
                                          || x.phone.StartsWith(search)
@@ -41,30 +43,15 @@ namespace MVCBookshelf.Controllers
             return View(authors);
         }
         [HttpGet] // this action result returns the partial containing the modal
-        public ActionResult CreateAuthor(string id)
+        public ActionResult Create(string id)
         {
-            var viewModel = new authors();
-            viewModel.au_id = id;
-            return PartialView("_CreateAuthor", viewModel);
+            return View();
         }
 
         // GET
         [HttpGet] // this action result returns the partial containing the modal
-        public ActionResult EditAuthor(string author_id)
+        public ActionResult Edit(string author_id)
         {
-            /*List<authors> listAuthors = db.authors.ToList();
-            ViewBag.AuthorsList = new SelectList(listAuthors, "au_id", "au_fname");
-
-            AuthorViewModel model = new AuthorViewModel();
-
-
-
-            authors auth = db.authors.SingleOrDefault(x => x.au_id == author_id);*/
-            /* model.EmployeeId = emp.EmployeeId;
-             model.DepartmentId = emp.DepartmentId;
-             model.Name = emp.Name;
-             model.Address = emp.Address;*/
-
             if (author_id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -74,7 +61,7 @@ namespace MVCBookshelf.Controllers
             {
                 return HttpNotFound();
             }
-            return PartialView("_EditAuthor", author);
+            return View(author);
         }
 
         // POST
@@ -82,7 +69,7 @@ namespace MVCBookshelf.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EditAuthor([Bind(Include = "au_id, au_lname, au_fname, phone, address, city, state, zip, contract")] authors authors)
+        public ActionResult Edit([Bind(Include = "au_id, au_lname, au_fname, phone, address, city, state, zip, contract")] authors authors)
         {
             if (ModelState.IsValid)
             {

@@ -43,69 +43,14 @@ namespace MVCBookshelf.Content.Values
         public const string error404Header2 = "We can't seem to find the page\nyou are looking for.";
         public const string error404Header3 = "Error code: 404";
 
-/* Database Metadata */
-        /* Metadata Authors */
-        public const string metadataLastName = "LAST NAME";
-        public const string metadataFirstName = "FIRST NAME";
-        public const string metadataPhone = "PHONE NUMBER";
-        public const string metadataAddress = "ADDRESS";
-        public const string metadataCity = "CITY";
-        public const string metadataState = "STATE";
-        public const string metadataZip = "ZIP CODE";
-        public const string metadataContract = "CONTRACT";
-
-        /* Metadata Discounts */
-        public const string metadataHighqty = "HIGH QUANTITY";
-        public const string metadataLowqty = "LOW QUANTITY";
-        public const string metadataDiscount = "DISCOUNT";
-        public const string metadataDiscountType = "DISCOUNT TYPE";
-
-        /* Metadata Employees */
-        public const string metadataMinit = "MIDDLE NAME INITIALS ";
-        public const string metadataJobLvl = "JOB LEVEL";
-        public const string metadataHireDate = "DATE HIRED";
-        public const string metadataPubName = "PUBLISHER NAME";
-
-        /* Metadata Jobs */
-        public const string metadataMinLvl = "MIN LEVEL";
-        public const string metadataMaxLvl = "MAX LEVEL";
-        public const string metadataJobDesc = "JOB DESCRIPTION";
-
-        /* Metadata Publishers */
-        public const string metadataCountry = "COUNTRY";
-        public const string metadataPubInfo = "PUBLISHER INFO";
-
-        /* Metadata Roysched */
-        public const string metadataTitle = "TITLE";
-        public const string metadataRoyalty = "ROYALTY";
-        public const string metadataHirange = "HIGH RANGE";
-        public const string metadataLorange = "LOW RANGE";
-
-        /* Metadata Sales */
-        public const string metadataQuantity = "QUANTITY";
-        public const string metadataPayTerms = "PAY TERMS";
-        public const string metadataOrderDate = "ORDER DATE";
-        public const string metadataOrderNumber = "ORDER NUMBER";
-
-        /* Metadata Stores */
-        public const string metadataStoreAddress = "STORE ADDRESS";
-        public const string metadataStoreName = "STORE NAME";
-
-        /* Metadata Title Authors */
-        public const string metadataRoyaltyper = "ROYALTYPER";
-        public const string metadataAuthorOrder = "AYTHOR ORDER";
-
-        /* Metadata Titles */
-        public const string metadataType = "TYPE";
-        public const string metadataPrice = "PRICE";
-        public const string metadataAdvance = "ADVANCE";
-        public const string metadataYtdSales = "YTD SALES";
-        public const string metadataNotes = "NOTES";
-        public const string metadataPubDate = "PUBLISHER DATE";
-        public const string metadataTitleID = "TITLE ID";
-
-/* Authors Page */
+    /* Authors Page */
         public const string authorsPageTitle = appName + " | Authors";
+        public const string authorsPageCreateTitle = appName + " | Create Author";
+        public const string authorsPageEditTitle = appName + " | Edit Author";
+        public const string authorsPageDeleteTitle = appName + " | Delete Author";
+        public const string authorsPageHeaderCreate = "Add a new author";
+        public const string authorsPageHeaderEdit = "Edit author";
+        public const string authorsPageHeaderDelete = "Delete author";
         public const string authorsPageHeader = "Authors Table";
         /* Authors - ADD BUTTON */
         public const string authorsPageButtonCreate = "Add a new author";
@@ -136,6 +81,9 @@ namespace MVCBookshelf.Content.Values
 
     /* Discounts Page */
         public const string discountsPageTitle = appName + " | Discounts";
+        public const string discountsPageCreateTitle = appName + " | Create Discount";
+        public const string discountsPageEditTitle = appName + " | Edit Discount";
+        public const string discountsPageDeleteTitle = appName + " | Delete Discount";
         public const string discountsPageHeader = "Discounts Table";
         /* BUTTONS */
         public const string discountsPageButtonCreate = "Add a new discount";
@@ -205,6 +153,73 @@ namespace MVCBookshelf.Content.Values
         public const string royschedPageButtonCreate = "Add a new roysched";
         /* Field Placeholders */
         public const string royschedPagePlaceholderSearch = "Enter something.";
+
+    /* Database Metadata */
+        public const string metadataRequiredField = "This field is required";
+        /* Metadata Authors */
+        public const string metadataAuthorId = "AUTHOR ID";
+        public const string metadataLastName = "LAST NAME";
+        public const string metadataFirstName = "FIRST NAME";
+        public const string metadataPhone = "PHONE NUMBER";
+        public const string metadataAddress = "ADDRESS";
+        public const string metadataCity = "CITY";
+        public const string metadataState = "STATE";
+        public const string metadataZip = "ZIP CODE";
+        public const string metadataContract = "CONTRACT";
+
+        /* Metadata Discounts */
+        public const string metadataStoreId = "STORE ID";
+        public const string metadataHighqty = "HIGH QUANTITY";
+        public const string metadataLowqty = "LOW QUANTITY";
+        public const string metadataDiscount = "DISCOUNT";
+        public const string metadataDiscountType = "DISCOUNT TYPE";
+
+        /* Metadata Employees */
+        public const string metadataEmployeeId = "EMPLOYEE ID";
+        public const string metadataMinit = "MIDDLE NAME INITIALS";
+        public const string metadataJobId = "JOB ID";
+        public const string metadataJobLvl = "JOB LEVEL";
+        public const string metadataHireDate = "DATE HIRED";
+        public const string metadataPubName = "PUBLISHER NAME";
+
+        /* Metadata Jobs */
+        public const string metadataMinLvl = "MIN LEVEL";
+        public const string metadataMaxLvl = "MAX LEVEL";
+        public const string metadataJobDesc = "JOB DESCRIPTION";
+
+        /* Metadata Publishers */
+        public const string metadataCountry = "COUNTRY";
+        public const string metadataPubInfo = "PUBLISHER INFO";
+
+        /* Metadata Roysched */
+        public const string metadataTitleId = "TITLE ID";
+        public const string metadataTitle = "TITLE";
+        public const string metadataRoyalty = "ROYALTY";
+        public const string metadataHirange = "HIGH RANGE";
+        public const string metadataLorange = "LOW RANGE";
+
+        /* Metadata Sales */
+        public const string metadataQuantity = "QUANTITY";
+        public const string metadataPayTerms = "PAY TERMS";
+        public const string metadataOrderDate = "ORDER DATE";
+        public const string metadataOrderNumber = "ORDER NUMBER";
+
+        /* Metadata Stores */
+        public const string metadataStoreAddress = "STORE ADDRESS";
+        public const string metadataStoreName = "STORE NAME";
+
+        /* Metadata Title Authors */
+        public const string metadataRoyaltyper = "ROYALTYPER";
+        public const string metadataAuthorOrder = "AYTHOR ORDER";
+
+        /* Metadata Titles */
+        public const string metadataType = "TYPE";
+        public const string metadataPrice = "PRICE";
+        public const string metadataAdvance = "ADVANCE";
+        public const string metadataYtdSales = "YTD SALES";
+        public const string metadataNotes = "NOTES";
+        public const string metadataPubDate = "PUBLISHER DATE";
+        public const string metadataTitleID = "TITLE ID";
 
     /* Navigation Menu */
         public const string navBarTitle = "LIBRARY";

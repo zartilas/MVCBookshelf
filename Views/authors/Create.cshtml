@@ -2,7 +2,7 @@
 @using MVCBookshelf.Content.Values
 
 @{
-    ViewBag.Title = Lang.authorsPageEditTitle;
+    ViewBag.Title = Lang.authorsPageCreateTitle;
 }
 
 @using (Html.BeginForm())
@@ -10,7 +10,7 @@
     @Html.AntiForgeryToken()
     <div class="jumbotron">
         <div class="form-horizontal">
-            <h2>@Lang.authorsPageHeaderEdit</h2>
+            <h2>@Lang.authorsPageButtonCreate</h2>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-row">
@@ -61,7 +61,7 @@
             </div>
 
             <br />
-            <button type="submit" id="btn-create-submit" class="btn btn-primary btn-lg"><i class="fa fa-save"></i> &nbsp; @Lang.buttonEdit</button>
+            <button type="submit" id="btn-create-submit" class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> &nbsp; @Lang.buttonCreate</button>
         </div>
     </div>
 }
