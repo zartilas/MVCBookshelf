@@ -25,7 +25,7 @@ namespace MVCBookshelf.Models.Metadata
         [Display(Name = Lang.metadataPhone)]
         [Required(ErrorMessage = Lang.metadataRequiredField)]
         [StringLength(12, ErrorMessage = "Do not enter more than 12 characters")]
-        [RegularExpression("^[0-9-]*$", ErrorMessage = "Please enter a valid phone number")]
+        [RegularExpression("^[0-9- ]*$", ErrorMessage = "Please enter a valid phone number")]
         [DataType(DataType.PhoneNumber)]
         public string phone;
 
