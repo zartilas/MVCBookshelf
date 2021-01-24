@@ -6,7 +6,7 @@
 @{
     ViewBag.Title = Lang.storesPageTitle;
 }
-<h1 style="text-align:center">  <span class="badge badge-pill badge-dark">Stores Table</span> </h1>
+<h1 style="text-align:center">  <span class="badge badge-pill badge-dark">@Lang.storesPageHeader</span> </h1>
 <br />
 <br />
 
@@ -55,7 +55,7 @@
             @using (Html.BeginForm("Index", "Stores", FormMethod.Get))
             {
                 <div class="input-group " style="width:300px">
-                    <input type="text" name="search" class="form-control" placeholder="Enter Store Name" />
+                    <input type="text" name="search" class="form-control" placeholder="@Lang.searchTextBox" />
                     <button type="submit" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; Search</button>
                 </div>
             }
@@ -109,10 +109,10 @@
                     <td>
                         <div class="btn-group">
                             <p data-toggle="modal" data-target="#editStore">
-                                <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                                <a class="btn btn-primary btn-lg w-25"><i class="fa fa-edit"></i></a>
                             </p>
                             <p data-toggle="modal" data-target="#deleteStore">
-                                <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                                <a class="btn btn-primary btn-lg ml-2 btn-danger w-25"><i class="fa fa-trash"></i></a>
                             </p>
                         </div>
 

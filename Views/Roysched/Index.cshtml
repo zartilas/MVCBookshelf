@@ -6,8 +6,8 @@
     ViewBag.Title = Lang.royschedPageTitle;
 }
 
-<link href="~/Content/PagedList.css" rel="stylesheet" />
-<h1 style="text-align:center">  <span class="badge badge-pill badge-dark">Roycheds Table</span> </h1>
+
+<h1 style="text-align:center">  <span class="badge badge-pill badge-dark">@Lang.royschedPageHeader</span> </h1>
 
 <!-- Modal -->
 <div id="modalAddNewRoysched" class="modal fade" role="dialog">
@@ -57,7 +57,7 @@
         @using (Html.BeginForm("Index", "Roysched", FormMethod.Get))
         {
         <div class="input-group " style="width:300px">
-            <input type="text" name="search" class="form-control" placeholder="Enter royalty" />
+            <input type="text" name="search" class="form-control" placeholder="@Lang.searchTextBox" />
             <button type="submit" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; Search</button>
         </div>
          }
@@ -67,7 +67,7 @@
 
 <div class="card bg-primary">
     <table class="table table-curvy table-dark table-striped">
-        <tr>
+        <tr class="table-primary">
             <th>
                 @Html.DisplayNameFor(model => model.First().lorange)
             </th>
@@ -102,10 +102,10 @@
             <td>
                 <div class="btn-group">
                     <p data-toggle="modal" data-target="#editRoysched" data-url="@Url.Action($"Edit/{item.title_id}")">
-                        <a class="btn btn-primary btn-lg"><i class="fa fa-edit"></i></a>
+                        <a class="btn btn-primary btn-lg w-25"><i class="fa fa-edit"></i></a>
                     </p>
                     <p data-toggle="modal" data-target="#deleteRoysched" data-url="@Url.Action($"Delete/{item.title_id}")">
-                        <a class="btn btn-primary btn-lg ml-2"><i class="fa fa-trash"></i></a>
+                        <a class="btn btn-primary btn-lg ml-2 btn-danger w-25"><i class="fa fa-trash"></i></a>
                     </p>
                 </div>
 

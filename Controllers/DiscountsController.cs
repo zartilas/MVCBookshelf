@@ -18,9 +18,13 @@ namespace MVCBookshelf.Controllers
         // GET: Discounts
         public ActionResult Index(string search, int? i)
         {
-            List<discounts> storesList = db.discounts.ToList();
+
             var discounts = db.discounts.Include(d => d.stores);
-            return View(db.discounts.Where(x => x.discounttype.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 5));
+            return View(db.discounts.Where(x => x.discounttype.StartsWith(search)
+                                            || x.stores.stor_name.StartsWith(search)
+                                            || x.lowqty.ToString().StartsWith(search)
+                                            || x.highqty.ToString().StartsWith(search)
+                                            || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
         // GET: Discounts/Details/5

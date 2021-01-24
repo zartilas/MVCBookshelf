@@ -19,9 +19,16 @@ namespace MVCBookshelf.Controllers
         // GET: Employees
         public ActionResult Index(string search, int? i)
         {
-            List<employee> employeesList = db.employee.ToList();
+
             var employee = db.employee.Include(e => e.jobs).Include(e => e.publishers);
-            return View(db.employee.Where(x => x.fname.StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 5));
+            return View(db.employee.Where(x => x.fname.StartsWith(search)
+                                             || x.minit.StartsWith(search)
+                                             || x.lname.StartsWith(search)
+                                             || x.job_lvl.ToString().StartsWith(search)
+                                             || x.hire_date.ToString().StartsWith(search)
+                                             || x.jobs.job_desc.StartsWith(search)
+                                             || x.publishers.pub_name.StartsWith(search)
+                                             || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
         // GET: Employees/Details/5

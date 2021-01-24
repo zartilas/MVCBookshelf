@@ -6,6 +6,7 @@ namespace MVCBookshelf.Content.Values
     {
     /* General - Global */
         public const string appName = "MVCBookshelf";
+        public const string searchTextBox = "Search for something in table..";
         /* Forms */
         public const string formInputSuccess = "MVCBookshelf";
         public const string tablesNothingFoundHeader2 = "No data found.";

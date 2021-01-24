@@ -18,8 +18,13 @@ namespace MVCBookshelf.Controllers
         // GET: Stores
         public ActionResult Index(string search, int? i)
         {
-            List<stores> storesList = db.stores.ToList();
-            return View(db.stores.Where(x => x.stor_name.StartsWith(search) || search== null).ToList().ToPagedList(i ?? 1, 5));
+
+            return View(db.stores.Where(x => x.stor_name.StartsWith(search)
+                                            || x.stor_address.StartsWith(search)
+                                            || x.city.ToString().StartsWith(search)
+                                            || x.state.StartsWith(search)
+                                            || x.zip.ToString().StartsWith(search)
+                                            || search== null).ToList().ToPagedList(i ?? 1, 5));
         }
 
         // GET: Stores/Details/5
