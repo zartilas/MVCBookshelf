@@ -1,64 +1,75 @@
-﻿@model MVCBookshelf.Models.publishers
+﻿@model MVCBookshelf.Models.authors
+@using MVCBookshelf.Content.Values
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = Lang.authorsPageDeleteTitle;
 }
 
-<h2>Delete</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="jumbotron">
+        <div class="form-horizontal">
+            <!-- Back Button -->
+            <div class="btn-toolbar justify-content-lg-start">
+                <p><a href="/Authors/Index" id="btn-back" class="btn btn-primary btn-lg"><i class="fa fa-arrow-left"></i></a></p>
+            </div>
+            <br />
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>publishers</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.pub_name)
-        </dt>
+            <h2>@Lang.authorsPageHeaderDelete</h2>
+            <h3>Are you sure you want to delete this author?</h3>
+            <hr />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.au_fname, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.au_fname, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.au_lname, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.au_lname, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.pub_name)
-        </dd>
+            <div class="form-group">
+                @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.city)
-        </dt>
+            <div class="form-group">
+                @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.city)
-        </dd>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.city, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.state, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.state, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                </div>
+                <div class="form-group col-md-2">
+                    @Html.LabelFor(model => model.zip, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.zip, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                </div>
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.state)
-        </dt>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <div class="custom-control custom-checkbox">
+                        @Html.CheckBoxFor(model => model.contract, new { @class = "custom-control-input", @readonly = "" })
+                        @Html.LabelFor(model => model.contract, new { @class = "custom-control-label" })
+                    </div>
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.state)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.country)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.country)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.pub_info.pr_info)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.pub_info.pr_info)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <br />
+            <button type="submit" id="btn-create-submit" class="btn btn-primary btn-lg btn-danger"><i class="fa fa-trash"></i> &nbsp; @Lang.buttonDelete</button>
         </div>
-    }
-</div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
