@@ -1,61 +1,81 @@
 ﻿@model MVCBookshelf.Models.employee
 @using MVCBookshelf.Content.Values
 
-@{ ViewBag.Title = "Create"; }
+@{
+    ViewBag.Title = Lang.employeesPageCreateTitle;
+}
+
+<script>
+    $(function () {
+        $('input[type=date]').datepicker();
+    });
+</script>
 
 @using (Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
-    <div class="jumbotron">
-        <div class="form-horizontal">
-            <!-- Back Button -->
-            <div class="btn-toolbar justify-content-lg-start">
-                <p><a href="/Discounts/Index" id="btn-back" class="btn btn-primary btn-lg"><i class="fa fa-arrow-left"></i></a></p>
-            </div>
-            <br />
+@Html.AntiForgeryToken()
+                <div class="jumbotron">
+                    <div class="form-horizontal">
+                        <!-- Back Button -->
+                        <div class="btn-toolbar justify-content-lg-start">
+                            <p><a href="/Employees/Index" id="btn-back" class="btn btn-primary btn-lg"><i class="fa fa-arrow-left"></i></a></p>
+                        </div>
+                        <br />
 
-            <h2>@Lang.discountsPageButtonCreate</h2>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.discounttype, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.discounttype, new { htmlAttributes = new { @class = "form-control col-lg" } })
-                @Html.ValidationMessageFor(model => model.discounttype, "", new { @class = "text-danger" })
-            </div>
+                        <h2>@Lang.employeesPageHeaderCreate</h2>
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    @Html.LabelFor(model => model.stor_id, htmlAttributes: new { @class = "control-label" })
-                    @Html.EditorFor(model => model.stor_id, new { htmlAttributes = new { @class = "form-control col-lg" } })
-                    @Html.ValidationMessageFor(model => model.stor_id, "", new { @class = "text-danger" })
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.fname, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.fname, new { htmlAttributes = new { @class = "form-control col-lg" } })
+                                @Html.ValidationMessageFor(model => model.fname, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.minit, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.minit, new { htmlAttributes = new { @class = "form-control col-sm" } })
+                                @Html.ValidationMessageFor(model => model.lowqty, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.lname, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.lname, new { htmlAttributes = new { @class = "form-control col-lg" } })
+                            @Html.ValidationMessageFor(model => model.lname, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.job_id, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.job_id, new { htmlAttributes = new { @class = "form-control col-lg" } })
+                                @Html.ValidationMessageFor(model => model.job_id, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group col-md-6">
+                                @Html.LabelFor(model => model.job_lvl, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.job_lvl, new { htmlAttributes = new { @class = "form-control col-sm" } })
+                                @Html.ValidationMessageFor(model => model.job_lvl, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.pub_id, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.pub_id, new { htmlAttributes = new { @class = "form-control col-lg" } })
+                            @Html.ValidationMessageFor(model => model.pub_id, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.hire_date, htmlAttributes: new { @class = "control-label" })
+                            @Html.EditorFor(model => model.hire_date, new { htmlAttributes = new { @class = "form-control col-lg" } })
+                            @Html.ValidationMessageFor(model => model.hire_date, "", new { @class = "text-danger" })
+
+                        </div>
+                        <br />
+                        <button type="submit" id="btn-create-submit" class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> &nbsp; @Lang.buttonCreate</button>
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    @Html.LabelFor(model => model.discount, htmlAttributes: new { @class = "control-label" })
-                    @Html.EditorFor(model => model.discount, new { htmlAttributes = new { @class = "form-control col-lg" } })
-                    @Html.ValidationMessageFor(model => model.discount, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group col-md-6">
-                    @Html.LabelFor(model => model.lowqty, htmlAttributes: new { @class = "control-label" })
-                    @Html.EditorFor(model => model.lowqty, new { htmlAttributes = new { @class = "form-control col-lg" } })
-                    @Html.ValidationMessageFor(model => model.lowqty, "", new { @class = "text-danger" })
-                </div>
-                <div class="form-group col-md-6">
-                    @Html.LabelFor(model => model.highqty, htmlAttributes: new { @class = "control-label" })
-                    @Html.EditorFor(model => model.highqty, new { htmlAttributes = new { @class = "form-control col-lg" } })
-                    @Html.ValidationMessageFor(model => model.highqty, "", new { @class = "text-danger" })
-                </div>
-            </div>
+                }
 
-            <br />
-            <button type="submit" id="btn-create-submit" class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> &nbsp; @Lang.buttonCreate</button>
-        </div>
-    </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+                @section Scripts {
+                    @Scripts.Render("~/bundles/jqueryval")
+                }
