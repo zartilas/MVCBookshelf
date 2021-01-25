@@ -174,6 +174,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Content\Values\Lang.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
+    <Compile Include="Controllers\ContactDetailsController.cs" />
     <Compile Include="Controllers\DiscountsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
@@ -480,6 +481,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ContactDetails\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
