@@ -291,6 +291,7 @@ namespace MVCBookshelf.Content.Values
         public const string metadataMinit = "MIDDLE NAME INITIALS";
         public const string metadataJobId = "JOB ID";
         public const string metadataJobLvl = "JOB LEVEL";
+        public const string metadataPubId = "PUB ID";
         public const string metadataHireDate = "DATE HIRED";
         public const string metadataPubName = "PUBLISHER NAME";
 

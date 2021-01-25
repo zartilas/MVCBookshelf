@@ -15,7 +15,7 @@
 
 @if (Model != null || Model.Count() != 0)
 {
-    <!-- Create Author Button -->
+    <!-- Create Button -->
     <div class="btn-toolbar justify-content-lg-start pull-right">
         <p><a href="@Url.Action("Create", "Authors")" class="btn btn-primary btn-lg w-125"><i class="fa fa-plus"></i> &nbsp; @Lang.authorsPageButtonCreate</a></p>
     </div>
@@ -27,7 +27,7 @@
             @using (Html.BeginForm("Index", "Authors", FormMethod.Get))
             {
                 <div class="input-group " style="width:300px">
-                    <input type="text" name="search" class="form-control" placeholder="@Lang.authorsPagePlaceholderSearch" />
+                    <input type="text" name="search" class="form-control" placeholder="@Lang.searchInputPlaceholder" />
                     <button type="submit" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; @Lang.buttonSearch</button>
                 </div>
             }
@@ -38,7 +38,6 @@
     <div class="card bg-primary">
         <table class="table table-curvy table-dark table-striped">
             <tr class="table-primary">
-
                 <th>
                     @Html.DisplayNameFor(model => model.First().au_fname)
                 </th>
@@ -64,7 +63,6 @@
                     @Html.DisplayNameFor(model => model.First().contract)
                 </th>
                 <th></th>
-
             </tr>
             @foreach (var item in Model)
             {
@@ -133,7 +131,7 @@ else
             <br />
             <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
             <br />
-            <!-- Create Author Button -->
+            <!-- Create Button -->
             <div class="btn-toolbar justify-content-lg-start pull-right">
                 <p><a href="@Url.Action("Create", "Authors")" class="btn btn-primary btn-lg w-125 h-100"><i class="fa fa-plus"></i> &nbsp; @Lang.authorsPageButtonCreate</a></p>
             </div>
