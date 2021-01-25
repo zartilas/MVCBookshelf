@@ -1,8 +1,8 @@
-﻿@model MVCBookshelf.Models.authors
+﻿@model MVCBookshelf.Models.jobs
 @using MVCBookshelf.Content.Values
 
 @{
-    ViewBag.Title = Lang.authorsPageDeleteTitle;
+    ViewBag.Title = Lang.jobsPageDeleteTitle;
 }
 
 @using (Html.BeginForm())
@@ -12,55 +12,29 @@
         <div class="form-horizontal">
             <!-- Back Button -->
             <div class="btn-toolbar justify-content-lg-start">
-                <p><a href="/Authors/Index" id="btn-back" class="btn btn-primary btn-lg"><i class="fa fa-arrow-left"></i></a></p>
+                <p><a href="/Jobs/Index" id="btn-back" class="btn btn-primary btn-lg"><i class="fa fa-arrow-left"></i></a></p>
             </div>
             <br />
 
-            <h2>@Lang.authorsPageHeaderDelete</h2>
-            <h3>Are you sure you want to delete this author?</h3>
+            <h2>@Lang.jobsPageHeaderDelete</h2>
+            <h3>@Lang.jobsPageHeaderDelete2</h3>
             <hr />
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    @Html.LabelFor(model => model.au_fname, htmlAttributes: new { @class = "control-label" })
-                    @Html.EditorFor(model => model.au_fname, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
-                </div>
-                <div class="form-group col-md-6">
-                    @Html.LabelFor(model => model.au_lname, htmlAttributes: new { @class = "control-label" })
-                    @Html.EditorFor(model => model.au_lname, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
-                </div>
-            </div>
-
             <div class="form-group">
-                @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                @Html.LabelFor(model => model.job_desc, htmlAttributes: new { @class = "control-label" })
+                @Html.TextAreaFor(model => model.job_desc, new { @class = "form-control col-lg", @rows = "3", @readonly = "" })
+                @Html.ValidationMessageFor(model => model.job_desc, "", new { @class = "text-danger" })
             </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    @Html.LabelFor(model => model.city, htmlAttributes: new { @class = "control-label" })
-                    @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                    @Html.LabelFor(model => model.min_lvl, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.min_lvl, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                    @Html.ValidationMessageFor(model => model.min_lvl, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group col-md-4">
-                    @Html.LabelFor(model => model.state, htmlAttributes: new { @class = "control-label" })
-                    @Html.EditorFor(model => model.state, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
-                </div>
-                <div class="form-group col-md-2">
-                    @Html.LabelFor(model => model.zip, htmlAttributes: new { @class = "control-label" })
-                    @Html.EditorFor(model => model.zip, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
-                </div>
-            </div>
-
-            <div class="form-row">
                 <div class="form-group col-md-6">
-                    <div class="custom-control custom-checkbox">
-                        @Html.CheckBoxFor(model => model.contract, new { @class = "custom-control-input", @readonly = "" })
-                        @Html.LabelFor(model => model.contract, new { @class = "custom-control-label" })
-                    </div>
+                    @Html.LabelFor(model => model.max_lvl, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.max_lvl, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                    @Html.ValidationMessageFor(model => model.max_lvl, "", new { @class = "text-danger" })
                 </div>
             </div>
 

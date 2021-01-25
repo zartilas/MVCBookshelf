@@ -29,26 +29,14 @@ namespace MVCBookshelf.Controllers
                                             || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
-        // GET: Sales/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            sales sales = db.sales.Find(id);
-            if (sales == null)
-            {
-                return HttpNotFound();
-            }
-            return View(sales);
-        }
-
         // GET: Sales/Create
         public ActionResult Create()
         {
-            ViewBag.stor_id = new SelectList(db.stores, "stor_id", "stor_name");
-            ViewBag.title_id = new SelectList(db.titles, "title_id", "title");
+            List<string> list = new List<string>();
+            list.Add("Net 30");
+            list.Add("Net 60");
+            list.Add("ON Invoice");
+            ViewBag.Payterms = new SelectList(list);
             return View();
         }
 
@@ -72,17 +60,19 @@ namespace MVCBookshelf.Controllers
         }
 
         // GET: Sales/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(string store_id, string title_id, string ord_num)
         {
-            if (id == null)
+            if (store_id == null || title_id == null || ord_num == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            sales sales = db.sales.Find(id);
+            sales sales = db.sales.Find(store_id, ord_num, title_id);
             if (sales == null)
             {
                 return HttpNotFound();
             }
+            List<string> list = new List<string>();
+            ViewBag.payterms = new SelectList(db.sales, "payterms", "", sales.payterms);
             ViewBag.stor_id = new SelectList(db.stores, "stor_id", "stor_name", sales.stor_id);
             ViewBag.title_id = new SelectList(db.titles, "title_id", "title", sales.title_id);
             return View(sales);
@@ -107,13 +97,13 @@ namespace MVCBookshelf.Controllers
         }
 
         // GET: Sales/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string store_id, string title_id, string ord_num)
         {
-            if (id == null)
+            if (store_id == null || title_id == null || ord_num == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            sales sales = db.sales.Find(id);
+            sales sales = db.sales.Find(store_id, ord_num, title_id);
             if (sales == null)
             {
                 return HttpNotFound();

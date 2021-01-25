@@ -432,20 +432,10 @@
     <Content Include="Views\Employees\Create.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
-    <Content Include="Views\Jobs\Create.cshtml" />
-    <Content Include="Views\Jobs\Details.cshtml" />
-    <Content Include="Views\Jobs\Edit.cshtml" />
     <Content Include="Views\Jobs\Index.cshtml" />
-    <Content Include="Views\Publishers\Create.cshtml" />
-    <Content Include="Views\Publishers\Details.cshtml" />
-    <Content Include="Views\Publishers\Edit.cshtml" />
     <Content Include="Views\Publishers\Index.cshtml" />
     <Content Include="Views\Roysched\Create.cshtml" />
     <Content Include="Views\Roysched\Index.cshtml" />
-    <Content Include="Views\Sales\Create.cshtml" />
-    <Content Include="Views\Sales\Delete.cshtml" />
-    <Content Include="Views\Sales\Details.cshtml" />
-    <Content Include="Views\Sales\Edit.cshtml" />
     <Content Include="Views\Sales\Index.cshtml" />
     <Content Include="Views\Stores\Create.cshtml" />
     <Content Include="Views\Stores\Delete.cshtml" />
@@ -468,8 +458,15 @@
     <Content Include="Views\Discounts\Create.cshtml" />
     <Content Include="Views\Authors\Edit.cshtml" />
     <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Jobs\Create.cshtml" />
     <Content Include="Views\Jobs\Delete.cshtml" />
+    <Content Include="Views\Jobs\Edit.cshtml" />
+    <Content Include="Views\Publishers\Create.cshtml" />
     <Content Include="Views\Publishers\Delete.cshtml" />
+    <Content Include="Views\Publishers\Edit.cshtml" />
+    <Content Include="Views\Sales\Create.cshtml" />
+    <Content Include="Views\Sales\Delete.cshtml" />
+    <Content Include="Views\Sales\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
