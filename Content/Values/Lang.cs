@@ -7,6 +7,7 @@ namespace MVCBookshelf.Content.Values
     /* General - Global */
         public const string appName = "MVCBookshelf";
         public const string searchTextBox = "Search for something in table..";
+        public const string searchInputPlaceholder = "Enter something.";
         /* Forms */
         public const string formInputSuccess = "MVCBookshelf";
         public const string tablesNothingFoundHeader2 = "No data found.";
@@ -16,9 +17,7 @@ namespace MVCBookshelf.Content.Values
         public const string buttonClose = "Close";
         public const string buttonCreate = "Add";
         public const string buttonEdit = "Update";
-        public const string buttonCancel = "Cancel";
         public const string buttonDelete = "Delete";
-        public const string buttonActionOk = "OK";
 
         /* Home/References Page*/
         public const string homePageTitle = appName + " | Home Page";
@@ -47,117 +46,227 @@ namespace MVCBookshelf.Content.Values
 
     /* Authors Page */
         public const string authorsPageTitle = appName + " | Authors";
+        public const string authorsPageHeader = "Authors Table";
+        /* Create Page */
         public const string authorsPageCreateTitle = appName + " | Create Author";
-        public const string authorsPageEditTitle = appName + " | Edit Author";
-        public const string authorsPageDeleteTitle = appName + " | Delete Author";
         public const string authorsPageHeaderCreate = "Add a new author";
+        /* Edit Page */
+        public const string authorsPageEditTitle = appName + " | Edit Author";
         public const string authorsPageHeaderEdit = "Edit author";
+        /* Delete Page */
+        public const string authorsPageDeleteTitle = appName + " | Delete Author";
         public const string authorsPageHeaderDelete = "Delete author";
         public const string authorsPageHeaderDelete2 = "Are you sure you want to delete this author?";
-        public const string authorsPageHeader = "Authors Table";
-        /* Authors - ADD BUTTON */
+        /* ADD BUTTON */
         public const string authorsPageButtonCreate = "Add a new author";
-        public const string authorsPageModalCreateHeader = "Add a new author:";
-        public const string authorsPageModalCreateDesc = "Insert a new author to the database.";
-        public const string authorsPageModalCreateButtonSearch = "Add";
-        public const string authorsPageModalCreateButtonClose = "Close";
-        /* Labels */
-        public const string authorsPageModalFormFirstNameLabel = "First Name:";
-        public const string authorsPageModalFormLastNameLabel = "Last Name:";
-        public const string authorsPageModalFormPhoneLabel = "Phone Number:";
-        public const string authorsPageModalFormAddressLabel = "Address:";
-        public const string authorsPageModalFormCityLabel = "City:";
-        public const string authorsPageModalFormStateLabel = "State:";
-        public const string authorsPageModalFormZipCodeLabel = "Zip Code:";
-        public const string authorsPageModalFormContractLabel = "On Contract:";
         /* Field Placeholders */
-        public const string authorsPagePlaceholderSearch = "Enter author name.";
-        public const string authorsPageModalFormPlaceholderFirstName = "Ex: John";
-        public const string authorsPageModalFormPlaceholderLastName = "Ex: Smith";
-        public const string authorsPageModalFormPlaceholderMiddleNameInitials = "Ex: K (without dot)";
-        public const string authorsPageModalFormPlaceholderPhone = "Ex: 99567181";
-        public const string authorsPageModalFormPlaceholderCity = "Ex: Piraeus";
-        public const string authorsPageModalFormPlaceholderZipCode = "Ex: 18534";
-        public const string authorsPageModalFormPlaceholderAddress = "Ex: Karaoli kai dimitriou";
-        public const string authorsPageModalFormPlaceholderState = "Ex: Attiki";
+        public const string authorsPageFormPlaceholderFirstName = "Ex: John";
+        public const string authorsPageFormPlaceholderLastName = "Ex: Smith";
+        public const string authorsPageFormPlaceholderMiddleNameInitials = "Ex: K (without dot)";
+        public const string authorsPageFormPlaceholderPhone = "Ex: 99567181";
+        public const string authorsPageFormPlaceholderCity = "Ex: Piraeus";
+        public const string authorsPageFormPlaceholderZipCode = "Ex: 18534";
+        public const string authorsPageFormPlaceholderAddress = "Ex: Karaoli kai dimitriou";
+        public const string authorsPageFormPlaceholderState = "Ex: Attiki";
 
 
     /* Discounts Page */
         public const string discountsPageTitle = appName + " | Discounts";
-        public const string discountsPageCreateTitle = appName + " | Create Discount";
-        public const string discountsPageEditTitle = appName + " | Edit Discount";
-        public const string discountsPageDeleteTitle = appName + " | Delete Discount";
         public const string discountsPageHeader = "Discounts Table";
+        /* Create Page */
+        public const string discountPageCreateTitle = appName + " | Create Author";
+        public const string discountPageHeaderCreate = "Add a new discount";
+        /* Edit Page */
+        public const string discountPageEditTitle = appName + " | Edit Author";
+        public const string discountPageHeaderEdit = "Edit author";
+        /* Delete Page */
+        public const string discountPageDeleteTitle = appName + " | Delete Discount";
+        public const string discountPageHeaderDelete = "Delete discount";
+        public const string discountPageHeaderDelete2 = "Are you sure you want to delete this discount?";
         /* BUTTONS */
         public const string discountsPageButtonCreate = "Add a new discount";
         /* Field Placeholders */
-        public const string discountsPagePlaceholderSearch = "Enter discount type.";
+        public const string discountsPageFormPlaceholderDiscountType = "Ex: Initial Customer";
+        public const string discountsPageFormPlaceholderStoreID = "Ex: 8042";
+        public const string discountsPageFormPlaceholderLowQty = "Ex: 100";
+        public const string discountsPageFormPlaceholderHighQty = "Ex: 1000";
+        public const string discountsPageFormPlaceholderDiscount = "Ex: 10.65";
 
-    /* Employees Page */
-        public const string employeesPageTitle = appName + " | Discounts";
+        /* Employees Page */
+        public const string employeesPageTitle = appName + " | Employees";
         public const string employeesPageHeader = "Employees Table";
+        /* Create Page */
+        public const string employeesPageCreateTitle = appName + " | Create Employee";
+        public const string employeesPageHeaderCreate = "Add a new employee";
+        /* Edit Page */
+        public const string employeesPageEditTitle = appName + " | Edit Employee";
+        public const string employeesPageHeaderEdit = "Edit employee";
+        /* Delete Page */
+        public const string employeesPageDeleteTitle = appName + " | Delete Employee";
+        public const string employeesPageHeaderDelete = "Delete employee";
+        public const string employeesPageHeaderDelete2 = "Are you sure you want to delete this employee?";
         /* BUTTONS */
         public const string employeePageButtonCreate = "Add a new employee";
         /* Field Placeholders */
-        public const string employeesPagePlaceholderSearch = "Enter employee name.";
+        public const string employeesPageFormPlaceholderDiscountType = "Ex: Initial Customer";
+        public const string employeesPageFormPlaceholderStoreID = "Ex: 8042";
+        public const string employeesPageFormPlaceholderLowQty = "Ex: 100";
+        public const string employeesPageFormPlaceholderHighQty = "Ex: 1000";
+        public const string employeesPageFormPlaceholderDiscount = "Ex: 10.65";
 
     /* Jobs Page */
-        public const string jobsPageTitle = appName + " | Discounts";
+        public const string jobsPageTitle = appName + " | Jobs";
         public const string jobsPageHeader = "Jobs Table";
+        /* Create Page */
+        public const string jobsPageCreateTitle = appName + " | Create Job";
+        public const string jobsPageHeaderCreate = "Add a new job";
+        /* Edit Page */
+        public const string jobsPageEditTitle = appName + " | Edit Job";
+        public const string jobsPageHeaderEdit = "Edit job";
+        /* Delete Page */
+        public const string jobsPageDeleteTitle = appName + " | Delete Job";
+        public const string jobsPageHeaderDelete = "Delete job";
+        public const string jobsPageHeaderDelete2 = "Are you sure you want to delete this job?";
         /* BUTTONS */
         public const string jobsPageButtonCreate = "Add a new job";
         /* Field Placeholders */
-        public const string jobsPagePlaceholderSearch = "Enter job name.";
+        public const string jobsPageFormPlaceholderJobDesc = "Ex: Editor";
+        public const string jobsPageFormPlaceholderMinLvl = "Ex: 10";
+        public const string jobsPageFormPlaceholderMaxLvl = "Ex: 150";
 
     /* Publishers Page */
-        public const string publishersPageTitle = appName + " | Discounts";
+        public const string publishersPageTitle = appName + " | Publishers";
         public const string publishersPageHeader = "Publishers Table";
+        /* Create Page */
+        public const string publishersPageCreateTitle = appName + " | Create Publisher";
+        public const string publishersPageHeaderCreate = "Add a new publisher";
+        /* Edit Page */
+        public const string publishersPageEditTitle = appName + " | Edit Publisher";
+        public const string publishersPageHeaderEdit = "Edit publisher";
+        /* Delete Page */
+        public const string publishersPageDeleteTitle = appName + " | Delete Publisher";
+        public const string publishersPageHeaderDelete = "Delete publisher";
+        public const string publishersPageHeaderDelete2 = "Are you sure you want to delete this publisher?";
         /* BUTTONS */
         public const string publishersPageButtonCreate = "Add a new publisher";
         /* Field Placeholders */
-        public const string publishersPagePlaceholderSearch = "Enter publisher name.";
+        public const string publishersPageFormPlaceholderPubName = "Ex: Name of publisher";
+        public const string publishersPageFormPlaceholderCity = "Ex: Boston";
+        public const string publishersPageFormPlaceholderState = "Ex: MA";
+        public const string publishersPageFormPlaceholderCountry = "Ex: USA";
 
     /* Sales Page */
-        public const string salesPageTitle = appName + " | Discounts";
+        public const string salesPageTitle = appName + " | Sales";
         public const string salesPageHeader = "Sales Table";
+        /* Create Page */
+        public const string salesPageCreateTitle = appName + " | Create Sale";
+        public const string salesPageHeaderCreate = "Add a new sale";
+        /* Edit Page */
+        public const string salesPageEditTitle = appName + " | Edit Sale";
+        public const string salesPageHeaderEdit = "Edit sale";
+        /* Delete Page */
+        public const string salesPageDeleteTitle = appName + " | Delete Sale";
+        public const string salesPageHeaderDelete = "Delete sale";
+        public const string salesPageHeaderDelete2 = "Are you sure you want to delete this sale?";
         /* BUTTONS */
         public const string salesPageButtonCreate = "Add a new sale";
         /* Field Placeholders */
-        public const string salesPagePlaceholderSearch = "Enter something.";
+        public const string salesPageFormPlaceholderStoreId = "Ex: 6300";
+        public const string salesPageFormPlaceholderOrdNum = "Ex: 6871";
+        public const string salesPageFormPlaceholderOrdDate = "Ex: 14-09-2020";
+        public const string salesPageFormPlaceholderQty = "Ex: 5";
+        public const string salesPageFormPlaceholderTitleId = "Ex: BU1032";
 
     /* Stores Page */
-        public const string storesPageTitle = appName + " | Discounts";
+        public const string storesPageTitle = appName + " | Stores";
         public const string storesPageHeader = "Stores Table";
+        /* Create Page */
+        public const string storesPageCreateTitle = appName + " | Create Store";
+        public const string storesPageHeaderCreate = "Add a new store";
+        /* Edit Page */
+        public const string storesPageEditTitle = appName + " | Edit Store";
+        public const string storesPageHeaderEdit = "Edit store";
+        /* Delete Page */
+        public const string storesPageDeleteTitle = appName + " | Delete Store";
+        public const string storesPageHeaderDelete = "Delete store";
+        public const string storesPageHeaderDelete2 = "Are you sure you want to delete this store?";
         /* BUTTONS */
-        public const string storePageButtonCreate = "Add a new store";
+        public const string storesPageButtonCreate = "Add a new store";
         /* Field Placeholders */
-        public const string storesPagePlaceholderSearch = "Enter store name.";
+        public const string storesPageFormPlaceholderStoreName = "Ex: Name of store";
+        public const string storesPageFormPlaceholderStoreAddress = "Ex: 788 Avenue St.";
+        public const string storesPageFormPlaceholderCity = "Ex: Seattle";
+        public const string storesPageFormPlaceholderState = "Ex: WA";
+        public const string storesPageFormPlaceholderZip = "Ex: 98056";
 
-    /* TitleAuthor Page */
-        public const string titleAuthorPageTitle = appName + " | Discounts";
-        public const string titleAuthorPageHeader = "Title Author Table";
+    /* Title Authors Page */
+        public const string titleAuthorsPageTitle = appName + " | Title Authors";
+        public const string titleAuthorsPageHeader = "Title Authors Table";
+        /* Create Page */
+        public const string titleAuthorsPageCreateTitle = appName + " | Create Title Author";
+        public const string titleAuthorsPageHeaderCreate = "Add a new title author";
+        /* Edit Page */
+        public const string titleAuthorsPageEditTitle = appName + " | Edit Title Author";
+        public const string titleAuthorsPageHeaderEdit = "Edit title author";
+        /* Delete Page */
+        public const string titleAuthorsPageDeleteTitle = appName + " | Delete Title Author";
+        public const string titleAuthorsPageHeaderDelete = "Delete title author";
+        public const string titleAuthorsPageHeaderDelete2 = "Are you sure you want to delete this title author?";
         /* BUTTONS */
-        public const string titleAuthorPageButtonCreate = "Add a new title author";
+        public const string titleAuthorsPageButtonCreate = "Add a new title author";
         /* Field Placeholders */
-        public const string titleAuthorPagePlaceholderSearch = "Enter author name.";
+        public const string titleAuthorsPageFormPlaceholderAuthorId = "Ex: 172-32-1176";
+        public const string titleAuthorsPageFormPlaceholderTitleId = "Ex: PS3333";
+        public const string titleAuthorsPageFormPlaceholderAuthorOrder = "Ex: 1";
+        public const string titleAuthorsPageFormPlaceholderRoyalTyper = "Ex: 100";
 
     /* Titles Page */
-        public const string titlesPageTitle = appName + " | Discounts";
+        public const string titlesPageTitle = appName + " | Titles";
         public const string titlesPageHeader = "Titles Table";
+        /* Create Page */
+        public const string titlesPageCreateTitle = appName + " | Create Title";
+        public const string titlesPageHeaderCreate = "Add a new title";
+        /* Edit Page */
+        public const string titlesPageEditTitle = appName + " | Edit Title";
+        public const string titlesPageHeaderEdit = "Edit title";
+        /* Delete Page */
+        public const string titlesPageDeleteTitle = appName + " | Delete Title";
+        public const string titlesPageHeaderDelete = "Delete title";
+        public const string titlesPageHeaderDelete2 = "Are you sure you want to delete this title?";
         /* BUTTONS */
         public const string titlesPageButtonCreate = "Add a new title";
         /* Field Placeholders */
-        public const string titlesPagePlaceholderSearch = "Enter title name.";
+        public const string titlesPageFormPlaceholderTitle = "Ex: Title name";
+        public const string titlesPageFormPlaceholderType = "Ex: Psychology";
+        public const string titlesPageFormPlaceholderPubId = "Ex: 1389";
+        public const string titlesPageFormPlaceholderPrice = "Ex: 19.99";
+        public const string titlesPageFormPlaceholderAdvance = "Ex: 5000.0";
+        public const string titlesPageFormPlaceholderRoyalty = "Ex: 10";
+        public const string titlesPageFormPlaceholderYtdSales = "Ex: 4602";
+        public const string titlesPageFormPlaceholderPubDate = "Ex: 06-12-1998";
 
     /* Roysched Page */
-        public const string royschedPageTitle = appName + " | Discounts";
+        public const string royschedPageTitle = appName + " | Royscheds";
         public const string royschedPageHeader = "Roysched Table";
+        /* Create Page */
+        public const string royschedPageCreateTitle = appName + " | Create Roysched";
+        public const string royschedPageHeaderCreate = "Add a new roysched";
+        /* Edit Page */
+        public const string royschedPageEditTitle = appName + " | Edit Roysched";
+        public const string royschedPageHeaderEdit = "Edit roysched";
+        /* Delete Page */
+        public const string royschedPageDeleteTitle = appName + " | Delete Roysched";
+        public const string royschedPageHeaderDelete = "Delete roysched";
+        public const string royschedPageHeaderDelete2 = "Are you sure you want to delete this roysched?";
         /* BUTTONS */
         public const string royschedPageButtonCreate = "Add a new roysched";
         /* Field Placeholders */
-        public const string royschedPagePlaceholderSearch = "Enter something.";
+        public const string royschedPageFormPlaceholderTitleId = "Ex: BU1032";
+        public const string royschedPageFormPlaceholderLorange = "Ex: 0";
+        public const string royschedPageFormPlaceholderHirange = "Ex: 5000";
+        public const string royschedPageFormPlaceholderRoyalty = "Ex: 10";
 
-    /* Database Metadata */
+        /* Database Metadata */
         public const string metadataRequiredField = "This field is required";
         /* Metadata Authors */
         public const string metadataAuthorId = "AUTHOR ID";
