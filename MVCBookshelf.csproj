@@ -464,13 +464,14 @@
     <Content Include="Views\Titleauthors\Edit.cshtml" />
     <Content Include="Views\Titleauthors\Index.cshtml" />
     <Content Include="Web.config" />
-    <Content Include="Views\References\result.cshtml" />
     <Content Include="Views\Authors\Create.cshtml" />
     <Content Include="Views\Discounts\Create.cshtml" />
     <Content Include="Views\Authors\Edit.cshtml" />
     <Content Include="Views\Employees\Delete.cshtml" />
     <Content Include="Views\Jobs\Delete.cshtml" />
     <Content Include="Views\Publishers\Delete.cshtml" />
+    <Content Include="Views\References\ContactDetails.cshtml" />
+    <Content Include="Views\References\OrderIdSearch.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
