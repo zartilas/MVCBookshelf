@@ -8,13 +8,13 @@ namespace MVCBookshelf.Models.Metadata
         [Display(Name = Lang.metadataEmployeeId)]
         [StringLength(9, ErrorMessage = "Do not enter more than 9 characters")]
         [DataType(DataType.Text)]
-        [Required]
+        [Required(ErrorMessage = Lang.metadataRequiredField)]
         public string emp_id;
 
         [Display(Name = Lang.metadataFirstName)]
         [StringLength(20, ErrorMessage = "Do not enter more than 20 characters")]
         [DataType(DataType.Text)]
-        [Required]
+        [Required(ErrorMessage = Lang.metadataRequiredField)]
         public string fname;
 
         [Display(Name = Lang.metadataMinit)]
@@ -25,7 +25,7 @@ namespace MVCBookshelf.Models.Metadata
         [Display(Name = Lang.metadataLastName)]
         [StringLength(30, ErrorMessage = "Do not enter more than 30 characters")]
         [DataType(DataType.Text)]
-        [Required]
+        [Required(ErrorMessage = Lang.metadataRequiredField)]
         public string lname;
 
         [Display(Name = Lang.metadataJobId)]
@@ -36,10 +36,14 @@ namespace MVCBookshelf.Models.Metadata
         [RegularExpression("([0-9]+)", ErrorMessage = "Please enter a valid number")]
         public string job_lvl;
 
+        [Display(Name = Lang.metadataPubId)]
+        [DataType(DataType.Text)]
+        public string pub_id;
+
         [Display(Name = Lang.metadataHireDate)]
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
-        [Required]
+        [Required(ErrorMessage = Lang.metadataRequiredField)]
         public string hire_date;
     }
 }

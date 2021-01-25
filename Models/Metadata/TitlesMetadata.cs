@@ -9,11 +9,11 @@ namespace MVCBookshelf.Models.Metadata
         public string title_id;
 
         [Display(Name = Lang.metadataTitle)]
-        [Required]
+        [Required(ErrorMessage = Lang.metadataRequiredField)]
         public string title;
 
         [Display(Name = Lang.metadataType)]
-        [Required]
+        [Required(ErrorMessage = Lang.metadataRequiredField)]
         public string type;
 
         [Display(Name = Lang.metadataPrice)]
@@ -32,7 +32,7 @@ namespace MVCBookshelf.Models.Metadata
         public string notes;
 
         [Display(Name = Lang.metadataPubDate)]
-        [Required]
+        [Required(ErrorMessage = Lang.metadataRequiredField)]
         public string pubdate;
     }
 }

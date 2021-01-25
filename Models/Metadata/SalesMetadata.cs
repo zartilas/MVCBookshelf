@@ -9,15 +9,15 @@ namespace MVCBookshelf.Models.Metadata
         public string ord_num;
 
         [Display(Name = Lang.metadataOrderDate)]
-        [Required]
+        [Required(ErrorMessage = Lang.metadataRequiredField)]
         public string ord_date;
 
         [Display(Name = Lang.metadataQuantity)]
-        [Required]
+        [Required(ErrorMessage = Lang.metadataRequiredField)]
         public string qty;
 
         [Display(Name = Lang.metadataPayTerms)]
-        [Required]
+        [Required(ErrorMessage = Lang.metadataRequiredField)]
         public string payterms;
     }
 }
