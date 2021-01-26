@@ -24,28 +24,28 @@
 
         <br />
 
-        <h2>@Lang.salesPageButtonCreate</h2>
+        <h2>@Lang.titlePageOrgerID</h2>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-row">
             <div class="form-group col-md-4">
-                @Html.LabelFor(model => model.ord_num, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.ord_num, new { htmlAttributes = new { @class = "form-control col-lg" } })
-                @Html.ValidationMessageFor(model => model.ord_num, "", new { @class = "text-danger" })
+                @Html.LabelFor(model => model.stores.stor_name, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.stores.stor_name, new { htmlAttributes = new { @class = "form-control col-lg" } })
+                @Html.ValidationMessageFor(model => model.stores.stor_name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-2">
-                @Html.LabelFor(model => model.stores.stor_name, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.stores.stor_name, new { htmlAttributes = new { @class = "form-control col-lg", @type= "date"  } })
-                @Html.ValidationMessageFor(model => model.stores.stor_name, "", new { @class = "text-danger" })
+                @Html.LabelFor(model => model.ord_date, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.ord_date, new { htmlAttributes = new { @class = "form-control col-lg", @type= "date"  } })
+                @Html.ValidationMessageFor(model => model.ord_date, "", new { @class = "text-danger" })
             </div>
             <div class="form-group col-md-2">
-                @Html.LabelFor(model => model.titles.title, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.titles.title, new { htmlAttributes = new { @class = "form-control col-lg", @type= "date" } })
-                @Html.ValidationMessageFor(model => model.titles.title, "", new { @class = "text-danger" })
+                @Html.LabelFor(model => model.ord_date, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.ord_date, new { htmlAttributes = new { @class = "form-control col-lg", @type= "date" } })
+                @Html.ValidationMessageFor(model => model.ord_date, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -54,6 +54,35 @@
     </div>
 </div>
 }
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ord_num)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.stores.stor_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.titles.title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ord_num)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stores.stor_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.titles.title)
+            </td>
+        </tr>
+    }
+
+</table>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
