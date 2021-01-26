@@ -21,6 +21,8 @@
         public const string homePageTitle = appName + " | Home Page";
         public const string homePageButtonContactDetailsOfAuthors = "Contact details of authors";
         public const string homePageButtonOrderID = "Order ID number";
+        public const string titlePageOrgerID = "Search for a sale";
+        public const string titlePageContactDetailsOfAuthors = "Search for Authors contact details";
         /* References - Search contact details of authors with top sellers */
         public const string homePageModal1Header = "Search for contact details of authors:";
         public const string homePageModal1Desc = "Find the contact details of authors depending on the top selling titles (date is optional).";
