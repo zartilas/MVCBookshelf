@@ -45,6 +45,12 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                @Html.LabelFor(model => model.pub_info.pr_info, htmlAttributes: new { @class = "control-label" })
+                @Html.TextAreaFor(model => model.pub_info.pr_info, new { @class = "form-control col-lg", @rows = "3" })
+                @Html.ValidationMessageFor(model => model.pub_info.pr_info, "", new { @class = "text-danger" })
+            </div>
+
             <br />
             <button type="submit" id="btn-create-submit" class="btn btn-primary btn-lg"><i class="fa fa-save"></i> &nbsp; @Lang.buttonEdit</button>
         </div>

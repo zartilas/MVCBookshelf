@@ -56,9 +56,6 @@
                     @Html.DisplayNameFor(model => model.First().ytd_sales)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.First().notes)
-                </th>
-                <th>
                     @Html.DisplayNameFor(model => model.First().pubdate)
                 </th>
                 <th>
@@ -67,54 +64,57 @@
                 <th>
                     @Html.DisplayNameFor(model => model.First().title_id)
                 </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().notes)
+                </th>
                 <th></th>
             </tr>
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.title)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.type)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.price)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.advance)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.royalty)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ytd_sales)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.notes)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.pubdate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.publishers.pub_name)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.title_id)
-                    </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.advance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.royalty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ytd_sales)
+            </td>
+            <td>
+                @Convert.ToDateTime(item.pubdate).ToString("dd-MMM-yy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.publishers.pub_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.notes)
+            </td>
 
-                    <td>
-                        <div class="btn-group">
-                            <p>
-                                <a href="@Url.Action("Edit", "Titles", new { id = item.title_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
-                            </p>
-                            <p>
-                                <a href="@Url.Action("Delete", "Titles", new { id = item.title_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
-                            </p>
-                        </div>
-                    </td>
-                </tr>
+            <td>
+                <div class="btn-group">
+                    <p>
+                        <a href="@Url.Action("Edit", "Titles", new { id = item.title_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
+                    </p>
+                    <p>
+                        <a href="@Url.Action("Delete", "Titles", new { id = item.title_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
+                    </p>
+                </div>
+            </td>
+        </tr>
             }
         </table>
     </div>
@@ -143,7 +143,7 @@ else
             <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
             <br />
             <!-- Create Button -->
-            <div class="btn-toolbar justify-content-lg-start pull-right">
+            <div class="btn-toolbar justify-content-lg-center">
                 <p><a href="@Url.Action("Create", "Titles")" class="btn btn-primary btn-lg w-125"><i class="fa fa-plus"></i> &nbsp; @Lang.titlesPageButtonCreate</a></p>
             </div>
         </div>

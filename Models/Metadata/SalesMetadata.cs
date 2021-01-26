@@ -12,7 +12,7 @@ namespace MVCBookshelf.Models.Metadata
 
         [Display(Name = Lang.metadataOrderDate)]
         [Required(ErrorMessage = Lang.metadataRequiredField)]
-        [DisplayFormat(DataFormatString = "{0:dd-MMM-yy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         public Nullable<System.DateTime> ord_date;
 

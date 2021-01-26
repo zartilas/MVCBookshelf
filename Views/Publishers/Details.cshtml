@@ -1,0 +1,40 @@
+﻿@model MVCBookshelf.Models.pub_info
+@using MVCBookshelf.Content.Values
+@using System.Text
+@using System.Drawing
+
+@{
+    ViewBag.Title = Lang.publisherInfoPageTitle;
+}
+
+
+<div class="jumbotron">
+    <div class="form-horizontal">
+        <!-- Back Button -->
+        <div class="btn-toolbar justify-content-lg-start">
+            <p><a href="/Publishers/Index" id="btn-back" class="btn btn-primary btn-lg"><i class="fa fa-arrow-left"></i></a></p>
+        </div>
+        <br />
+
+        <h2>@Lang.publisherInfoPageHeader</h2>
+        <hr />
+
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(Model.logo))" class="rounded float-left" alt="Publisher Logo" />
+                </div>
+                <div class="col-9">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.pr_info, htmlAttributes: new { @class = "control-label" })
+                        @Html.TextAreaFor(model => model.pr_info, new { @class = "form-control col-lg", @rows = "8", @readonly = "" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

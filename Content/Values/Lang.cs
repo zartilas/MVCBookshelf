@@ -2,7 +2,7 @@
 {
     public static class Lang
     {
-        /* General - Global */
+    /* General - Global */
         public const string appName = "MVCBookshelf";
         public const string searchTextBox = "Search for something in table..";
         public const string searchInputPlaceholder = "Enter something.";
@@ -17,7 +17,7 @@
         public const string buttonEdit = "Update";
         public const string buttonDelete = "Delete";
 
-        /* Home/References Page*/
+    /* Home/References Page*/
         public const string homePageTitle = appName + " | Home Page";
         public const string homePageButtonContactDetailsOfAuthors = "Contact details of authors";
         public const string homePageButtonOrderID = "Order ID number";
@@ -37,13 +37,13 @@
         public const string homePageModal1FormPlaceholderDateFrom = "Enter date to start (Ex: 2019-01-15).";
         public const string homePageModal1FormPlaceholderDateTo = "Enter date to finish between (Ex: 2019-02-18).";
 
-        /* Error Page */
+    /* Error Page */
         public const string error404PageTitle = "404: Page not found | " + appName;
         public const string error404Header1 = "Oops!";
         public const string error404Header2 = "We can't seem to find the page\nyou are looking for.";
         public const string error404Header3 = "Error code: 404";
 
-        /* Authors Page */
+    /* Authors Page */
         public const string authorsPageTitle = appName + " | Authors";
         public const string authorsPageHeader = "Authors Table";
         /* Create Page */
@@ -68,7 +68,7 @@
         public const string authorsPageFormPlaceholderAddress = "Ex: Karaoli kai dimitriou";
         public const string authorsPageFormPlaceholderState = "Ex: Attiki";
 
-        /* Discounts Page */
+    /* Discounts Page */
         public const string discountsPageTitle = appName + " | Discounts";
         public const string discountsPageHeader = "Discounts Table";
         /* Create Page */
@@ -90,7 +90,7 @@
         public const string discountsPageFormPlaceholderHighQty = "Ex: 1000";
         public const string discountsPageFormPlaceholderDiscount = "Ex: 10.65";
 
-        /* Employees Page */
+    /* Employees Page */
         public const string employeesPageTitle = appName + " | Employees";
         public const string employeesPageHeader = "Employees Table";
         /* Create Page */
@@ -113,7 +113,7 @@
         public const string employeesPageFormPlaceholderJobLVL = "Ex: 35";
         public const string employeesPageFormPlaceholderPubId = "Ex: 0877";
 
-        /* Jobs Page */
+    /* Jobs Page */
         public const string jobsPageTitle = appName + " | Jobs";
         public const string jobsPageHeader = "Jobs Table";
         /* Create Page */
@@ -133,7 +133,7 @@
         public const string jobsPageFormPlaceholderMinLvl = "Ex: 10";
         public const string jobsPageFormPlaceholderMaxLvl = "Ex: 150";
 
-        /* Publishers Page */
+    /* Publishers Page */
         public const string publishersPageTitle = appName + " | Publishers";
         public const string publishersPageHeader = "Publishers Table";
         /* Create Page */
@@ -154,7 +154,11 @@
         public const string publishersPageFormPlaceholderState = "Ex: MA";
         public const string publishersPageFormPlaceholderCountry = "Ex: USA";
 
-        /* Sales Page */
+     /* Publishers Page */
+        public const string publisherInfoPageTitle = appName + " | Publisher Details";
+        public const string publisherInfoPageHeader = "Publisher Details";
+
+    /* Sales Page */
         public const string salesPageTitle = appName + " | Sales";
         public const string salesPageHeader = "Sales Table";
         /* Create Page */
@@ -175,8 +179,9 @@
         public const string salesPageFormPlaceholderOrdDate = "Ex: 14-09-2020";
         public const string salesPageFormPlaceholderQty = "Ex: 5";
         public const string salesPageFormPlaceholderTitleId = "Ex: BU1032";
+        public const string salesPageFormPlaceholderPayterms = "Ex: Net 30 or ON invoice";
 
-        /* Stores Page */
+    /* Stores Page */
         public const string storesPageTitle = appName + " | Stores";
         public const string storesPageHeader = "Stores Table";
         /* Create Page */
@@ -198,7 +203,7 @@
         public const string storesPageFormPlaceholderState = "Ex: WA";
         public const string storesPageFormPlaceholderZip = "Ex: 98056";
 
-        /* Title Authors Page */
+    /* Title Authors Page */
         public const string titleAuthorsPageTitle = appName + " | Title Authors";
         public const string titleAuthorsPageHeader = "Title Authors Table";
         /* Create Page */
@@ -219,7 +224,7 @@
         public const string titleAuthorsPageFormPlaceholderAuthorOrder = "Ex: 1";
         public const string titleAuthorsPageFormPlaceholderRoyalTyper = "Ex: 100";
 
-        /* Titles Page */
+    /* Titles Page */
         public const string titlesPageTitle = appName + " | Titles";
         public const string titlesPageHeader = "Titles Table";
         /* Create Page */
@@ -244,7 +249,7 @@
         public const string titlesPageFormPlaceholderYtdSales = "Ex: 4602";
         public const string titlesPageFormPlaceholderPubDate = "Ex: 06-12-1998";
 
-        /* Roysched Page */
+    /* Roysched Page */
         public const string royschedPageTitle = appName + " | Royscheds";
         public const string royschedPageHeader = "Roysched Table";
         /* Create Page */

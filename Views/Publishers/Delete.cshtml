@@ -21,7 +21,7 @@
             <hr />
             <div class="form-group">
                 @Html.LabelFor(model => model.pub_name, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.pub_name, new { htmlAttributes = new { @class = "form-control col-lg", @readonly="" } })
+                @Html.EditorFor(model => model.pub_name, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
                 @Html.ValidationMessageFor(model => model.pub_name, "", new { @class = "text-danger" })
             </div>
 
@@ -41,6 +41,12 @@
                     @Html.EditorFor(model => model.state, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
                     @Html.ValidationMessageFor(model => model.state, "", new { @class = "text-danger" })
                 </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.pub_info.pr_info, htmlAttributes: new { @class = "control-label" })
+                @Html.TextAreaFor(model => model.pub_info.pr_info, new { @class = "form-control col-lg", @rows = "3", @readonly = "" })
+                @Html.ValidationMessageFor(model => model.pub_info.pr_info, "", new { @class = "text-danger" })
             </div>
 
             <br />

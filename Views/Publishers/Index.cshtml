@@ -72,7 +72,10 @@
                                 <a href="@Url.Action("Edit", "Publishers", new { id = item.pub_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
                             </p>
                             <p>
-                                <a href="@Url.Action("Delete", "Publishers", new { id = item.pub_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
+                                <a href="@Url.Action("Details", "Publishers", new { pub_id = item.pub_id })" class="btn edit btn-primary btn-lg w-25" id="btn-details"><i class="fa fa-info-circle"></i></a>
+                            </p>
+                            <p>
+                                <a href="@Url.Action("Delete", "Publishers", new { id = item.pub_id })" class="btn btn-primary btn-danger btn-lg w-25" id="btn-delete"><i class="fa fa-trash"></i></a>
                             </p>
                         </div>
                     </td>
@@ -104,7 +107,7 @@ else
             <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
             <br />
             <!-- Create Button -->
-            <div class="btn-toolbar justify-content-lg-start pull-right">
+            <div class="btn-toolbar justify-content-lg-center">
                 <p><a href="@Url.Action("Create", "Publishers")" class="btn btn-primary btn-lg w-125"><i class="fa fa-plus"></i> &nbsp; @Lang.publishersPageButtonCreate</a></p>
             </div>
         </div>

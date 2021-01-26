@@ -44,7 +44,7 @@
                     @Html.EditorFor(model => model.stor_id, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.salesPageFormPlaceholderStoreId } })
                     @Html.ValidationMessageFor(model => model.stor_id, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     @Html.LabelFor(model => model.title_id, htmlAttributes: new { @class = "control-label" })
                     @Html.EditorFor(model => model.title_id, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.salesPageFormPlaceholderTitleId } })
                     @Html.ValidationMessageFor(model => model.title_id, "", new { @class = "text-danger" })
@@ -53,9 +53,8 @@
 
             <div class="form-row">
                 <div class="form-group col-md-6">
-
                     @Html.LabelFor(model => model.payterms, htmlAttributes: new { @class = "control-label" })
-                    @Html.DropDownListFor(model => model.payterms, (SelectList)ViewBag.Payterms, "Select Payterms", new { @class = "form-control col-lg" })
+                    @Html.EditorFor(model => model.payterms, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.salesPageFormPlaceholderPayterms } })
                     @Html.ValidationMessageFor(model => model.payterms, "", new { @class = "text-danger" })
                 </div>
                 <div class="form-group col-md-4">
