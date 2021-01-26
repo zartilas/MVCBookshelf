@@ -16,29 +16,15 @@ namespace MVCBookshelf.Controllers
 
             IQueryable<sales> list = db.sales;
 
-            string numberOfSales = Request.QueryString["userInput"];
 
-            if (numberOfSales != null && numberOfSales != "")
-            {
-                // list = list.Where(m => m.qty.ToString());
+            var query = db.authors.SqlQuery("SELECT top (5) t.title_id, t.total_sales, S.order_date, A.au_fname, A.au_lname, A.phone, A.zip, A.au_id, t.title" +
+                                            "FROM(SELECT title_id, max(ytd_sales) as total_sales, max(title) as title FROM titles GROUP BY title_id) T LEFT OUTER JOIN (SELECT title_id, max(ord_date) AS order_date"+
+                                            "FROM sales GROUP BY title_id) S ON(T.title_id = S.title_id) LEFT OUTER JOIN (SELECT title_id, au_id FROM titleauthor) TA" +
+                                            "ON(T.title_id = TA.title_id) LEFT OUTER JOIN (SELECT au_id, au_fname, au_lname, phone, zip FROM authors) A ON(TA.au_id = A.au_id)" +
+                                            "WHERE total_sales is not null ORDER BY total_sales DESC");
 
 
-
-            }
-                if (Request.QueryString["dateFrom"] != null && Request.QueryString["dateFrom"] != "")
-                {
-                    DateTime.TryParse(Request.QueryString["dateFrom"], out DateTime datefrom);
-                    list = list.Where(m => m.ord_date >= datefrom);
-                }
-
-                if (Request.QueryString["dateTo"] != null && Request.QueryString["dateTo"] != "")
-                {
-                    DateTime.TryParse(Request.QueryString["dateTo"], out DateTime dateto);
-                    list = list.Where(m => m.ord_date <= dateto);
-                }
-            
-
-            return View(list.ToList());
+            return View(query.ToList());
         }
 
         // GET: ContactDetails/Details/5
