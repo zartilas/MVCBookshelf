@@ -1,4 +1,4 @@
-﻿@model MVCBookshelf.Models.sales
+﻿@model  IEnumerable<MVCBookshelf.Models.sales>
 @using MVCBookshelf.Content.Values
 
 @{
@@ -30,22 +30,19 @@
 
         <div class="form-row">
             <div class="form-group col-md-4">
-                @Html.LabelFor(model => model.stores.stor_name, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.stores.stor_name, new { htmlAttributes = new { @class = "form-control col-lg" } })
-                @Html.ValidationMessageFor(model => model.stores.stor_name, "", new { @class = "text-danger" })
+                <label>Store Name</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Type Last Name">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-2">
-                @Html.LabelFor(model => model.ord_num, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.ord_num, new { htmlAttributes = new { @class = "form-control col-lg", @type= "date"  } })
-                @Html.ValidationMessageFor(model => model.ord_num, "", new { @class = "text-danger" })
+                <label>From Date</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Type Last Name">
             </div>
             <div class="form-group col-md-2">
-                @Html.LabelFor(model => model.stord_num, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.ord_num, new { htmlAttributes = new { @class = "form-control col-lg", @type= "date" } })
-                @Html.ValidationMessageFor(model => model.ord_num, "", new { @class = "text-danger" })
+                <label>To Date</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Type Last Name">
             </div>
         </div>
 
@@ -81,37 +78,6 @@
             </td>
         </tr>
     }
-
-</table>
-
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ord_num)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.stores.stor_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.titles.title)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ord_num)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.stores.stor_name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.titles.title)
-        </td>
-
-    </tr>
-}
 
 </table>
 

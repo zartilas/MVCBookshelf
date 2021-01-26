@@ -22,7 +22,7 @@ namespace MVCBookshelf.Controllers
             if (storeName != null)
             {
                 list = list.Where(m => m.stores.stor_name.StartsWith(storeName) );
-                
+
 
                 if (Request.QueryString["dateFrom"] != null && Request.QueryString["dateFrom"] != "")
                 {
@@ -39,7 +39,7 @@ namespace MVCBookshelf.Controllers
                 list = list.Where(m => m.title_id == m.titles.title_id);
 
             }
-            return View();
+            return View(list.ToList());
         }
 
         // GET: OrderIdSearch/Details/5
