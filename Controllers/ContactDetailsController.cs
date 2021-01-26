@@ -21,7 +21,7 @@ namespace MVCBookshelf.Controllers
             string numberOfSales = Request.QueryString["qty"];
             if (numberOfSales != null && numberOfSales != "")
             {
-                list = list.Where(m => m.qty.ToString());
+               // list = list.Where(m => m.qty.ToString());
             }
 
             if (Request.QueryString["dateFrom"] != null && Request.QueryString["dateFrom"] != "")
