@@ -37,7 +37,6 @@ namespace MVCBookshelf.Content.Values
         public const string homePageModal1FormPlaceholderDateFrom = "Enter date to start (Ex: 2019-01-15).";
         public const string homePageModal1FormPlaceholderDateTo = "Enter date to finish between (Ex: 2019-02-18).";
 
-
         /* Error Page */
         public const string error404PageTitle = "404: Page not found | " + appName;
         public const string error404Header1 = "Oops!";
@@ -74,15 +73,15 @@ namespace MVCBookshelf.Content.Values
         public const string discountsPageTitle = appName + " | Discounts";
         public const string discountsPageHeader = "Discounts Table";
         /* Create Page */
-        public const string discountPageCreateTitle = appName + " | Create Author";
-        public const string discountPageHeaderCreate = "Add a new discount";
+        public const string discountsPageCreateTitle = appName + " | Create Discount";
+        public const string discountsPageHeaderCreate = "Add a new discount";
         /* Edit Page */
-        public const string discountPageEditTitle = appName + " | Edit Author";
-        public const string discountPageHeaderEdit = "Edit author";
+        public const string discountPageEditTitle = appName + " | Edit Discount";
+        public const string discountsPageHeaderEdit = "Edit discount";
         /* Delete Page */
-        public const string discountPageDeleteTitle = appName + " | Delete Discount";
-        public const string discountPageHeaderDelete = "Delete discount";
-        public const string discountPageHeaderDelete2 = "Are you sure you want to delete this discount?";
+        public const string discountsPageDeleteTitle = appName + " | Delete Discount";
+        public const string discountsPageHeaderDelete = "Delete discount";
+        public const string discountsPageHeaderDelete2 = "Are you sure you want to delete this discount?";
         /* BUTTONS */
         public const string discountsPageButtonCreate = "Add a new discount";
         /* Field Placeholders */
@@ -92,7 +91,7 @@ namespace MVCBookshelf.Content.Values
         public const string discountsPageFormPlaceholderHighQty = "Ex: 1000";
         public const string discountsPageFormPlaceholderDiscount = "Ex: 10.65";
 
-        /* Employees Page */
+    /* Employees Page */
         public const string employeesPageTitle = appName + " | Employees";
         public const string employeesPageHeader = "Employees Table";
         /* Create Page */
@@ -108,11 +107,12 @@ namespace MVCBookshelf.Content.Values
         /* BUTTONS */
         public const string employeePageButtonCreate = "Add a new employee";
         /* Field Placeholders */
-        public const string employeesPageFormPlaceholderDiscountType = "Ex: Initial Customer";
-        public const string employeesPageFormPlaceholderStoreID = "Ex: 8042";
-        public const string employeesPageFormPlaceholderLowQty = "Ex: 100";
-        public const string employeesPageFormPlaceholderHighQty = "Ex: 1000";
-        public const string employeesPageFormPlaceholderDiscount = "Ex: 10.65";
+        public const string employeesPageFormPlaceholderFirstName = "Ex: Paolo";
+        public const string employeesPageFormPlaceholderLastName = "Ex: Accorti";
+        public const string employeesPageFormPlaceholderMinit = "Ex: M";
+        public const string employeesPageFormPlaceholderJobId = "Ex: 2";
+        public const string employeesPageFormPlaceholderJobLVL = "Ex: 35";
+        public const string employeesPageFormPlaceholderPubId = "Ex: 0877";
 
     /* Jobs Page */
         public const string jobsPageTitle = appName + " | Jobs";

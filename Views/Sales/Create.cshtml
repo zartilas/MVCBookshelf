@@ -1,79 +1,75 @@
 ﻿@model MVCBookshelf.Models.sales
+@using MVCBookshelf.Content.Values
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = Lang.salesPageCreateTitle;
 }
 
-<h2>Create</h2>
+<script>
+  $( function() {
+      $('input[type=date]').datepicker();
+  } );
+</script>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>sales</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.stor_id, "stor_id", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("stor_id", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.stor_id, "", new { @class = "text-danger" })
+    <div class="jumbotron">
+        <div class="form-horizontal">
+            <!-- Back Button -->
+            <div class="btn-toolbar justify-content-lg-start">
+                <p><a href="/Sales/Index" id="btn-back" class="btn btn-primary btn-lg"><i class="fa fa-arrow-left"></i></a></p>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ord_num, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ord_num, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ord_num, "", new { @class = "text-danger" })
+            <br />
+            <h2>@Lang.salesPageButtonCreate</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.ord_num, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.ord_num, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.salesPageFormPlaceholderOrdNum } })
+                    @Html.ValidationMessageFor(model => model.ord_num, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.ord_date, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.ord_date, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.salesPageFormPlaceholderOrdDate } })
+                    @Html.ValidationMessageFor(model => model.ord_date, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ord_date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ord_date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ord_date, "", new { @class = "text-danger" })
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.stor_id, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.stor_id, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.salesPageFormPlaceholderStoreId } })
+                    @Html.ValidationMessageFor(model => model.stor_id, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.title_id, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.title_id, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.salesPageFormPlaceholderTitleId } })
+                    @Html.ValidationMessageFor(model => model.title_id, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.qty, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.qty, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.qty, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.payterms, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.payterms, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.payterms, "", new { @class = "text-danger" })
+                    @Html.LabelFor(model => model.payterms, htmlAttributes: new { @class = "control-label" })
+                    @Html.DropDownListFor(model => model.payterms, (SelectList)ViewBag.Payterms, "Select Payterms", new { @class = "form-control col-lg" })
+                    @Html.ValidationMessageFor(model => model.payterms, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.qty, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.qty, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.salesPageFormPlaceholderQty } })
+                    @Html.ValidationMessageFor(model => model.qty, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.title_id, "title_id", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("title_id", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.title_id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+            <br />
+            <button type="submit" id="btn-create-submit" class="btn btn-primary btn-lg"><i class="fa fa-plus"></i> &nbsp; @Lang.buttonCreate</button>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
