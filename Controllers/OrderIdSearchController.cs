@@ -24,6 +24,8 @@ namespace MVCBookshelf.Controllers
                                            "WHERE total_sales is not null ORDER BY total_sales DESC");
 
             string storeName = Request.QueryString["stor_name"];
+            string dateFrom = Request.QueryString["dateFrom"];
+            string dateTo = Request.QueryString["dateTo"];
 
             if (storeName != null)
             {
