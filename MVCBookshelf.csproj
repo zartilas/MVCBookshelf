@@ -467,7 +467,7 @@
     <Content Include="Views\Titles\Create.cshtml" />
     <Content Include="Views\Titles\Delete.cshtml" />
     <Content Include="Views\Titles\Edit.cshtml" />
-    <Content Include="Views\Publishers\Delete - Copy.cshtml" />
+    <Content Include="Views\Publishers\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

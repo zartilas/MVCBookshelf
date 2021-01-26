@@ -7,7 +7,7 @@ namespace MVCBookshelf.Models.Metadata
         [Display(Name = "Logo")]
         public string logo;
 
-        [Display(Name = "Publisher Info")]
+        [Display(Name = "PUBLISHER INFO")]
         public string pr_info;
     }
 }
