@@ -36,7 +36,7 @@ namespace MVCBookshelf.Controllers
                     DateTime.TryParse(Request.QueryString["dateTo"], out DateTime dateto);
                     list = list.Where(m => m.ord_date <= dateto);
                 }
-            }
+            
 
             return View(list.ToList());
         }
