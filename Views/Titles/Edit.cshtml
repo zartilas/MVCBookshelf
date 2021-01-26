@@ -5,6 +5,12 @@
     ViewBag.Title = Lang.titlesPageEditTitle;
 }
 
+<script>
+    $(function () {
+        $('input[type=date]').datepicker();
+    });
+</script>
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()

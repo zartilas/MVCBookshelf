@@ -6,12 +6,11 @@
     ViewBag.Title = Lang.royschedPageTitle;
 }
 
-
 <h1 style="text-align:center">  <span class="badge badge-pill badge-dark">@Lang.royschedPageHeader</span> </h1>
 <br />
 <br />
 
-@if (Model != null || Model.Count() != 0)
+@if (Model != null || Model.Count != 0)
 {
 
     <!-- Create Button -->
@@ -33,7 +32,6 @@
             <br />
         </div>
     </div>
-
 
     <div class="card bg-primary">
         <table class="table table-curvy table-dark table-striped">
@@ -70,13 +68,11 @@
                     </td>
                 </tr>
             }
-
         </table>
     </div>
     <div class="mt-5 row align-items-center justify-content-center ">
 
         @Html.PagedListPager(Model, i => Url.Action("Index", "Roysched", new { i, search = Request.QueryString["Search"] }))
-
     </div>
 }
 else
@@ -103,4 +99,3 @@ else
         </div>
     </section>
 }
-

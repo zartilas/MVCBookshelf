@@ -1,4 +1,5 @@
 ﻿using MVCBookshelf.Content.Values;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MVCBookshelf.Models.Metadata
@@ -30,7 +31,7 @@ namespace MVCBookshelf.Models.Metadata
 
         [Display(Name = Lang.metadataJobId)]
         [RegularExpression("([0-9]+)", ErrorMessage = "Please enter a valid number")]
-        public string job_id;
+        public int job_id;
 
         [Display(Name = Lang.metadataJobLvl)]
         [RegularExpression("([0-9]+)", ErrorMessage = "Please enter a valid number")]
@@ -44,6 +45,6 @@ namespace MVCBookshelf.Models.Metadata
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
         [Required(ErrorMessage = Lang.metadataRequiredField)]
-        public string hire_date;
+        public Nullable<System.DateTime> hire_date;
     }
 }

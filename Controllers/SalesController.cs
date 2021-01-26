@@ -1,14 +1,11 @@
-﻿using System;
+﻿using MVCBookshelf.Models;
+using PagedList;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MVCBookshelf.Models;
-using PagedList;
-using PagedList.Mvc;
 
 namespace MVCBookshelf.Controllers
 {
@@ -19,7 +16,6 @@ namespace MVCBookshelf.Controllers
         // GET: Sales
         public ActionResult Index(string search, int? i)
         {
-
             var sales = db.sales.Include(s => s.stores).Include(s => s.titles);
             return View(db.sales.Where(x => x.ord_date.ToString().StartsWith(search)
                                             || x.qty.ToString().StartsWith(search)

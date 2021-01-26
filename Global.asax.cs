@@ -1,6 +1,4 @@
-﻿using MVCBookshelf.Controllers;
-using System;
-using System.Data.Entity;
+﻿using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -17,6 +15,7 @@ namespace MVCBookshelf
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
         protected void Application_Error(object sender, EventArgs e)
         {
             Exception lastErrorInfo = Server.GetLastError();
@@ -37,27 +36,27 @@ namespace MVCBookshelf
             }
         }
 
-/*        protected void Application_Error(object sender, EventArgs e)
-        {
-            Exception exception = Server.GetLastError();
-            Response.Clear();
-            HttpException httpException = exception as HttpException;
-            RouteData routeData = new RouteData();
-            routeData.Values.Add("controller", "Error");
-            if (httpException != null)
-            {
-                switch(httpException.GetHttpCode())
+        /*        protected void Application_Error(object sender, EventArgs e)
                 {
-                    case 404:
-                        routeData.Values.Add("action", "NotFound");
-                        break;
-                }
-                Server.ClearError();
-                Response.TrySkipIisCustomErrors = true;
-            }
-            IController errorController = new ErrorController();
-            errorController.Execute(new RequestContext(
-                new HttpContextWrapper(Context), routeData));
-        }*/
+                    Exception exception = Server.GetLastError();
+                    Response.Clear();
+                    HttpException httpException = exception as HttpException;
+                    RouteData routeData = new RouteData();
+                    routeData.Values.Add("controller", "Error");
+                    if (httpException != null)
+                    {
+                        switch(httpException.GetHttpCode())
+                        {
+                            case 404:
+                                routeData.Values.Add("action", "NotFound");
+                                break;
+                        }
+                        Server.ClearError();
+                        Response.TrySkipIisCustomErrors = true;
+                    }
+                    IController errorController = new ErrorController();
+                    errorController.Execute(new RequestContext(
+                        new HttpContextWrapper(Context), routeData));
+                }*/
     }
 }

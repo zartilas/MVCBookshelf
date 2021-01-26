@@ -6,12 +6,11 @@
     ViewBag.Title = Lang.salesPageTitle;
 }
 
-
 <h1 style="text-align:center">  <span class="badge badge-pill badge-dark">@Lang.salesPageHeader</span> </h1>
 <br />
 <br />
 
-@if (Model != null || Model.Count() != 0)
+@if (Model != null || Model.Count != 0)
 {
     <!-- Create Button -->
     <div class="btn-toolbar justify-content-lg-start pull-right">
@@ -77,17 +76,14 @@
                         <div class="btn-group">
                             <p>
                                 <a href="@Url.Action("Edit", "Sales", new { store_id = item.stor_id, title_id = item.title_id, ord_num = item.ord_num })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
-
                             </p>
                             <p>
                                 <a href="@Url.Action("Delete", "Sales", new { store_id = item.stor_id, title_id = item.title_id, ord_num = item.ord_num })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                             </p>
                         </div>
-
                     </td>
                 </tr>
             }
-
         </table>
     </div>
     <div class="mt-5 row align-items-center justify-content-center ">
@@ -119,4 +115,3 @@ else
         </div>
     </section>
 }
-
