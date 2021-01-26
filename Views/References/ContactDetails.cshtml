@@ -30,9 +30,9 @@
 
         <div class="form-row">
             <div class="form-group col-md-4">
-                @Html.LabelFor(model => model.au_fname, htmlAttributes: new { @class = "control-label" })
-                @Html.EditorFor(model => model.au_fname, new { htmlAttributes = new { @class = "form-control col-lg" } })
-                @Html.ValidationMessageFor(model => model.au_fname, "", new { @class = "text-danger" })
+                @Html.LabelFor("Top number", htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor("Top number", new { htmlAttributes = new { @class = "form-control col-lg" } })
+                @Html.ValidationMessageFor("Top number", "", new { @class = "text-danger" })
             </div>
         </div>
 

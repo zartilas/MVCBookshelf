@@ -13,14 +13,18 @@ namespace MVCBookshelf.Controllers
         public ActionResult Index()
         {
             IQueryable<authors> list1 = db.authors;
+
             IQueryable<sales> list = db.sales;
 
-            string numberOfSales = Request.QueryString["qty"];
+            string numberOfSales = Request.QueryString["userInput"];
 
             if (numberOfSales != null && numberOfSales != "")
             {
                 // list = list.Where(m => m.qty.ToString());
 
+
+
+            }
                 if (Request.QueryString["dateFrom"] != null && Request.QueryString["dateFrom"] != "")
                 {
                     DateTime.TryParse(Request.QueryString["dateFrom"], out DateTime datefrom);
@@ -32,7 +36,7 @@ namespace MVCBookshelf.Controllers
                     DateTime.TryParse(Request.QueryString["dateTo"], out DateTime dateto);
                     list = list.Where(m => m.ord_date <= dateto);
                 }
-            }
+            
 
             return View(list.ToList());
         }
