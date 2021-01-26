@@ -16,14 +16,27 @@ namespace MVCBookshelf.Controllers
         public ActionResult Index()
         {
             IQueryable<authors> list1 = db.authors;
+
             IQueryable<sales> list = db.sales;
 
-            string numberOfSales = Request.QueryString["qty"];
+            string numberOfSales = Request.QueryString["userInput"];
 
             if (numberOfSales != null && numberOfSales != "")
             {
-               // list = list.Where(m => m.qty.ToString());
 
+                List<string> titleIdList;
+
+                }
+            foreach (var item in (List<string>)list.Where(m => m.stor_id != null))
+            {
+                if (item.Equals(item))//δαμε θελει σκεψη
+                {
+                    Console.WriteLine(item);
+                }
+
+
+
+            }
                 if (Request.QueryString["dateFrom"] != null && Request.QueryString["dateFrom"] != "")
                 {
                 DateTime.TryParse(Request.QueryString["dateFrom"], out DateTime datefrom);
@@ -36,11 +49,7 @@ namespace MVCBookshelf.Controllers
                 list = list.Where(m => m.ord_date <= dateto);
                 }
 
-
-
-            }
-
-            return View(list.ToList());
+           return View(list.ToList());
         }
 
 
