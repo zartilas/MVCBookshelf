@@ -1,51 +1,58 @@
 ﻿@model MVCBookshelf.Models.titleauthor
+@using MVCBookshelf.Content.Values
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = Lang.titleAuthorsPageEditTitle;
 }
-
-<h2>Edit</h2>
-
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>titleauthor</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.au_id)
-
-        @Html.HiddenFor(model => model.title_id)
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.au_ord, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.au_ord, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.au_ord, "", new { @class = "text-danger" })
+    <div class="jumbotron">
+        <div class="form-horizontal">
+            <!-- Back Button -->
+            <div class="btn-toolbar justify-content-lg-start">
+                <p><a href="/Titleauthors/Index" id="btn-back" class="btn btn-primary btn-lg"><i class="fa fa-arrow-left"></i></a></p>
             </div>
-        </div>
+            <br />
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.royaltyper, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.royaltyper, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.royaltyper, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            <h2>@Lang.titleAuthorsPageHeaderEdit</h2>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.au_id)
+            @Html.HiddenFor(model => model.title_id)
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.au_id, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.au_id, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.titleAuthorsPageFormPlaceholderAuthorId } })
+                    @Html.ValidationMessageFor(model => model.au_id, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.title_id, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.title_id, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.titleAuthorsPageFormPlaceholderTitleId } })
+                    @Html.ValidationMessageFor(model => model.title_id, "", new { @class = "text-danger" })
+                </div>
             </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.au_ord, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.au_ord, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.titleAuthorsPageFormPlaceholderAuthorOrder } })
+                    @Html.ValidationMessageFor(model => model.au_ord, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.royaltyper, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.royaltyper, new { htmlAttributes = new { @class = "form-control col-lg", @placeholder = Lang.titleAuthorsPageFormPlaceholderRoyalTyper } })
+                    @Html.ValidationMessageFor(model => model.royaltyper, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <br />
+            <button type="submit" id="btn-create-submit" class="btn btn-primary btn-lg"><i class="fa fa-save"></i> &nbsp; @Lang.buttonEdit</button>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

@@ -1,64 +1,60 @@
 ﻿@model MVCBookshelf.Models.stores
+@using MVCBookshelf.Content.Values
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = Lang.storesPageDeleteTitle;
 }
 
-<h2>Delete</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="jumbotron">
+        <div class="form-horizontal">
+            <!-- Back Button -->
+            <div class="btn-toolbar justify-content-lg-start">
+                <p><a href="/Stores/Index" id="btn-back" class="btn btn-primary btn-lg"><i class="fa fa-arrow-left"></i></a></p>
+            </div>
+            <br />
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>stores</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.stor_name)
-        </dt>
+            <h2>@Lang.storesPageHeaderDelete</h2>
+            <h3>@Lang.storesPageHeaderDelete2</h3>
+            <hr />
+            <div class="form-group">
+                @Html.LabelFor(model => model.stor_name, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.stor_name, new { htmlAttributes = new { @class = "form-control col-lg", @readonly="" } })
+                @Html.ValidationMessageFor(model => model.stor_name, "", new { @class = "text-danger" })
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.stor_name)
-        </dd>
+            <div class="form-group">
+                @Html.LabelFor(model => model.stor_address, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.stor_address, new { htmlAttributes = new { @class = "form-control col-lg", @readonly="" } })
+                @Html.ValidationMessageFor(model => model.stor_address, "", new { @class = "text-danger" })
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.stor_address)
-        </dt>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.city, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.city, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                    @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.state, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.state, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                    @Html.ValidationMessageFor(model => model.state, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-4">
+                    @Html.LabelFor(model => model.zip, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.zip, new { htmlAttributes = new { @class = "form-control col-lg", @readonly = "" } })
+                    @Html.ValidationMessageFor(model => model.zip, "", new { @class = "text-danger" })
+                </div>
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.stor_address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.city)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.city)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.state)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.state)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.zip)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.zip)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <br />
+            <button type="submit" id="btn-create-submit" class="btn btn-primary btn-lg btn-danger"><i class="fa fa-trash"></i> &nbsp; @Lang.buttonDelete</button>
         </div>
-    }
-</div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -266,7 +266,7 @@ namespace MVCBookshelf.Content.Values
         public const string royschedPageFormPlaceholderHirange = "Ex: 5000";
         public const string royschedPageFormPlaceholderRoyalty = "Ex: 10";
 
-        /* Database Metadata */
+    /* Database Metadata */
         public const string metadataRequiredField = "This field is required";
         /* Metadata Authors */
         public const string metadataAuthorId = "AUTHOR ID";
@@ -329,7 +329,7 @@ namespace MVCBookshelf.Content.Values
         public const string metadataType = "TYPE";
         public const string metadataPrice = "PRICE";
         public const string metadataAdvance = "ADVANCE";
-        public const string metadataYtdSales = "YTD SALES";
+        public const string metadataYtdSales = "YEAR-TO-DATE SALES";
         public const string metadataNotes = "NOTES";
         public const string metadataPubDate = "PUBLISHER DATE";
         public const string metadataTitleID = "TITLE ID";

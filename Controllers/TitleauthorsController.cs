@@ -28,21 +28,6 @@ namespace MVCBookshelf.Controllers
                                             || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
-        // GET: Titleauthors/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            titleauthor titleauthor = db.titleauthor.Find(id);
-            if (titleauthor == null)
-            {
-                return HttpNotFound();
-            }
-            return View(titleauthor);
-        }
-
         // GET: Titleauthors/Create
         public ActionResult Create()
         {
@@ -71,13 +56,13 @@ namespace MVCBookshelf.Controllers
         }
 
         // GET: Titleauthors/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(string au_id, string title_id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            titleauthor titleauthor = db.titleauthor.Find(id);
+            titleauthor titleauthor = db.titleauthor.Find(au_id, title_id);
             if (titleauthor == null)
             {
                 return HttpNotFound();
@@ -106,13 +91,13 @@ namespace MVCBookshelf.Controllers
         }
 
         // GET: Titleauthors/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string au_id, string title_id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            titleauthor titleauthor = db.titleauthor.Find(id);
+            titleauthor titleauthor = db.titleauthor.Find(au_id, title_id);
             if (titleauthor == null)
             {
                 return HttpNotFound();
@@ -123,9 +108,9 @@ namespace MVCBookshelf.Controllers
         // POST: Titleauthors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(string au_id, string title_id)
         {
-            titleauthor titleauthor = db.titleauthor.Find(id);
+            titleauthor titleauthor = db.titleauthor.Find(au_id, title_id);
             db.titleauthor.Remove(titleauthor);
             db.SaveChanges();
             return RedirectToAction("Index");

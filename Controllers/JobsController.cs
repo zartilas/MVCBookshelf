@@ -25,21 +25,6 @@ namespace MVCBookshelf.Controllers
                                            || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
-        // GET: Jobs/Details/5
-        public ActionResult Details(short? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            jobs jobs = db.jobs.Find(id);
-            if (jobs == null)
-            {
-                return HttpNotFound();
-            }
-            return View(jobs);
-        }
-
         // GET: Jobs/Create
         public ActionResult Create()
         {

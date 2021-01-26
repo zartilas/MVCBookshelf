@@ -28,21 +28,6 @@ namespace MVCBookshelf.Controllers
                                                || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
-        // GET: Royscheds/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            roysched roysched = db.roysched.Find(id);
-            if (roysched == null)
-            {
-                return HttpNotFound();
-            }
-            return View(roysched);
-        }
-
         // GET: Royscheds/Create
         public ActionResult Create()
         {

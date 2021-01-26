@@ -438,20 +438,8 @@
     <Content Include="Views\Roysched\Create.cshtml" />
     <Content Include="Views\Roysched\Index.cshtml" />
     <Content Include="Views\Sales\Index.cshtml" />
-    <Content Include="Views\Stores\Create.cshtml" />
-    <Content Include="Views\Stores\Delete.cshtml" />
-    <Content Include="Views\Stores\Details.cshtml" />
-    <Content Include="Views\Stores\Edit.cshtml" />
     <Content Include="Views\Stores\Index.cshtml" />
-    <Content Include="Views\Titles\Create.cshtml" />
-    <Content Include="Views\Titles\Delete.cshtml" />
-    <Content Include="Views\Titles\Details.cshtml" />
-    <Content Include="Views\Titles\Edit.cshtml" />
     <Content Include="Views\Titles\Index.cshtml" />
-    <Content Include="Views\Titleauthors\Create.cshtml" />
-    <Content Include="Views\Titleauthors\Delete.cshtml" />
-    <Content Include="Views\Titleauthors\Details.cshtml" />
-    <Content Include="Views\Titleauthors\Edit.cshtml" />
     <Content Include="Views\Titleauthors\Index.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Views\Authors\Create.cshtml" />
@@ -469,6 +457,15 @@
     <Content Include="Views\Sales\Edit.cshtml" />
     <Content Include="Views\References\ContactDetails.cshtml" />
     <Content Include="Views\References\OrderIdSearch.cshtml" />
+    <Content Include="Views\Stores\Create.cshtml" />
+    <Content Include="Views\Stores\Delete.cshtml" />
+    <Content Include="Views\Stores\Edit.cshtml" />
+    <Content Include="Views\Titleauthors\Create.cshtml" />
+    <Content Include="Views\Titleauthors\Edit.cshtml" />
+    <Content Include="Views\Titleauthors\Delete.cshtml" />
+    <Content Include="Views\Titles\Create.cshtml" />
+    <Content Include="Views\Titles\Delete.cshtml" />
+    <Content Include="Views\Titles\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -478,7 +475,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ContactDetails\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

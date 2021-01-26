@@ -10,53 +10,22 @@
 <br />
 <br />
 
-<!-- Modal -->
-<div id="modalAddNewStore" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Titles</h4>
-                <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <label class="col-form-label" for="inputPosNum"></label>
-                    <input type="text" class="form-control" placeholder="" id="inputPosNum">
-
-                    <label class="col-form-label" for="inputDateFrom"></label>
-                    <input data-provide="datepicker" class="form-control" placeholder="" id="inputDateFrom">
-
-                    <div class="input-group date">
-                        <input type="text" class="form-control" value="12-02-2012">
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-lg w-125 h-75" data-dismiss="modal"><i class="fa fa-search"></i> &nbsp; Search</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-@if (Model.Count() != 0)
+@if (Model != null || Model.Count() != 0)
 {
+    <!-- Create Button -->
     <div class="btn-toolbar justify-content-lg-start pull-right">
-        <p data-toggle="modal" data-target="#modalAddNewStore"><a class="btn btn-primary btn-lg w-125 h-90"><i class="fa fa-plus"></i> &nbsp;  Add new store</a></p>
+        <p><a href="@Url.Action("Create", "Stores")" class="btn btn-primary btn-lg w-125"><i class="fa fa-plus"></i> &nbsp; @Lang.storesPageButtonCreate</a></p>
     </div>
 
+    <!-- Search Input Group -->
     <div class="row-fluid">
         <div class="form-group">
 
             @using (Html.BeginForm("Index", "Stores", FormMethod.Get))
             {
                 <div class="input-group " style="width:300px">
-                    <input type="text" name="search" class="form-control" placeholder="@Lang.searchTextBox" />
-                    <button type="submit" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; Search</button>
+                    <input type="text" name="search" class="form-control" placeholder="@Lang.searchInputPlaceholder" />
+                    <button type="submit" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; @Lang.buttonSearch</button>
                 </div>
             }
             <br />
@@ -89,7 +58,6 @@
             @foreach (var item in Model)
             {
                 <tr>
-
                     <td>
                         @Html.DisplayFor(modelItem => item.stor_name)
                     </td>
@@ -145,6 +113,10 @@ else
             <br />
             <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
             <br />
+            <!-- Create Button -->
+            <div class="btn-toolbar justify-content-lg-start pull-right">
+                <p><a href="@Url.Action("Create", "Stores")" class="btn btn-primary btn-lg w-125"><i class="fa fa-plus"></i> &nbsp; @Lang.storesPageButtonCreate</a></p>
+            </div>
         </div>
     </section>
 

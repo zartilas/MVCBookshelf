@@ -29,21 +29,6 @@ namespace MVCBookshelf.Controllers
                                             || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
-        // GET: Publishers/Details/5
-        public ActionResult Details(string id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            publishers publishers = db.publishers.Find(id);
-            if (publishers == null)
-            {
-                return HttpNotFound();
-            }
-            return View(publishers);
-        }
-
         // GET: Publishers/Create
         public ActionResult Create()
         {

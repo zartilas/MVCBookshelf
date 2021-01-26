@@ -9,180 +9,150 @@
 }
 
 <h1 style="text-align:center">  <span class="badge badge-pill badge-dark">@Lang.titlesPageHeader</span> </h1>
+<br />
+<br />
 
-<!-- Modal -->
-<div id="modalAddNewTitle" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Titles</h4>
-                <button type="button" class="close" data-dismiss="modal"><i class="bi bi-x"></i></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <label class="col-form-label" for="inputPosNum"></label>
-                    <input type="text" class="form-control" placeholder="" id="inputPosNum">
-
-                    <label class="col-form-label" for="inputDateFrom"></label>
-                    <input data-provide="datepicker" class="form-control" placeholder="" id="inputDateFrom">
-
-                    <div class="input-group date">
-                        <input type="text" class="form-control" value="12-02-2012">
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
-                        </div>
-                    </div>
-                    <br />
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-lg w-125 h-75" data-dismiss="modal"><i class="fa fa-search"></i> &nbsp; Search</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-@if (Model.Count() != 0)
+@if (Model != null || Model.Count() != 0)
 {
-<br />
-<br />
-<div class="btn-toolbar justify-content-lg-start  pull-right">
-    <p data-toggle="modal" data-target="#modalAddNewTitle"><a class="btn btn-primary btn-lg w-125"><i class="bi bi-plus"></i> &nbsp;  Add new title</a></p>
-</div>
-
-
-<div class="row-fluid">
-    <div class="form-group">
-
-        @using (Html.BeginForm("Index", "Titles", FormMethod.Get))
-        {
-        <div class="input-group " style="width:300px">
-            <input type="text" name="search" class="form-control" placeholder="@Lang.searchTextBox"/>
-            <button type="submit" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; Search</button>
-        </div>
-         }
-        <br />
+    <!-- Create Button -->
+    <div class="btn-toolbar justify-content-lg-start pull-right">
+        <p><a href="@Url.Action("Create", "Titles")" class="btn btn-primary btn-lg w-125"><i class="fa fa-plus"></i> &nbsp; @Lang.titlesPageButtonCreate</a></p>
     </div>
-</div>
 
-<div class="card bg-primary">
-    <table class="table table-curvy table-dark table-striped">
-        <tr class="table-primary">
-            <th>
-                @Html.DisplayNameFor(model => model.First().title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().advance)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().royalty)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().ytd_sales)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().notes)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().pubdate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().publishers.pub_name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().title_id)
-            </th>
-            <th></th>
-        </tr>
+    <!-- Search Input Group -->
+    <div class="row-fluid">
+        <div class="form-group">
 
-        @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.advance)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.royalty)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ytd_sales)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.notes)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.pubdate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.publishers.pub_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.title_id)
-            </td>
-
-            <td>
-                <div class="btn-group">
-                    <p>
-                        <a href="@Url.Action("Edit", "Titles", new { id = item.title_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
-
-                    </p>
-                    <p>
-                        <a href="@Url.Action("Delete", "Titles", new { id = item.title_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
-                    </p>
+            @using (Html.BeginForm("Index", "Titles", FormMethod.Get))
+            {
+                <div class="input-group " style="width:300px">
+                    <input type="text" name="search" class="form-control" placeholder="@Lang.searchInputPlaceholder" />
+                    <button type="submit" name="submit" class="input-group-btn ml-1 btn btn-primary"><i class="fa fa-search"></i> &nbsp; @Lang.buttonSearch</button>
                 </div>
-
-            </td>
-        </tr>
-    }
-
-    </table>
-</div>
+            }
+            <br />
+        </div>
+    </div>
 
 
+    <div class="card bg-primary">
+        <table class="table table-curvy table-dark table-striped">
+            <tr class="table-primary">
+                <th>
+                    @Html.DisplayNameFor(model => model.First().title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().price)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().advance)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().royalty)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().ytd_sales)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().notes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().pubdate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().publishers.pub_name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().title_id)
+                </th>
+                <th></th>
+            </tr>
 
-<div class="mt-5 row align-items-center justify-content-center ">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.advance)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.royalty)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ytd_sales)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.notes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.pubdate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.publishers.pub_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.title_id)
+                    </td>
 
-    @Html.PagedListPager(Model, i => Url.Action("Index", "Titles", new { i, search = Request.QueryString["Search"] }))
+                    <td>
+                        <div class="btn-group">
+                            <p>
+                                <a href="@Url.Action("Edit", "Titles", new { id = item.title_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
 
-</div>
+                            </p>
+                            <p>
+                                <a href="@Url.Action("Delete", "Titles", new { id = item.title_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
+                            </p>
+                        </div>
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+    <div class="mt-5 row align-items-center justify-content-center ">
+
+        @Html.PagedListPager(Model, i => Url.Action("Index", "Titles", new { i, search = Request.QueryString["Search"] }))
+
+    </div>
 
 }
 else
 {
-<section>
-    <div class="col-sm-12 text-center">
-        <img src="~/Content/Images/nothing_found.png" style="height:40%; width:40%;" alt="No records found" />
-    </div>
-    <div>
-        <!-- Button Divider-->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
-            <div class="divider-custom-line"></div>
+    <section>
+        <div class="col-sm-12 text-center">
+            <img src="~/Content/Images/nothing_found.png" style="height:40%; width:40%;" alt="No records found" />
         </div>
-        <h2 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader2</h2>
-        <br />
-        <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
-        <br />
-    </div>
-</section>
+        <div>
+            <!-- Button Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fa fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <h2 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader2</h2>
+            <br />
+            <h3 class="page-section-heading text-center text-secondary mb-0">@Lang.tablesNothingFoundHeader3</h3>
+            <br />
+            <!-- Create Button -->
+            <div class="btn-toolbar justify-content-lg-start pull-right">
+                <p><a href="@Url.Action("Create", "Titles")" class="btn btn-primary btn-lg w-125"><i class="fa fa-plus"></i> &nbsp; @Lang.titlesPageButtonCreate</a></p>
+            </div>
+        </div>
+    </section>
 }
 
 
