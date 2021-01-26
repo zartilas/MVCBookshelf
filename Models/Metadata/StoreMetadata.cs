@@ -19,7 +19,5 @@ namespace MVCBookshelf.Models.Metadata
 
         [Display(Name = Lang.metadataZip)]
         public string zip;
-
-
     }
 }

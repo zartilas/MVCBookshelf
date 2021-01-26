@@ -6,12 +6,11 @@
     ViewBag.Title = Lang.titleAuthorsPageTitle;
 }
 
-
 <h1 style="text-align:center">  <span class="badge badge-pill badge-dark">@Lang.titleAuthorsPageHeader</span> </h1>
 <br />
 <br />
 
-@if (Model != null || Model.Count() != 0)
+@if (Model != null || Model.Count != 0)
 {
     <!-- Create Button -->
     <div class="btn-toolbar justify-content-lg-start pull-right">
@@ -32,7 +31,6 @@
             <br />
         </div>
     </div>
-
 
     <div class="card bg-primary">
         <table class="table table-curvy table-dark table-striped">
@@ -72,24 +70,20 @@
                         <div class="btn-group">
                             <p>
                                 <a href="@Url.Action("Edit", "Titleauthors", new { au_id = item.au_id, title_id = item.title_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
-
                             </p>
                             <p>
                                 <a href="@Url.Action("Delete", "Titleauthors", new { au_id = item.au_id, title_id = item.title_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                             </p>
                         </div>
-
                     </td>
                 </tr>
             }
-
         </table>
     </div>
 
     <div class="mt-5 row align-items-center justify-content-center ">
 
         @Html.PagedListPager(Model, i => Url.Action("Index", "Titleauthors", new { i, search = Request.QueryString["Search"] }))
-
     </div>
 
 }
@@ -117,4 +111,3 @@ else
         </div>
     </section>
 }
-

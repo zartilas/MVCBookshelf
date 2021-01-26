@@ -12,7 +12,7 @@
 <br />
 <br />
 
-@if (Model != null || Model.Count() != 0)
+@if (Model != null || Model.Count != 0)
 {
     <!-- Create Button -->
     <div class="btn-toolbar justify-content-lg-start pull-right">
@@ -33,7 +33,6 @@
             <br />
         </div>
     </div>
-
 
     <div class="card bg-primary">
         <table class="table table-curvy table-dark table-striped">
@@ -109,24 +108,20 @@
                         <div class="btn-group">
                             <p>
                                 <a href="@Url.Action("Edit", "Titles", new { id = item.title_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
-
                             </p>
                             <p>
                                 <a href="@Url.Action("Delete", "Titles", new { id = item.title_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                             </p>
                         </div>
-
                     </td>
                 </tr>
             }
-
         </table>
     </div>
 
     <div class="mt-5 row align-items-center justify-content-center ">
 
         @Html.PagedListPager(Model, i => Url.Action("Index", "Titles", new { i, search = Request.QueryString["Search"] }))
-
     </div>
 
 }
@@ -154,6 +149,3 @@ else
         </div>
     </section>
 }
-
-
-

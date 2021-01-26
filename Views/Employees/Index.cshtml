@@ -6,12 +6,11 @@
     ViewBag.Title = Lang.employeesPageTitle;
 }
 
-
 <h1 style="text-align:center">  <span class="badge badge-pill badge-dark">@Lang.employeesPageHeader</span> </h1>
 <br />
 <br />
 
-@if (Model != null || Model.Count() != 0)
+@if (Model != null || Model.Count != 0)
 {
 
     <!-- Create Button -->
@@ -33,7 +32,6 @@
             <br />
         </div>
     </div>
-
 
     <div class="card bg-primary">
         <table class="table table-curvy table-dark table-striped">
@@ -95,17 +93,14 @@
                                 <a href="@Url.Action("Delete", "Employees", new { id = item.emp_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                             </p>
                         </div>
-
                     </td>
                 </tr>
             }
-
         </table>
     </div>
     <div class="mt-5 row align-items-center justify-content-center ">
 
         @Html.PagedListPager(Model, i => Url.Action("Index", "Employees", new { i, search = Request.QueryString["Search"] }))
-
     </div>
 
 }
@@ -133,4 +128,3 @@ else
         </div>
     </section>
 }
-

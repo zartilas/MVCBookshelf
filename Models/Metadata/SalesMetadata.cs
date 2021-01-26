@@ -1,4 +1,5 @@
 ﻿using MVCBookshelf.Content.Values;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MVCBookshelf.Models.Metadata
@@ -13,7 +14,7 @@ namespace MVCBookshelf.Models.Metadata
         [Required(ErrorMessage = Lang.metadataRequiredField)]
         [DisplayFormat(DataFormatString = "{0:dd-MMM-yy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date)]
-        public string ord_date;
+        public Nullable<System.DateTime> ord_date;
 
         [Display(Name = Lang.metadataStoreId)]
         [Required(ErrorMessage = Lang.metadataRequiredField)]

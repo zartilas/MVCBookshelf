@@ -1,11 +1,12 @@
 ﻿using MVCBookshelf.Content.Values;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MVCBookshelf.Models.Metadata
 {
     public class TitlesMetadata
     {
-        [Display(Name = Lang.metadataTitleID)]
+        [Display(Name = Lang.metadataTitleId)]
         public string title_id;
 
         [Display(Name = Lang.metadataTitle)]
@@ -33,6 +34,8 @@ namespace MVCBookshelf.Models.Metadata
 
         [Display(Name = Lang.metadataPubDate)]
         [Required(ErrorMessage = Lang.metadataRequiredField)]
-        public string pubdate;
+        [DisplayFormat(DataFormatString = "{0:dd-MMM-yy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        public Nullable<System.DateTime> pubdate;
     }
 }

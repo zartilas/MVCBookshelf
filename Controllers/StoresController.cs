@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MVCBookshelf.Models;
+using PagedList;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MVCBookshelf.Models;
-using PagedList;
 
 namespace MVCBookshelf.Controllers
 {
@@ -18,13 +15,12 @@ namespace MVCBookshelf.Controllers
         // GET: Stores
         public ActionResult Index(string search, int? i)
         {
-
             return View(db.stores.Where(x => x.stor_name.StartsWith(search)
                                             || x.stor_address.StartsWith(search)
                                             || x.city.ToString().StartsWith(search)
                                             || x.state.StartsWith(search)
                                             || x.zip.ToString().StartsWith(search)
-                                            || search== null).ToList().ToPagedList(i ?? 1, 5));
+                                            || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
         // GET: Stores/Create
