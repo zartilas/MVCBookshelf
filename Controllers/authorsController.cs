@@ -1,15 +1,14 @@
-﻿using System.Data.Entity;
+﻿using MVCBookshelf.Models;
+using PagedList;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using MVCBookshelf.Models;
-using PagedList;
 
 namespace MVCBookshelf.Controllers
 {
     public class AuthorsController : Controller
     {
-
         private pubsEntities db = new pubsEntities();
 
         // GET: Authors
@@ -43,6 +42,7 @@ namespace MVCBookshelf.Controllers
 
             return View(authors);
         }
+
         [HttpGet] // this action result returns the partial containing the modal
         public ActionResult Create(string id)
         {

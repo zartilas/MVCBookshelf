@@ -4,6 +4,6 @@ namespace MVCBookshelf.Models
 {
     public class ManageAuthorsModel
     {
-       public List<authors> Authors { get; set; }
+        public List<authors> Authors { get; set; }
     }
 }

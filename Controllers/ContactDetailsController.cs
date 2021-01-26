@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MVCBookshelf.Models;
+using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using MVCBookshelf.Models;
 
 namespace MVCBookshelf.Controllers
 {
     public class ContactDetailsController : Controller
     {
-
         private pubsEntities db = new pubsEntities();
 
         // GET: ContactDetails
@@ -23,35 +20,26 @@ namespace MVCBookshelf.Controllers
 
             if (numberOfSales != null && numberOfSales != "")
             {
-
-                List<string> titleIdList;
-
-                }
-            foreach (var item in (List<string>)list.Where(m => m.stor_id != null))
-            {
-                if (item.Equals(item))//δαμε θελει σκεψη
-                {
-                    Console.WriteLine(item);
-                }
+                // list = list.Where(m => m.qty.ToString());
 
 
 
             }
                 if (Request.QueryString["dateFrom"] != null && Request.QueryString["dateFrom"] != "")
                 {
-                DateTime.TryParse(Request.QueryString["dateFrom"], out DateTime datefrom);
-                list = list.Where(m => m.ord_date >= datefrom);
+                    DateTime.TryParse(Request.QueryString["dateFrom"], out DateTime datefrom);
+                    list = list.Where(m => m.ord_date >= datefrom);
                 }
 
                 if (Request.QueryString["dateTo"] != null && Request.QueryString["dateTo"] != "")
                 {
-                DateTime.TryParse(Request.QueryString["dateTo"], out DateTime dateto);
-                list = list.Where(m => m.ord_date <= dateto);
+                    DateTime.TryParse(Request.QueryString["dateTo"], out DateTime dateto);
+                    list = list.Where(m => m.ord_date <= dateto);
                 }
+            }
 
-           return View(list.ToList());
+            return View(list.ToList());
         }
-
 
         // GET: ContactDetails/Details/5
         public ActionResult Details(int id)

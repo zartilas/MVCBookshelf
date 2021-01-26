@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MVCBookshelf.Models;
+using PagedList;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MVCBookshelf.Models;
-using PagedList;
-using PagedList.Mvc;
 
 namespace MVCBookshelf.Controllers
 {
@@ -19,7 +15,6 @@ namespace MVCBookshelf.Controllers
         // GET: Titleauthors
         public ActionResult Index(string search, int? i)
         {
-
             var titleauthor = db.titleauthor.Include(t => t.authors).Include(t => t.titles);
             return View(db.titleauthor.Where(x => x.royaltyper.ToString().StartsWith(search)
                                             || x.au_ord.ToString().StartsWith(search)
@@ -58,7 +53,7 @@ namespace MVCBookshelf.Controllers
         // GET: Titleauthors/Edit/5
         public ActionResult Edit(string au_id, string title_id)
         {
-            if (id == null)
+            if (au_id == null || title_id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -93,7 +88,7 @@ namespace MVCBookshelf.Controllers
         // GET: Titleauthors/Delete/5
         public ActionResult Delete(string au_id, string title_id)
         {
-            if (id == null)
+            if (au_id == null || title_id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }

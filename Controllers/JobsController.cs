@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MVCBookshelf.Models;
+using PagedList;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MVCBookshelf.Models;
-using PagedList;
-using PagedList.Mvc;
 
 namespace MVCBookshelf.Controllers
 {
@@ -20,8 +16,8 @@ namespace MVCBookshelf.Controllers
         public ActionResult Index(string search, int? i)
         {
             return View(db.jobs.Where(x => x.job_desc.StartsWith(search)
-                                           ||x.max_lvl.ToString().StartsWith(search)
-                                           ||x.min_lvl.ToString().StartsWith(search)
+                                           || x.max_lvl.ToString().StartsWith(search)
+                                           || x.min_lvl.ToString().StartsWith(search)
                                            || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 

@@ -8,8 +8,7 @@
 
 <h1 style="text-align:center">  <span class="badge badge-pill badge-dark">@Lang.discountsPageHeader</span> </h1>
 
-
-@if (Model != null || Model.Count() != 0)
+@if (Model != null || Model.Count != 0)
 {
     <!-- Create Button -->
     <div class="btn-toolbar justify-content-lg-start pull-right">
@@ -30,7 +29,6 @@
             <br />
         </div>
     </div>
-
 
     <div class="card bg-primary">
         <table class="table table-curvy table-dark table-striped">
@@ -67,7 +65,6 @@
                     </td>
                 </tr>
             }
-
         </table>
     </div>
 
@@ -100,5 +97,3 @@ else
         </div>
     </section>
 }
-
-

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using MVCBookshelf.Models;
+using PagedList;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using MVCBookshelf.Models;
-using PagedList;
-using PagedList.Mvc;
 
 namespace MVCBookshelf.Controllers
 {
@@ -19,7 +15,6 @@ namespace MVCBookshelf.Controllers
         // GET: Titles
         public ActionResult Index(string search, int? i)
         {
-
             var titles = db.titles.Include(t => t.publishers).Include(t => t.roysched);
             return View(db.titles.Where(x => x.title.StartsWith(search)
                                             || x.type.StartsWith(search)

@@ -10,7 +10,7 @@
 <br />
 <br />
 
-@if (Model != null || Model.Count() != 0)
+@if (Model != null || Model.Count != 0)
 {
     <!-- Create Button -->
     <div class="btn-toolbar justify-content-lg-start pull-right">
@@ -78,17 +78,14 @@
                         <div class="btn-group">
                             <p>
                                 <a href="@Url.Action("Edit", "Stores", new { id = item.stor_id })" class="btn edit btn-primary btn-lg w-25" id="btn-edit"><i class="fa fa-edit"></i></a>
-
                             </p>
                             <p>
                                 <a href="@Url.Action("Delete", "Stores", new { id = item.stor_id })" class="btn btn-primary btn-danger btn-lg w-25"><i class="fa fa-trash"></i></a>
                             </p>
                         </div>
-
                     </td>
                 </tr>
             }
-
         </table>
     </div>
 
@@ -119,6 +116,5 @@ else
             </div>
         </div>
     </section>
-
 
 }
