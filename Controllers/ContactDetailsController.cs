@@ -19,21 +19,25 @@ namespace MVCBookshelf.Controllers
             IQueryable<sales> list = db.sales;
 
             string numberOfSales = Request.QueryString["qty"];
+
             if (numberOfSales != null && numberOfSales != "")
             {
                // list = list.Where(m => m.qty.ToString());
-            }
 
-            if (Request.QueryString["dateFrom"] != null && Request.QueryString["dateFrom"] != "")
-            {
+                if (Request.QueryString["dateFrom"] != null && Request.QueryString["dateFrom"] != "")
+                {
                 DateTime.TryParse(Request.QueryString["dateFrom"], out DateTime datefrom);
                 list = list.Where(m => m.ord_date >= datefrom);
-            }
+                }
 
-            if (Request.QueryString["dateTo"] != null && Request.QueryString["dateTo"] != "")
-            {
+                if (Request.QueryString["dateTo"] != null && Request.QueryString["dateTo"] != "")
+                {
                 DateTime.TryParse(Request.QueryString["dateTo"], out DateTime dateto);
                 list = list.Where(m => m.ord_date <= dateto);
+                }
+
+
+
             }
 
             return View(list.ToList());
