@@ -25,6 +25,22 @@ namespace MVCBookshelf.Controllers
                                             || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
+        // GET: Publishers/Details
+        public ActionResult Details(string pub_id)
+        {
+            if (pub_id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            pub_info publisherInfo = db.pub_info.Find(pub_id);
+            if (publisherInfo == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.pub_id = new SelectList(db.pub_info, "pub_id", "pr_info");
+            return View(publisherInfo);
+        }
+
         // GET: Publishers/Create
         public ActionResult Create()
         {
@@ -71,11 +87,12 @@ namespace MVCBookshelf.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "pub_id,pub_name,city,state,country")] publishers publishers)
+        public ActionResult Edit([Bind(Include = "pub_id,pub_name,city,state,country")] publishers publishers, [Bind(Include = "logo,pr_info")] pub_info pubInfo)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(publishers).State = EntityState.Modified;
+                db.Entry(pubInfo).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

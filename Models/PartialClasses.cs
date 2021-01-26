@@ -23,6 +23,10 @@ namespace MVCBookshelf.Models
     public partial class publishers
     { }
 
+    [MetadataType(typeof(PubInfoMetadata))]
+    public partial class pub_info
+    { }
+
     [MetadataType(typeof(RoyschedMetadata))]
     public partial class roysched
     { }

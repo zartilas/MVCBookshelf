@@ -2,11 +2,6 @@
 
 namespace MVCBookshelf.Models.Metadata
 {
-    [MetadataType(typeof(PubInfoMetadata))]
-    public partial class PubInfo
-    {
-    }
-
     public class PubInfoMetadata
     {
         [Display(Name = "Logo")]

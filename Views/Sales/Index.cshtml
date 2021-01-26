@@ -57,7 +57,7 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.ord_date)
+                        @Convert.ToDateTime(item.ord_date).ToString("dd-MMM-yy")
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.qty)

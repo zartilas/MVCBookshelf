@@ -76,7 +76,7 @@
                         @Html.DisplayFor(modelItem => item.job_lvl)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.hire_date)
+                        @Convert.ToDateTime(item.hire_date).ToString("dd-MMM-yy")
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.jobs.job_desc)
