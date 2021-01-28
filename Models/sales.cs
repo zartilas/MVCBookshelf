@@ -11,7 +11,8 @@ namespace MVCBookshelf.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class sales
     {
         public string stor_id { get; set; }
@@ -19,6 +20,8 @@ namespace MVCBookshelf.Models
         public System.DateTime ord_date { get; set; }
         public short qty { get; set; }
         public string payterms { get; set; }
+
+        [ForeignKey("Titles")]
         public string title_id { get; set; }
     
         public virtual stores stores { get; set; }

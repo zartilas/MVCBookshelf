@@ -25,32 +25,32 @@ namespace MVCBookshelf.Controllers
                                          || search == null).ToList().ToPagedList(i ?? 1, 5));
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            authors authors = new authors();
+            return View();
+        }
+
         // POST: Authors/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "au_id,au_lname,au_fname,phone,address,city,state,zip,contract")] authors authors)
+        public ActionResult Create([Bind(Include = "au_id, au_lname, au_fname, phone, address, city, state, zip, contract")] authors author)
         {
             if (ModelState.IsValid)
             {
-                db.authors.Add(authors);
+                db.authors.Add(author);
                 db.SaveChanges();
-                ModelState.Clear();
                 return RedirectToAction("Index");
             }
 
-            return View(authors);
-        }
-
-        [HttpGet] // this action result returns the partial containing the modal
-        public ActionResult Create(string id)
-        {
-            return View();
+            return View(author);
         }
 
         // GET
-        [HttpGet] // this action result returns the partial containing the modal
+        [HttpGet]
         public ActionResult Edit(string id)
         {
             if (id == null)

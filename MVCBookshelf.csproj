@@ -174,11 +174,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Content\Values\Lang.cs" />
     <Compile Include="Controllers\AuthorsController.cs" />
-    <Compile Include="Controllers\ContactDetailsController.cs" />
     <Compile Include="Controllers\DiscountsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\OrderIdSearchController.cs" />
     <Compile Include="Controllers\ReferencesController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\PublishersController.cs" />
@@ -193,7 +191,6 @@
     <Compile Include="Models\authors.cs">
       <DependentUpon>ModelPubs.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ReferencesModelDal.cs" />
     <Compile Include="Models\ManageAuthorsModel.cs" />
     <Compile Include="Models\Metadata\AuthorsMetadata.cs" />
     <Compile Include="Models\discounts.cs">
@@ -230,6 +227,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelPubs.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\ModelViewOrderID.cs" />
+    <Compile Include="Models\ViewModels\ModelViewTopSales.cs" />
     <Compile Include="Models\PartialClasses.cs" />
     <Compile Include="Models\publishers.cs">
       <DependentUpon>ModelPubs.tt</DependentUpon>
@@ -457,7 +456,6 @@
     <Content Include="Views\Sales\Delete.cshtml" />
     <Content Include="Views\Sales\Edit.cshtml" />
     <Content Include="Views\References\ContactDetails.cshtml" />
-    <Content Include="Views\References\OrderIdSearch.cshtml" />
     <Content Include="Views\Stores\Create.cshtml" />
     <Content Include="Views\Stores\Delete.cshtml" />
     <Content Include="Views\Stores\Edit.cshtml" />
@@ -468,6 +466,7 @@
     <Content Include="Views\Titles\Delete.cshtml" />
     <Content Include="Views\Titles\Edit.cshtml" />
     <Content Include="Views\Publishers\Details.cshtml" />
+    <Content Include="Views\References\OrderID.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

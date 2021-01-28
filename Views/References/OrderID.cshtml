@@ -1,8 +1,8 @@
-﻿@model IEnumerable<MVCBookshelf.Models.ViewModels.ModelViewTopSales>
+﻿@model IEnumerable<MVCBookshelf.Models.ViewModels.ModelViewOrderID>
 @using MVCBookshelf.Content.Values
 
 @{
-    ViewBag.Title = Lang.homePage1Title;
+    ViewBag.Title = Lang.homePage2Title;
 }
 
 <script>
@@ -17,22 +17,29 @@
     </div>
 
     <br />
-    <h2>@Lang.homePage1Header</h2>
+    <h2>@Lang.homePage2Header</h2>
     <hr />
     <form class="form-horizontal">
-        <div class="form-group">
-            <label>@Lang.homePage1FormTopNumLabel</label>
-            <input type="text" class="form-control col-md-3" id="TopNum" name="TopNum" placeholder="@Lang.homePage1FormPlaceholderTopNum" min="1">
-        </div>
         <div class="form-row">
             <div class="form-group col-md-3">
-                <label>@Lang.homePage1FormDateFromLabel</label>
-                <input type="date" class="form-control" id="DateFrom" name="DateFrom" placeholder="">
+                <label>@Lang.homePage2FormDateFromLabel</label>
+                <input type="date" class="form-control" id="DateFrom" name="DateFrom">
             </div>
 
             <div class="form-group col-md-3">
-                <label>@Lang.homePage1FormDateToLabel</label>
-                <input type="date" class="form-control" id="DateTo" name="DateTo" placeholder="">
+                <label>@Lang.homePage2FormDateToLabel</label>
+                <input type="date" class="form-control" id="DateTo" name="DateTo">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label>@Lang.homePage2FormStoreNameFromLabel</label>
+                <input type="text" class="form-control" id="StoreNameFrom" name="StoreNameFrom" placeholder="@Lang.homePage2FormStoreNameFromLabel">
+            </div>
+            <div class="form-group col-md-3">
+                <label>@Lang.homePage2FormStoreNameToLabel</label>
+                <input type="text" class="form-control" id="StoreNameTo" name="StoreNameTo" placeholder="@Lang.homePage2FormStoreNameToLabel">
             </div>
         </div>
 
@@ -48,25 +55,19 @@
     <table class="table table-curvy table-dark table-striped">
         <tr class="table-primary">
             <th>
+                <p>ORDER ID</p>
+            </th>
+            <th>
+                <p>ORDER DATE</p>
+            </th>
+            <th>
                 <p>TITLE ID</p>
             </th>
             <th>
                 <p>TITLE NAME</p>
             </th>
             <th>
-                <p>TOTAL SALES</p>
-            </th>
-            <th>
-                <p>ORDER DATE</p>
-            </th>
-            <th>
-                <p>AUTHOR FIRST NAME</p>
-            </th>
-            <th>
-                <p>AUTHOR LAST NAME</p>
-            </th>
-            <th>
-                <p>PHONE</p>
+                <p>STORE NAME</p>
             </th>
         </tr>
 
@@ -74,25 +75,19 @@
         {
             <tr>
                 <td>
+                    @Html.DisplayFor(modelItem => item.ord_num)
+                </td>
+                <td>
+                    @Convert.ToDateTime(item.ord_date).ToString("dd-MMM-yy")
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.title_id)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.title_name)
+                    @Html.DisplayFor(modelItem => item.title)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.total_sales)
-                </td>
-                <td>
-                    @Convert.ToDateTime(item.order_date).ToString("dd-MMM-yy")
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.au_fname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.au_lname)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.phone)
+                    @Html.DisplayFor(modelItem => item.stor_name)
                 </td>
             </tr>
         }
