@@ -116,25 +116,26 @@ namespace MVCBookshelf.Controllers
             {
                 return View();
             }
+
             if (dateTo == null || dateTo == "")
             {
                 DateTime.TryParse(dateFrom, out DateTime dateFromConverted);
-                query += "S.ord_date >= '" + dateFromConverted + "' ";
+                query += "S.ord_date >= '" + dateFromConverted + "'";
             }
             else if (dateFrom != null && dateFrom != "" && dateTo != null && dateTo != "")
             {
                 DateTime.TryParse(dateFrom, out DateTime dateFromConverted);
                 DateTime.TryParse(dateTo, out DateTime dateToConverted);
-                query += "S.ord_date BETWEEN '" + dateFromConverted + "' AND '" + dateToConverted + "' ";
+                query += "S.ord_date BETWEEN '" + dateFromConverted + "' AND '" + dateToConverted + "'";
             }
 
             if (storeNameFrom != null && storeNameFrom != "" && (storeNameTo == null || storeNameTo == ""))
             {
-                query += "AND stor_name LIKE '" + storeNameFrom + "%'";
+                query += " AND stor_name LIKE '" + storeNameFrom + "%' ";
             }
             else if ((storeNameFrom != null && storeNameFrom != "") && (storeNameTo != null && storeNameTo != ""))
             {
-                query += "AND stor_name LIKE '["+storeNameFrom+"-"+storeNameTo+"]%'";
+                query += " AND stor_name LIKE '["+storeNameFrom+"-"+storeNameTo+"]%'";
             }
 
             if (query == null)
@@ -145,6 +146,7 @@ namespace MVCBookshelf.Controllers
             }
             else
             {
+                query += " ORDER BY ord_date DESC";
                 IEnumerable<ModelViewOrderID> myAreaList = db.Database.SqlQuery<ModelViewOrderID>(query);
                 return View(myAreaList.ToList());
             }
